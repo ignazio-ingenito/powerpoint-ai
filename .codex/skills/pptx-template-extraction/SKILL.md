@@ -43,6 +43,15 @@ Extract:
 - icon treatment;
 - closing slide pattern.
 
+Also extract named reusable patterns for proposal/business-case decks when present:
+
+- `Contesto / Esigenza / Obiettivi`;
+- AS IS architecture/process;
+- TO BE architecture/scenario;
+- roadmap / project phases;
+- economics table/cards;
+- next steps / decision slide.
+
 ## Output
 
 Produce a visual system brief:
@@ -61,6 +70,7 @@ Produce a visual system brief:
 - Card/table rules:
 - Diagram/roadmap rules:
 - Economics slide rules:
+- Slide-type-to-reference mapping:
 - Constraints:
 - Manual checks:
 ```

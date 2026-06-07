@@ -46,8 +46,10 @@ Per proposte/business case di sviluppo software, usare una pipeline quality-firs
 3. storyline sulle cinque sezioni cardine;
 4. grounding visuale su `docs/template.pptx`, `docs/ui/` e deck sorgente;
 5. manipolazione/produzione PowerPoint editabile;
-6. review qualità;
-7. handoff con assunzioni, verifiche e rischi residui.
+6. passaggio finale `Critic`;
+7. passaggio finale `Review`;
+8. ultima passata `humanize`;
+9. handoff con assunzioni, verifiche e rischi residui.
 
 Se mancano informazioni critiche su valore, perimetro, economics, impegni, date o contenuti cliente, fermarsi e chiedere chiarimenti. Se mancano dettagli minori, procedere solo marcandoli come assunzioni o punti da validare.
 
@@ -87,6 +89,24 @@ Usare i file `docs/reference*.md` come interpretazione di base di queste sezioni
 
 La storyline può essere adattata in base a dimensione e complessità del progetto, ma le cinque sezioni cardine non devono sparire senza un motivo chiaro.
 
+La prima sezione cardine **Contesto ed esigenza/obiettivi** deve essere esplicita nel deck e nella storyline. Non basta una slide generica di contesto o pain point: deve risultare chiaro, anche a livello di titolo o struttura interna della slide, quali sono:
+
+- **Contesto:** situazione di partenza e razionale business;
+- **Esigenza:** bisogno, criticità, opportunità o trigger che rende utile il progetto;
+- **Obiettivi:** cosa il deck/progetto deve abilitare o decidere.
+
+Quando il deck è sintetico, questi tre elementi possono stare in una sola slide, ma non devono sparire o essere impliciti.
+
+Per deck costruiti a partire da una POC, un prototipo o un repository software, la storyline deve includere anche un ponte esplicativo prima di passare a roadmap ed economics. Il deck deve far capire, in linguaggio executive:
+
+- **cosa fa oggi la POC/soluzione:** input gestiti, principali funzioni e output prodotti;
+- **come lo fa:** flusso operativo, componenti o logiche chiave, spiegati solo quanto serve a comprenderne valore, rischio e riusabilità;
+- **cosa produce di misurabile:** evidenze, metriche, payload, report, dati, diagnostica o risultati osservabili;
+- **quali limiti ha oggi:** gap funzionali, operativi, tecnici o di validazione;
+- **in cosa può evolvere:** capability target, estensioni applicative, processi/funzioni futuri e business case abilitati.
+
+La sintesi C-level non deve cancellare questo ponte. Può comprimerlo in una o due slide, ma non può lasciare il lettore senza una comprensione concreta dell'oggetto che si propone di finanziare, evolvere o industrializzare.
+
 ## Riferimenti Visivi
 
 Usare `docs/ui/` solo come area di riferimento visivo e di layout.
@@ -108,6 +128,28 @@ I file in `docs/ui/` possono includere PDF, immagini esportate da slide, screens
 Non scrivere deliverable generati dentro `docs/ui/`.
 
 Quando si usano deck di riferimento, seguire il loro linguaggio visivo e il sistema di layout. Non copiare contenuti riservati o specifici di un cliente, salvo richiesta esplicita dell'utente.
+
+Se `docs/template.pdf` e' disponibile, usarlo come riferimento visuale primario per la fedelta' grafica, perche' mostra la resa effettiva del template esportato. `docs/template.pptx` resta invece la base editabile da riusare o ispezionare per master, layout e asset PowerPoint.
+
+La generazione visuale deve partire dai pattern effettivamente presenti in `docs/ui/`, non da layout generici. In particolare:
+
+- per la slide iniziale di contenuto usare il pattern `Contesto / Esigenza / Obiettivi` quando disponibile;
+- per roadmap e piano usare pattern a fasi/righe coerenti con le reference PMO;
+- per economics usare tabelle o card comparabili alle reference economics;
+- header, barre decorative, logo, colori, densità e spaziature devono richiamare le reference, salvo motivo esplicito.
+- quando `docs/template.pdf` e' presente, confrontare cover, header/footer, card, colonne, roadmap, fascia `Valore generato`, chiusura e densita' del testo con le pagine del PDF prima di approvare la fedelta' visuale.
+
+Se il deck generato si discosta dai pattern disponibili, la deviazione deve essere dichiarata e motivata nel visual plan o nell'handoff.
+
+Quando il materiale viene passato ad altri modelli, tool di generazione slide o designer, preferire un **creative handoff** rispetto a un visual plan rigido. Il creative handoff deve preservare messaggio, contenuti obbligatori, fonti, assunzioni e guardrail visuali, ma lasciare libertà compositiva dove possibile.
+
+Per ogni slide indicare un livello di libertà:
+
+- **High:** il modello può scegliere la composizione visuale, se rispetta messaggio e guardrail.
+- **Medium:** deve restare vicino a una famiglia di reference, ma può variare layout.
+- **Low:** deve seguire un pattern specifico perché serve coerenza formale o riconoscibilità.
+
+Usare `Low` soprattutto per copertina, `Contesto / Esigenza / Obiettivi`, economics/offerta formale e chiusura istituzionale. Per le altre slide, evitare di prescrivere coordinate, numero esatto di box, frecce o diagrammi se non necessario: indicare invece ruolo narrativo, contenuti obbligatori, alternative visuali ammesse e anti-pattern.
 
 ## Regole di Output
 
@@ -166,14 +208,27 @@ Quando utile, separare:
 Prima di considerare una presentazione completa, verificare che:
 
 - le cinque sezioni cardine siano presenti o adattate intenzionalmente
+- la sezione `Contesto ed esigenza/obiettivi` sia esplicita, non solo implicita in una slide generica
+- per deck basati su POC/repo software, sia chiaro cosa fa oggi la soluzione, come funziona a livello executive, cosa produce, quali limiti ha e in cosa può evolvere
 - il deck usi `docs/` come fonte contenutistica e metodologica
 - il deck usi `docs/ui/` solo come riferimento layout
+- le slide rispettino i guardrail visuali e il livello di libertà creativa dichiarato; aderenza stretta ai pattern `docs/ui/` solo dove richiesta
 - i deliverable finali siano salvati nella root del progetto
 - le assunzioni siano esplicite
 - i titoli slide comunichino il messaggio
 - il testo non sia sovraccarico
 - diagrammi, tabelle e roadmap siano leggibili
 - contenuti riservati provenienti da deck di riferimento non siano stati copiati accidentalmente
+
+## Gate Finale Obbligatorio
+
+Prima di consegnare un deck, una storyline, un creative handoff, un prompt o qualunque artifact testuale destinato a generare slide, eseguire sempre tre passaggi finali:
+
+1. **Critic:** rileggere il lavoro in modo avversariale, cercando contenuti mancanti, assunzioni nascoste, passaggi narrativi deboli, claim non supportati e punti che un CEO/CTO non capirebbe.
+2. **Review:** applicare la review qualità del processo, includendo grounding, sezioni cardine, POC narrative bridge, economics, assunzioni, guardrail visuali e completezza del deliverable.
+3. **Humanize:** fare l'ultima passata sul testo per renderlo più naturale, leggibile e meno meccanico, senza cambiare fatti, assunzioni, vincoli o fonti.
+
+Se uno dei tre passaggi trova un problema materiale, correggere l'artifact e ripetere almeno il controllo rilevante prima dell'handoff.
 
 ## Strumenti e Skill Utili
 

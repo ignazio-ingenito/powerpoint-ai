@@ -26,6 +26,7 @@ Read:
 - Prefer message titles over section labels.
 - Keep slide body text short.
 - Tie technical details to business value, risk, time, quality, scalability, or economics.
+- For POC/repo-derived decks, preserve the executive explanation of what the solution does, how it works, what it produces, what its limits are, and what it can evolve into.
 - Separate facts, assumptions, estimates, risks, and open questions.
 - Do not make unsupported benefits sound guaranteed.
 - Move implementation detail to appendix when it distracts from the decision.
@@ -56,6 +57,16 @@ When text is too dense:
 3. Convert paragraphs into 3-5 bullets or 2-3 cards.
 4. Move details, caveats, and implementation notes to appendix or speaker notes.
 5. Preserve assumptions visibly.
+
+Do not compress away the core explanatory bridge for POC/repo-derived decks. A C-level reader should still understand:
+
+- the concrete input and output;
+- the few operating steps that make the asset credible;
+- the observable result or evidence;
+- the current boundary;
+- the next evolution.
+
+If a deck is too short, merge this bridge into one strong slide instead of deleting it.
 
 ## Output
 

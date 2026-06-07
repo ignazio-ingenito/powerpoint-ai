@@ -1,72 +1,75 @@
 # PowerPoint Deck Workflow
 
-Questo repository serve a produrre presentazioni commerciali e business case, preferibilmente in formato PowerPoint editabile, seguendo una pipeline quality-first per progetti software.
+Questo repository serve a produrre presentazioni commerciali, business case e deck PMO in PowerPoint, con contenuti fondati sulle fonti e stile coerente con le reference TXT/Novigo.
 
-## Quando Usare Questo Workflow
+Usalo quando parti da repository software, appunti, documenti, immagini, transcript, deck sorgenti o template. Il risultato tipico è:
 
-Usalo quando devi creare una presentazione a partire da:
+- un brief fondato sulle fonti in Markdown;
+- una storyline executive;
+- un creative handoff per tool/modelli di generazione slide;
+- un `.pptx` finale nella root del repo;
+- un eventuale `.pdf` solo quando richiesto.
 
-- repository software;
-- appunti o documenti testuali;
-- immagini e reference visuali;
-- transcript di riunioni;
-- deck sorgenti o template PowerPoint.
+Ogni artefatto finale deve passare da `Critic`, `Review` e ultima passata `humanize` prima dell'handoff.
 
-Output tipico:
-
-- dossier grounded in Markdown;
-- storyline executive;
-- visual plan;
-- deck `.pptx` in root;
-- eventuale export `.pdf` quando richiesto.
-
-## Regole Base
+## Regole Minime
 
 - Non inventare fatti, costi, date, scope, commitment o benefici.
-- Segna sempre cosa e' **fatto confermato**, **inferenza**, **stima**, **assunzione** o **domanda aperta**.
-- Se procedi usando assunzioni, dichiarale anche nel messaggio all'utente: quali sono, perche' non bloccano lo step corrente e quando vanno validate.
-- Non chiamare "approval questions" domande che non sono state ancora poste. Usa "domande aperte" o "domande da porre prima del prossimo step".
-- Mantieni le cinque sezioni cardine:
-  1. Contesto ed esigenza/obiettivi
-  2. AS IS
-  3. TO BE
-  4. Piano di lavoro
-  5. Economics
-- Per deck CEO o portfolio, ogni iniziativa deve chiarire: valore, risultati visibili, sizing, prossimi passi, owner/funding e decisioni richieste.
+- Marca sempre **fatti confermati**, **inferenze**, **stime**, **assunzioni** e **domande aperte**.
+- Se procedi usando assunzioni, dichiarale anche nel messaggio all'utente.
+- Mantieni le cinque sezioni cardine: `Contesto / Esigenza / Obiettivi`, `AS IS`, `TO BE`, `Piano di lavoro`, `Economics`.
+- Nei deck basati su POC o repository software, spiega sempre cosa fa oggi la soluzione, come funziona, cosa produce, quali limiti ha e in cosa può evolvere.
 - Usa `docs/ui/` e `docs/template.pptx` come riferimento visuale, non come fonte di contenuti cliente.
+- Se `docs/template.pdf` e' disponibile, confronta la fedelta' visuale con il PDF; usa il `.pptx` come sorgente editabile.
+- Usa aderenza stretta ai pattern visuali solo per slide marcate `Creative freedom: Low`.
 
-## Struttura Dei File
+## Struttura Del Repo
 
 | Path | Uso |
 |---|---|
-| `AGENTS.md` | Regole operative principali per Codex |
+| `AGENTS.md` | Regole operative principali |
 | `.codex/deck-pipeline.md` | Pipeline end-to-end |
-| `.codex/skills/` | Skill locali da usare nelle varie fasi |
+| `.codex/skills/` | Skill locali per le fasi del workflow |
 | `CONTEXT.md` | Glossario del dominio deck |
 | `docs/reference*.md` | Metodo commerciale e storyline standard |
-| `docs/ui/` | Reference visive |
+| `docs/ui/` | Reference visuali |
 | `docs/template.pptx` | Template/base PowerPoint |
-| `prompt.repo-analysis-for-deck.md` | Prompt riusabile per analizzare repository software |
-| root | Destinazione deliverable finali e working draft |
+| `template-references/` | Slide reference estratte da `docs/template.pdf` per fedelta' visuale |
+| `prompt.repo-analysis-for-deck.md` | Prompt per analizzare repo software |
+| root | Deliverable finali e working draft |
 
-## Workflow End-To-End
+## Comandi Rapidi
 
-### 1. Intake
+Usali all'inizio o durante il lavoro, in base alla fase:
 
-Obiettivo: capire input, audience, decisione da abilitare e gap critici.
+```bash
+git status --short
+find docs/ui -maxdepth 1 -type f | sort
+pdfinfo docs/template.pdf
+unzip -l docs/template.pptx | sed -n '1,80p'
+unzip -t "<deck>.pptx"
+```
 
-Materiali da raccogliere:
+Per esportare un PPTX in PDF quando serve una revisione visuale:
 
-- path del repo o cartella sorgente;
-- nome progetto;
-- cliente/sponsor;
+```bash
+libreoffice --headless --convert-to pdf --outdir /tmp/deck-review "<deck>.pptx"
+```
+
+## Workflow Pratico
+
+### 1. Raccogli input e obiettivo
+
+Prima di generare qualunque artefatto, chiarisci:
+
+- progetto o cliente;
+- materiali disponibili;
 - audience;
-- tipo deck;
-- obiettivo business;
-- vincoli noti;
-- immagini, documenti, transcript, appunti.
+- decisione che il deck deve abilitare;
+- vincoli commerciali, privacy o tecnici;
+- output desiderato: brief, storyline, handoff, PPTX o PDF.
 
-Prompt breve:
+Prompt utile:
 
 ```text
 Voglio creare una proposta/business case per <progetto>.
@@ -76,20 +79,15 @@ Decisione che il deck deve abilitare: <decisione>.
 Usa la pipeline del repo PowerPoint e fammi prima le domande bloccanti.
 ```
 
-### 2. Repo Analysis / Grounded Brief
+Fermati e chiedi se mancano informazioni critiche su valore, perimetro, economics, date, commitment o claim cliente.
 
-Obiettivo: trasformare un repository software in un dossier commerciale grounded.
+### 2. Analizza le fonti
 
-Skill coinvolte:
-
-- `repo-to-deck-brief`
-- `software-delivery-estimation`
-
-Prompt consigliato:
+Se parti da un repository software, usa il prompt dedicato:
 
 ```text
 Analizza il repository <path_repo> usando prompt.repo-analysis-for-deck.md.
-Produci un dossier grounded per proposta commerciale/business case.
+Produci un dossier fondato sulle fonti per proposta commerciale/business case.
 Includi contesto, AS IS, TO BE, piano, effort, benefici, economics driver, rischi e domande.
 Non creare ancora il PowerPoint.
 ```
@@ -100,29 +98,27 @@ Output atteso:
 <Nome progetto> - Repo to Deck Brief.md
 ```
 
-Controlli:
+Il brief deve contenere:
 
-- tutte le fonti lette sono elencate;
-- i PDF o dati sensibili non sono letti se non necessari;
-- eventuali metriche sono aggregate e non esposte come claim non validati;
-- stime e benefici sono marcati come tali.
+- inventario fonti;
+- cosa fa il prodotto/sistema;
+- se è una POC: cosa fa oggi, come funziona, cosa produce, limiti ed evoluzione;
+- baseline o metriche, se disponibili;
+- stime e benefici marcati come tali;
+- rischi e domande aperte.
 
-### 3. Executive Storyline
+### 3. Crea la storyline executive
 
-Obiettivo: comprimere il dossier in una scaletta C-level.
+Trasforma il brief in una struttura slide-by-slide.
 
-Skill coinvolte:
-
-- `business-case-storyline`
-- `executive-slide-writing`
-
-Prompt consigliato:
+Prompt utile:
 
 ```text
 Usa <Nome progetto> - Repo to Deck Brief.md per creare una executive storyline.
 Mantieni le cinque sezioni cardine.
 Usa titoli slide che comunichino il messaggio.
 Applica il CEO-readiness check: risultati visibili, sizing, economics, owner, decisioni.
+Non generare ancora il PPTX.
 ```
 
 Output atteso:
@@ -131,66 +127,92 @@ Output atteso:
 <Nome progetto> - Executive Storyline v1.md
 ```
 
-Controlli:
+Controlla che:
 
-- ogni slide ha un ruolo distinto;
-- i tecnicismi sono tradotti in impatto business;
-- economics e benefici non sono promesse non supportate;
-- le domande non ancora poste sono marcate come open question prima del PPTX.
+- ogni slide abbia un ruolo distinto;
+- `Contesto / Esigenza / Obiettivi` sia esplicito;
+- per POC/repo software non manchi il ponte `cosa fa / come funziona / cosa produce / limiti / evoluzione`;
+- le metriche operative non siano presentate come accuratezza validata;
+- economics e benefici non sembrino promesse non supportate.
 
-### 4. Visual Grounding
+### 4. Crea il creative handoff
 
-Obiettivo: scegliere layout e pattern prima di generare slide.
+Usa il creative handoff quando il deck verrà generato da altri modelli, tool visuali o designer. Serve a dare contenuto e guardrail senza bloccare la composizione.
 
-Skill coinvolte:
-
-- `deck-visual-grounding`
-- `pptx-template-extraction`
-
-Comandi utili:
-
-```bash
-find docs/ui -maxdepth 1 -type f | sort
-unzip -l docs/template.pptx | sed -n '1,80p'
-```
-
-Prompt consigliato:
+Prompt utile:
 
 ```text
-Crea il visual plan slide-by-slide per <Nome progetto>.
-Usa docs/template.pptx e docs/ui/ come reference visuali.
-Mantieni il deck editabile in PowerPoint.
+Crea il creative handoff slide-by-slide per <Nome progetto>.
+Per ogni slide includi:
+- ruolo narrativo;
+- contenuti obbligatori;
+- contenuti opzionali;
+- cosa non dichiarare;
+- fonti;
+- guardrail visuali;
+- forme visuali possibili;
+- Creative freedom: High/Medium/Low.
+
+Usa docs/template.pptx e docs/ui/ come reference visuali, ma non prescrivere layout rigidi salvo slide a bassa libertà.
+Se docs/template.pdf e' disponibile, confronta la direzione visuale con il PDF e cita i pattern del template usati.
 Non generare ancora il PPTX.
 ```
 
 Output atteso:
 
 ```text
+<Nome progetto> - Creative Handoff.md
+```
+
+Usa questi livelli:
+
+- `High`: libertà compositiva ampia, purché il messaggio resti corretto.
+- `Medium`: restare vicino a una famiglia visuale, ma con layout variabile.
+- `Low`: seguire da vicino una reference. Tipico per copertina, `Contesto / Esigenza / Obiettivi`, economics/offerta, chiusura.
+
+Se serve una generazione diretta e molto vincolata, puoi creare anche:
+
+```text
 <Nome progetto> - Visual Plan.md
 ```
 
-Controlli:
+### 5. Passa il lavoro ad altri modelli o tool
 
-- ogni slide ha layout, contenuto visuale e note di esecuzione;
-- non vengono copiati contenuti cliente dalle reference;
-- testo e diagrammi saranno PowerPoint-native.
+Quando devi passare il lavoro a modelli o tool esterni, crea un prompt specifico per quello strumento partendo da:
 
-### 5. PPTX Generation
+- `<Nome progetto> - Repo to Deck Brief.md`
+- `<Nome progetto> - Executive Storyline v1.md`
+- `<Nome progetto> - Creative Handoff.md`
+- `docs/template.pptx`
+- `docs/template.pdf`
+- `template-references/`
+- reference in `docs/ui/`
 
-Obiettivo: creare il deck editabile.
+Prompt sintetico di base:
 
-Skill coinvolte:
+```text
+Genera un deck PowerPoint pronto per una lettura executive usando:
+- <Nome progetto> - Repo to Deck Brief.md
+- <Nome progetto> - Executive Storyline v1.md
+- <Nome progetto> - Creative Handoff.md
+- docs/template.pptx
+- docs/template.pdf
+- template-references/
+- docs/ui/
 
-- `powerpoint-manipulation`
-- `pptx-package-validation`
+Rispetta contenuti obbligatori, guardrail e livelli Creative freedom.
+Non inventare claim, prezzi, date o commitment.
+```
 
-Prompt consigliato:
+### 6. Genera il PPTX con Codex
+
+Quando vuoi che Codex generi direttamente il deck:
 
 ```text
 Genera una prima versione PPTX editabile usando:
 - <Nome progetto> - Repo to Deck Brief.md
 - <Nome progetto> - Executive Storyline v1.md
-- <Nome progetto> - Visual Plan.md
+- <Nome progetto> - Creative Handoff.md
 
 Usa docs/template.pptx e docs/ui/ come baseline visuale.
 Salva il file in root.
@@ -203,46 +225,52 @@ Output atteso:
 YYYY_CLIENTE_001 - Cliente - Titolo proposta.pptx
 ```
 
-### 6. Validation
+Se si aggiunge uno script riusabile, metterlo sotto `scripts/`. Se servono dipendenze Python, usare `uv`.
 
-Obiettivo: verificare qualità contenutistica, visuale e integrità del pacchetto.
+### 7. Valida il deliverable
 
-Skill coinvolte:
+Ogni consegna deve passare questi tre step, in ordine:
 
-- `commercial-deck-quality-review`
-- `pptx-package-validation`
+1. `Critic`: cerca contenuti mancanti, assunzioni nascoste, passaggi deboli, claim non supportati e punti poco chiari per CEO/CTO.
+2. `Review`: applica la qualità del processo con `commercial-deck-quality-review` e, per PPTX, `pptx-package-validation`.
+3. `humanize`: ultima passata sui testi per renderli naturali e leggibili senza cambiare fatti, fonti o vincoli.
 
-Comandi utili:
+Per PPTX, almeno:
 
 ```bash
 unzip -t "<deck>.pptx"
 ```
 
+Quando utile:
+
+```bash
+libreoffice --headless --convert-to pdf --outdir /tmp/deck-review "<deck>.pptx"
+```
+
 Checklist:
 
-- le cinque sezioni cardine sono presenti;
-- titoli slide sono messaggi, non label;
-- assunzioni e open point sono espliciti;
-- baseline e metriche non sono presentate come accuratezza validata se non lo sono;
-- sizing/economics sono range o driver se non ci sono dati definitivi;
-- slide non duplicate;
-- elementi principali editabili;
-- package PPTX integro.
+- sezioni cardine presenti;
+- `Contesto / Esigenza / Obiettivi` esplicito;
+- POC/repo software spiegato prima di roadmap/economics;
+- fonti e assunzioni visibili;
+- economics senza prezzi se non autorizzati;
+- baseline non spacciata per accuratezza;
+- guardrail visuali rispettati;
+- package PPTX integro;
+- testi leggibili e non meccanici.
 
-### 7. Handoff
+### 8. Handoff finale
 
-Obiettivo: chiudere la fase con file, verifiche e rischi residui chiari.
+Il messaggio finale deve includere:
 
-Il riepilogo finale deve includere:
-
-- path output;
+- path degli output;
 - principali decisioni contenutistiche;
 - assunzioni rimaste;
 - domande aperte;
 - verifiche eseguite;
 - rischi residui o controlli manuali PowerPoint.
 
-## Prompt Completo Per Avviare Un Nuovo Deck Da Repository
+## Prompt Completo Per Un Nuovo Deck Da Repository
 
 ```text
 Voglio creare una presentazione business case/proposta commerciale a partire da questo repository:
@@ -265,7 +293,7 @@ Usa il workflow di questo repo PowerPoint:
 2. usa prompt.repo-analysis-for-deck.md;
 3. crea prima il Repo to Deck Brief;
 4. poi crea Executive Storyline;
-5. poi Visual Plan;
+5. poi Creative Handoff;
 6. aspetta approvazione prima di generare il PPTX.
 
 Non inventare dati, costi, date, benefici o commitment.
@@ -273,14 +301,15 @@ Se usi assunzioni per procedere, dichiarale nella risposta prima di generare l'a
 Se mancano informazioni critiche, chiedi.
 ```
 
-## Convenzione Nomi File
+## Convenzioni Nome File
 
-Working draft Markdown:
+Working draft:
 
 ```text
 <Nome progetto> - Repo to Deck Brief.md
 <Nome progetto> - Executive Storyline v1.md
-<Nome progetto> - Visual Plan.md
+<Nome progetto> - Creative Handoff.md
+<Nome progetto> - Visual Plan.md, solo per generazione diretta vincolata
 ```
 
 Deliverable finali:
@@ -292,8 +321,9 @@ Deliverable finali:
 
 ## Note Operative
 
-- I file finali vanno in root.
+- I deliverable finali vanno nella root.
 - `docs/ui/` non deve contenere output generati.
 - `docs/template.pptx` non va sovrascritto.
 - Non installare dipendenze se non servono davvero.
-- Se si aggiunge una pipeline generativa riusabile, tenere script e logica sotto `scripts/`.
+- Non usare reference visuali come fonte di fatti cliente.
+- Non usare GitNexus per questo repo, salvo introduzione futura di codice riusabile complesso.

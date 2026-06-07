@@ -33,6 +33,8 @@ For content-bearing changes, also read all `docs/reference*.md` and task-specifi
 - Treat `docs/template.pptx` and source decks as PowerPoint package baselines, not just screenshots.
 - Do not copy customer-specific content from reference decks unless explicitly authorized.
 - Do not assume Node dependencies exist. This repo may intentionally have no `package.json`.
+- When generating from `docs/ui/` references, respect the creative handoff or visual plan. For slides marked `Creative freedom: Low`, adapt the relevant reference pattern closely. For `Medium` or `High`, preserve message, brand guardrails, editability, and source grounding without forcing exact layout replication.
+- Do not replace a clearly required formal pattern, such as `Contesto / Esigenza / Obiettivi`, formal economics, cover, or institutional closing, with a generic card/dashboard layout unless the handoff explicitly allows it.
 
 ## Inspection Workflow
 
@@ -67,6 +69,8 @@ Choose the least risky strategy:
 | Heavy generation | add a script/dependency only after confirming it is needed |
 
 If a script is needed, keep it under `scripts/` and document why a static/manual approach is insufficient.
+
+For generated decks, the script should encode reusable layout functions that support the selected creative direction. Use stricter reference-pattern functions for low-freedom slides, and more flexible functions for high/medium-freedom slides such as flow, before/after, layered architecture, decision map, table, or process lane.
 
 ## Package Validation
 

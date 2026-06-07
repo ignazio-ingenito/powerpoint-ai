@@ -46,9 +46,27 @@ The opening narrative that explains why the project matters now, what business o
 
 The current situation before the proposed intervention. It may include architecture, systems, processes, criticalities, constraints, inefficiencies, risks, and missed opportunities.
 
+For a POC or existing software asset, AS IS must also make the current asset understandable: what it does, how it works at executive level, what it produces, and what it does not yet cover.
+
 ## TO BE
 
 The proposed future state after the intervention. It may include solution strategy, target architecture, new or changed systems, managed processes/functions, work breakdown, and key value elements.
+
+For a POC or existing software asset, TO BE should explain the evolution path from current asset to reusable capability, customer application, business workflow, or governed service.
+
+## POC Narrative Bridge
+
+The mandatory explanatory bridge for decks derived from a POC, prototype, accelerator, or software repository.
+
+It connects `Contesto ed esigenza/obiettivi` to `TO BE`, `Piano di Lavoro`, and `Economics` by explaining:
+
+- what the asset does today;
+- how it works at executive level;
+- what it produces or makes measurable;
+- its current limits;
+- what it can evolve into.
+
+It may be one or more slides, depending on deck length, but it must not disappear in the name of executive compression.
 
 ## Piano di Lavoro
 

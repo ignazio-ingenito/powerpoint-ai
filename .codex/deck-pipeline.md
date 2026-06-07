@@ -79,6 +79,26 @@ Build the proposal around the five standard sections unless the user explicitly 
 4. Piano di lavoro.
 5. Economics.
 
+The first section, `Contesto ed esigenza/obiettivi`, must be explicit. Codex must not treat a generic context, pain-point, or opportunity slide as sufficient unless the slide clearly covers:
+
+- context: starting situation and business rationale;
+- need: pain, trigger, opportunity, or constraint that makes the project necessary;
+- objectives: what the project/deck should enable, decide, or achieve.
+
+For compact CEO decks, these three elements may be compressed into one slide, but the slide title, labels, or structure must make the three-part section visible.
+
+For decks derived from a POC, prototype, or software repository, the storyline must include a concrete explanatory bridge before roadmap and economics. Executive compression must not remove the reader's understanding of the object being funded or evolved.
+
+At minimum, the storyline must answer:
+
+- what the POC/system does today: inputs, main functions, and outputs;
+- how it works at executive level: operating flow, main components, decision logic, integrations, or data movement;
+- what it produces that is observable or measurable: payloads, evidence, reports, metrics, diagnostics, run history, or business artifacts;
+- where it is limited today: functional gaps, operational gaps, validation gaps, production-readiness gaps;
+- what it can become: target capability, product/service evolution, application layers, workflows, or customer business cases.
+
+These points may be covered in one or two slides in compact CEO decks, but they must not be silently collapsed into a generic "POC exists" or "technical architecture" slide.
+
 For software-development projects, the TO BE should connect:
 
 - proposed solution strategy;
@@ -99,7 +119,7 @@ For CEO, portfolio, or multi-initiative decks, apply a CEO-readiness pattern:
 - include sizing, timing, cost, benefit, or at least an explicit order-of-magnitude estimate when the slide asks for investment or prioritization;
 - translate technical terms into business impact, risk, dependency, cost, or decision.
 
-## 4. Visual Grounding
+## 4. Creative Direction
 
 Before producing slides:
 
@@ -111,6 +131,8 @@ Before producing slides:
 
 Use `.codex/skills/pptx-template-extraction/SKILL.md` when a reusable visual-system brief is needed.
 
+When `docs/template.pdf` exists, treat it as the primary visual fidelity reference because it captures the exported appearance of the PowerPoint template. Keep `docs/template.pptx` as the editable source for masters, layouts, theme parts, and reusable assets.
+
 Derive:
 
 - slide grid and whitespace;
@@ -119,8 +141,36 @@ Derive:
 - typography scale;
 - card/table/process/architecture/economics patterns;
 - icon usage.
+- visual patterns visible in `docs/template.pdf`, including cover, header/footer, three-column initiative slides, thin bordered cards, roadmap layouts, value-generated bands, page numbers, and closing slide.
 
 Do not copy customer-specific content from visual references.
+
+Creative direction must map the actual slide plan to `docs/ui/` reference families or guardrails before PPTX generation or external handoff. At minimum, identify the reference guardrail for:
+
+- cover;
+- `Contesto / Esigenza / Obiettivi`;
+- AS IS / architecture or process;
+- TO BE / target architecture or scenario;
+- roadmap / piano di lavoro;
+- economics;
+- decision / next steps.
+
+For handoff to external design models or tools, do not turn the visual plan into a pixel-level or layout-prescriptive specification unless the user explicitly asks for strict recreation.
+
+Use two layers instead:
+
+1. `Slide Brief`: narrative intent, mandatory content, optional content, source grounding, assumptions, and what must not be claimed.
+2. `Creative Direction`: visual references, brand guardrails, density, typography/palette constraints, suggested patterns, anti-patterns, and creative freedom.
+
+Each slide should include a `Creative freedom` level:
+
+- `High`: the model/tool may choose the visual composition as long as the message and guardrails are respected.
+- `Medium`: the slide should stay close to a reference family, but composition alternatives are acceptable.
+- `Low`: use a specific reference pattern or brand convention because consistency, recognizability, or commercial formality matters.
+
+Typical low-freedom slides are cover, `Contesto / Esigenza / Obiettivi`, formal economics/offering, and institutional closing. For other slides, prefer giving the model a clear communicative goal and usable visual options over prescribing exact boxes, arrows, or coordinates.
+
+When an available reference pattern matches the slide type, cite it as inspiration or guardrail. Require strict adaptation only when the slide has `Creative freedom: Low` or when the user asks for high fidelity.
 
 ## 5. Plan
 
@@ -133,7 +183,7 @@ The plan should include:
 - source mapping;
 - assumptions;
 - open questions;
-- visual approach;
+- creative direction and freedom level;
 - validation criteria.
 
 Ask for approval when the plan changes commercial positioning, economics, or scope.
@@ -141,6 +191,8 @@ Ask for approval when the plan changes commercial positioning, economics, or sco
 Before moving from Markdown planning artifacts to PPTX generation, ask the user any remaining questions that affect audience, positioning, economics, baseline metrics, output fidelity, or customer-facing claims. Do not generate the PPTX while those questions are only listed inside an artifact.
 
 For software-development estimates, use `.codex/skills/software-delivery-estimation/SKILL.md` to produce delivery phases, effort ranges, role mix, dependencies, risks, and estimate assumptions. These estimates are delivery inputs, not binding pricing.
+
+For executive proposal decks, distinguish the strategic evolution roadmap from the implementation macro plan. The roadmap explains how the product, service, or capability evolves over releases and business cases. The macro plan explains feasible delivery phases, indicative ranges, milestones, releases, replanning points, and run/maintenance where relevant. When `docs/gantt.pdf` is available, use it as the planning reference for the macro plan. Do not turn the macro-plan slide into a detailed WBS or a list of individual implementation tasks unless the user explicitly asks for an operational plan.
 
 ## 6. Build
 
@@ -158,14 +210,25 @@ Do not overwrite existing files without confirmation.
 
 ## 7. Verify
 
-Run a focused quality review:
+Run the mandatory final gate in this order:
+
+1. `Critic`: adversarial critique of the artifact. Look for missing content, hidden assumptions, weak storyline transitions, unsupported claims, unclear executive meaning, and anything that would confuse CEO/CTO readers.
+2. `Review`: formal quality review against this pipeline and the relevant skills.
+3. `Humanize`: final text pass to make the language natural, readable, and less mechanical without changing facts, assumptions, constraints, or source grounding.
+
+If `Critic` or `Review` finds a material issue, fix it and rerun the relevant check before handoff.
+
+The formal quality review must cover:
 
 - storyline coverage;
+- explicit coverage of `Contesto / Esigenza / Obiettivi`;
+- for POC/repo-derived decks, explicit coverage of what the current solution does, how it works, what it produces, its limits, and its evolution path;
 - source grounding;
 - assumptions and open questions;
 - executive clarity;
 - commercial tone;
 - visual consistency;
+- respect for selected creative guardrails and documented freedom level;
 - readability;
 - package integrity;
 - no accidental content copied from references;
@@ -202,6 +265,8 @@ Passes when:
 Passes when:
 
 - the five standard sections are present or intentionally adapted;
+- `Contesto ed esigenza/obiettivi` is explicit and not hidden inside a generic context slide;
+- for POC/repo-derived decks, the reader can understand the current solution's function, mechanism, outputs, limits, and evolution path before seeing roadmap/economics;
 - each slide has a source or declared assumption;
 - unsupported claims are removed or marked.
 - repeated slides have been fused or justified;
@@ -213,7 +278,9 @@ Passes when:
 Passes when:
 
 - visual references were inspected fresh;
-- layout uses the template/source deck language;
+- brand guardrails and source-deck/template language are explicit;
+- each major slide type has a slide brief and creative freedom level;
+- strict visual pattern matching is required only where the brief marks `Creative freedom: Low`;
 - text remains readable;
 - visual elements are editable where practical.
 
@@ -224,4 +291,5 @@ Passes when:
 - the output exists in root;
 - PowerPoint package integrity is checked;
 - remaining assumptions are explicit;
+- final `Critic`, `Review`, and `Humanize` passes have been completed for the delivered artifact;
 - final report lists validation and residual risk.

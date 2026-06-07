@@ -37,15 +37,29 @@ Produce one Markdown dossier with:
 1. Executive summary.
 2. Source inventory.
 3. Contesto ed esigenza/obiettivi.
-4. AS IS.
-5. TO BE.
-6. Piano di lavoro.
-7. Effort and team estimate.
-8. Benefici attesi.
-9. Economics drivers.
-10. Risks and open points.
-11. Proposed deck storyline.
-12. Questions before deck creation.
+4. What the current POC/system does.
+5. How it works.
+6. What it produces and how results are observed.
+7. AS IS limits and gaps.
+8. TO BE.
+9. Piano di lavoro.
+10. Effort and team estimate.
+11. Benefici attesi.
+12. Economics drivers.
+13. Risks and open points.
+14. Proposed deck storyline.
+15. Questions before deck creation.
+
+For repositories that represent a POC, prototype, automation, or internal accelerator, do not jump directly from "AS IS architecture" to "TO BE". Extract a concrete executive explanation of:
+
+- input materials or events handled;
+- main capabilities/functions performed today;
+- operating flow at a level a CEO/CTO can understand;
+- outputs produced, including payloads, reports, decisions, evidence, metrics, diagnostics, or persisted data;
+- limits of the current POC/system;
+- credible evolution path from current asset to reusable capability or customer business case.
+
+This bridge is source material for the deck and must not be left only as implementation detail.
 
 ## Evidence Rules
 
@@ -82,5 +96,6 @@ Stop and ask before creating deck content if:
 - project objective is unclear;
 - target audience is unclear;
 - repository purpose cannot be inferred;
+- the repository purpose is clear but Codex cannot explain what the current POC/system does and produces in business terms;
 - economics would require invented numbers;
 - customer commitments or sensitive claims are involved.
