@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="620" height="420" viewBox="0 0 620 420" fill="none">
+  <circle cx="310" cy="190" r="150" fill="#F3F6F7"/>
+  <circle cx="310" cy="190" r="120" fill="#52AB9F" opacity="0.22"/>
+  <circle cx="310" cy="190" r="88" fill="#FFFFFF" stroke="#52AB9F" stroke-width="18"/>
+  <circle cx="310" cy="190" r="48" fill="#52AB9F" opacity="0.85"/>
+  <path d="M310 190 L460 78" stroke="#0B6F78" stroke-width="14" stroke-linecap="round"/>
+  <path d="M440 54 L500 70 L468 116 Z" fill="#368BD6"/>
+  <text x="310" y="385" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" font-weight="700" fill="#0B6F78">BUSINESS IMPACT</text>
+</svg>

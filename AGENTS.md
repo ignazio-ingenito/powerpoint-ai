@@ -8,7 +8,7 @@ Codex deve usare il repository come ambiente di produzione per deck:
 
 - `docs/` definisce metodo, storyline e regole contenutistiche.
 - `docs/ui/` fornisce riferimenti visivi e di layout.
-- la root del progetto è la destinazione dei deliverable finali.
+- ogni presentazione vive in una cartella dedicata nella root del progetto.
 
 ## Agent OS / Codex OS
 
@@ -73,6 +73,51 @@ Rileggere sempre il contenuto aggiornato delle cartelle di riferimento prima di 
 
 Considerare `docs/` come fonte primaria per struttura, metodo e contenuti della presentazione. Non inventare fatti, impegni, costi, date, perimetro progettuale, tecnologie, claim commerciali, esempi, dettagli cliente o dettagli implementativi che non siano presenti nei materiali sorgente o chiaramente forniti dall'utente.
 
+## Struttura Per Presentazione
+
+Ogni nuova presentazione deve avere una cartella dedicata nella root del repository, con naming:
+
+```text
+yyyy-mm-dd-<nome-progetto>
+```
+
+Esempio:
+
+```text
+2026-06-07-cantieri-protetti-ai/
+```
+
+La cartella della presentazione deve contenere il materiale specifico di quel lavoro:
+
+- sorgenti cliente o di progetto;
+- brief, storyline, creative handoff, prompt e piani;
+- reference visuali specifiche di quella presentazione;
+- asset generati o scaricati per quella presentazione;
+- output finali `.pptx` e `.pdf`;
+- eventuali tentativi, anteprime o export intermedi quando utili a ricostruire il lavoro.
+
+Ogni cartella presentazione deve usare queste sottocartelle standard:
+
+```text
+drafts/
+prompts/
+source-materials/
+visual-references/
+generated-assets/
+attempts/
+```
+
+Uso previsto:
+
+- `drafts/`: brief, storyline, creative handoff, visual plan e note testuali di lavoro;
+- `prompts/`: prompt usati per generare, recuperare o passare il lavoro ad altri tool;
+- `source-materials/`: materiali sorgente ricevuti o usati per la presentazione;
+- `visual-references/`: reference visive specifiche della presentazione;
+- `generated-assets/`: asset, script o package generati per quella presentazione;
+- `attempts/`: tentativi, preview, export intermedi e output non finali.
+
+La root deve restare l'indice dei progetti e delle regole comuni, non una destinazione per output o working draft di singole presentazioni.
+
 Se un contenuto manca, è ambiguo o non è sufficientemente specificato, chiedere all'utente prima di colmare il vuoto. Fare assunzioni o creare contenuti placeholder solo quando l'utente lo chiede esplicitamente. Quando le assunzioni sono richieste, dichiararle in modo esplicito e facilmente verificabile nel documento e nel messaggio di handoff.
 
 ## Storyline Standard
@@ -109,9 +154,9 @@ La sintesi C-level non deve cancellare questo ponte. Può comprimerlo in una o d
 
 ## Riferimenti Visivi
 
-Usare `docs/ui/` solo come area di riferimento visivo e di layout.
+Usare `docs/ui/` solo come area di riferimento visivo e di layout comune.
 
-Prima di creare o modificare un deck, rileggere sempre il contenuto aggiornato di `docs/ui/` e verificare quali file di riferimento sono disponibili.
+Prima di creare o modificare un deck, rileggere sempre il contenuto aggiornato di `docs/ui/`, verificare quali file di riferimento comuni sono disponibili e controllare anche eventuali reference specifiche nella cartella della presentazione.
 
 I file in `docs/ui/` possono includere PDF, immagini esportate da slide, screenshot o altri esempi che mostrano lo stile desiderato della presentazione. Usarli per dedurre:
 
@@ -125,7 +170,7 @@ I file in `docs/ui/` possono includere PDF, immagini esportate da slide, screens
 - densità del testo
 - trattamento di diagrammi, architetture, processi, tabelle, roadmap ed economics
 
-Non scrivere deliverable generati dentro `docs/ui/`.
+Non scrivere deliverable generati dentro `docs/ui/`. Le reference visuali specifiche di una presentazione devono stare nella cartella della presentazione, ad esempio in `yyyy-mm-dd-<nome-progetto>/visual-references/`.
 
 Quando si usano deck di riferimento, seguire il loro linguaggio visivo e il sistema di layout. Non copiare contenuti riservati o specifici di un cliente, salvo richiesta esplicita dell'utente.
 
@@ -153,7 +198,7 @@ Usare `Low` soprattutto per copertina, `Contesto / Esigenza / Obiettivi`, econom
 
 ## Regole di Output
 
-Salvare i deliverable finali nella root del progetto.
+Salvare i deliverable finali nella cartella della presentazione, non nella root del progetto.
 
 Output finali preferiti:
 
@@ -171,13 +216,13 @@ Usare nomi file chiari e descrittivi, ad esempio:
 - `2026_CLIENTE_001 - Cliente - Titolo proposta.pptx`
 - `2026_CLIENTE_001 - Cliente - Titolo proposta.pdf`
 
-Non posizionare output finali generati dentro `docs/` o `docs/ui/`.
+Non posizionare output finali generati dentro `docs/`, `docs/ui/` o nella root se appartengono a una presentazione specifica.
 
 ## Generazione PowerPoint
 
 Preferire la creazione di file PowerPoint modificabili rispetto a output solo statici.
 
-Quando si implementa una pipeline di generazione, aggiungere una dipendenza solo se serve davvero al task. Se serve generare `.pptx` via script, preferire `pptxgenjs` salvo che il progetto usi già in modo consolidato un altro strumento. Tenere script e logica riutilizzabile fuori da `docs/` e `docs/ui/`, ad esempio sotto `scripts/`.
+Quando si implementa una pipeline di generazione, aggiungere una dipendenza solo se serve davvero al task. Se serve generare `.pptx` via script, preferire `pptxgenjs` salvo che il progetto usi già in modo consolidato un altro strumento. Tenere script e logica riutilizzabile fuori da `docs/` e `docs/ui/`, ad esempio sotto `scripts/`. Script e asset usa-e-getta di una singola presentazione possono stare nella cartella della presentazione.
 
 I deck generati dovrebbero rimanere modificabili in PowerPoint quando possibile:
 
@@ -213,7 +258,7 @@ Prima di considerare una presentazione completa, verificare che:
 - il deck usi `docs/` come fonte contenutistica e metodologica
 - il deck usi `docs/ui/` solo come riferimento layout
 - le slide rispettino i guardrail visuali e il livello di libertà creativa dichiarato; aderenza stretta ai pattern `docs/ui/` solo dove richiesta
-- i deliverable finali siano salvati nella root del progetto
+- i deliverable finali siano salvati nella cartella della presentazione
 - le assunzioni siano esplicite
 - i titoli slide comunichino il messaggio
 - il testo non sia sovraccarico

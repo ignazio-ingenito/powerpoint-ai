@@ -43,9 +43,24 @@ They are authoritative for content structure unless the user gives a task-specif
 
 ## Visual References
 
-`docs/template.pptx` and `docs/ui/` define visual style, layout, and baseline patterns.
+`docs/template.pptx` and `docs/ui/` define common visual style, layout, and baseline patterns.
+
+Presentation-specific visual references belong in the relevant `yyyy-mm-dd-<project-name>/visual-references/` folder.
 
 They are not content sources unless the user explicitly authorizes reuse.
+
+## Presentation Folders
+
+Root-level folders named `yyyy-mm-dd-<project-name>/` contain all material for a single presentation and must use the standard subfolders:
+
+- `drafts/`
+- `prompts/`
+- `source-materials/`
+- `visual-references/`
+- `generated-assets/`
+- `attempts/`
+
+They are delivery workspaces, not repository-wide policy.
 
 ## Working Notes
 

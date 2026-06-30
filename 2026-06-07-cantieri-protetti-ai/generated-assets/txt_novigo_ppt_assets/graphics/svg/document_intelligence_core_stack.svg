@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="520" viewBox="0 0 800 520" fill="none">
+  <rect x="210" y="320" width="380" height="92" rx="28" fill="#EBEFF5" stroke="#9FCCDB"/>
+  <rect x="235" y="250" width="330" height="92" rx="28" fill="#F3F6F7" stroke="#9FCCDB"/>
+  <rect x="260" y="180" width="280" height="92" rx="28" fill="#FFFFFF" stroke="#52AB9F"/>
+  <circle cx="400" cy="155" r="72" fill="url(#g1)" stroke="#52AB9F" stroke-width="2"/>
+  <text x="400" y="150" text-anchor="middle" font-family="Arial, sans-serif" font-size="34" font-weight="700" fill="#FFFFFF">AI</text>
+  <text x="400" y="190" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#FFFFFF">CORE</text>
+  <text x="400" y="225" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#0B6F78">INTELLIGENCE LAYER</text>
+  <text x="400" y="295" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#0B6F78">PROCESS &amp; ORCHESTRATION</text>
+  <text x="400" y="365" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#307FE2">DATA FOUNDATION</text>
+  <defs>
+    <linearGradient id="g1" x1="328" y1="83" x2="472" y2="227" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#52AB9F"/>
+      <stop offset="1" stop-color="#368BD6"/>
+    </linearGradient>
+  </defs>
+</svg>

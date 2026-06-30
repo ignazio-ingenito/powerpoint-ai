@@ -7,7 +7,7 @@ Usalo quando parti da repository software, appunti, documenti, immagini, transcr
 - un brief fondato sulle fonti in Markdown;
 - una storyline executive;
 - un creative handoff per tool/modelli di generazione slide;
-- un `.pptx` finale nella root del repo;
+- un `.pptx` finale nella cartella dedicata alla presentazione;
 - un eventuale `.pdf` solo quando richiesto.
 
 Ogni artefatto finale deve passare da `Critic`, `Review` e ultima passata `humanize` prima dell'handoff.
@@ -36,7 +36,46 @@ Ogni artefatto finale deve passare da `Critic`, `Review` e ultima passata `human
 | `docs/template.pptx` | Template/base PowerPoint |
 | `template-references/` | Slide reference estratte da `docs/template.pdf` per fedelta' visuale |
 | `prompt.repo-analysis-for-deck.md` | Prompt per analizzare repo software |
-| root | Deliverable finali e working draft |
+| `yyyy-mm-dd-<nome-progetto>/` | Materiali, draft, prompt, asset, tentativi e deliverable di una singola presentazione |
+
+## Convenzione Cartelle Presentazione
+
+Ogni presentazione deve stare in una cartella dedicata nella root:
+
+```text
+yyyy-mm-dd-<nome-progetto>/
+```
+
+Esempio:
+
+```text
+2026-06-07-cantieri-protetti-ai/
+```
+
+Struttura standard obbligatoria:
+
+```text
+yyyy-mm-dd-<nome-progetto>/
+  drafts/
+  prompts/
+  source-materials/
+  visual-references/
+  generated-assets/
+  attempts/
+```
+
+Uso previsto:
+
+| Sottocartella | Contenuto |
+|---|---|
+| `drafts/` | Brief, storyline, creative handoff, visual plan e note testuali di lavoro |
+| `prompts/` | Prompt usati per generare, recuperare o passare il lavoro ad altri tool |
+| `source-materials/` | Materiali sorgente ricevuti o usati per la presentazione |
+| `visual-references/` | Reference visive specifiche della presentazione |
+| `generated-assets/` | Asset, script o package generati per quella presentazione |
+| `attempts/` | Tentativi, preview, export intermedi e output non finali |
+
+Usare la cartella progetto per tutto ciò che appartiene a una singola presentazione: materiali sorgente, brief, storyline, creative handoff, prompt, reference specifiche, asset generati, preview, `.pptx` e `.pdf`. Lasciare in root solo regole comuni, template comuni, prompt riusabili e cartelle progetto.
 
 ## Comandi Rapidi
 
@@ -45,6 +84,7 @@ Usali all'inizio o durante il lavoro, in base alla fase:
 ```bash
 git status --short
 find docs/ui -maxdepth 1 -type f | sort
+find "<cartella-presentazione>/visual-references" -maxdepth 1 -type f | sort
 pdfinfo docs/template.pdf
 unzip -l docs/template.pptx | sed -n '1,80p'
 unzip -t "<deck>.pptx"
@@ -95,7 +135,7 @@ Non creare ancora il PowerPoint.
 Output atteso:
 
 ```text
-<Nome progetto> - Repo to Deck Brief.md
+yyyy-mm-dd-<nome-progetto>/drafts/<Nome progetto> - Repo to Deck Brief.md
 ```
 
 Il brief deve contenere:
@@ -124,7 +164,7 @@ Non generare ancora il PPTX.
 Output atteso:
 
 ```text
-<Nome progetto> - Executive Storyline v1.md
+yyyy-mm-dd-<nome-progetto>/drafts/<Nome progetto> - Executive Storyline v1.md
 ```
 
 Controlla che:
@@ -161,7 +201,7 @@ Non generare ancora il PPTX.
 Output atteso:
 
 ```text
-<Nome progetto> - Creative Handoff.md
+yyyy-mm-dd-<nome-progetto>/drafts/<Nome progetto> - Creative Handoff.md
 ```
 
 Usa questi livelli:
@@ -173,7 +213,7 @@ Usa questi livelli:
 Se serve una generazione diretta e molto vincolata, puoi creare anche:
 
 ```text
-<Nome progetto> - Visual Plan.md
+yyyy-mm-dd-<nome-progetto>/drafts/<Nome progetto> - Visual Plan.md
 ```
 
 ### 5. Passa il lavoro ad altri modelli o tool
@@ -187,6 +227,7 @@ Quando devi passare il lavoro a modelli o tool esterni, crea un prompt specifico
 - `docs/template.pdf`
 - `template-references/`
 - reference in `docs/ui/`
+- reference specifiche in `yyyy-mm-dd-<nome-progetto>/visual-references/`
 
 Prompt sintetico di base:
 
@@ -199,6 +240,7 @@ Genera un deck PowerPoint pronto per una lettura executive usando:
 - docs/template.pdf
 - template-references/
 - docs/ui/
+- yyyy-mm-dd-<nome-progetto>/visual-references/
 
 Rispetta contenuti obbligatori, guardrail e livelli Creative freedom.
 Non inventare claim, prezzi, date o commitment.
@@ -215,7 +257,7 @@ Genera una prima versione PPTX editabile usando:
 - <Nome progetto> - Creative Handoff.md
 
 Usa docs/template.pptx e docs/ui/ come baseline visuale.
-Salva il file in root.
+Salva il file nella cartella della presentazione.
 Non sovrascrivere file esistenti.
 ```
 
@@ -306,23 +348,24 @@ Se mancano informazioni critiche, chiedi.
 Working draft:
 
 ```text
-<Nome progetto> - Repo to Deck Brief.md
-<Nome progetto> - Executive Storyline v1.md
-<Nome progetto> - Creative Handoff.md
-<Nome progetto> - Visual Plan.md, solo per generazione diretta vincolata
+yyyy-mm-dd-<nome-progetto>/drafts/<Nome progetto> - Repo to Deck Brief.md
+yyyy-mm-dd-<nome-progetto>/drafts/<Nome progetto> - Executive Storyline v1.md
+yyyy-mm-dd-<nome-progetto>/drafts/<Nome progetto> - Creative Handoff.md
+yyyy-mm-dd-<nome-progetto>/drafts/<Nome progetto> - Visual Plan.md, solo per generazione diretta vincolata
 ```
 
 Deliverable finali:
 
 ```text
-2026_CLIENTE_001 - Cliente - Titolo proposta.pptx
-2026_CLIENTE_001 - Cliente - Titolo proposta.pdf
+yyyy-mm-dd-<nome-progetto>/2026_CLIENTE_001 - Cliente - Titolo proposta.pptx
+yyyy-mm-dd-<nome-progetto>/2026_CLIENTE_001 - Cliente - Titolo proposta.pdf
 ```
 
 ## Note Operative
 
-- I deliverable finali vanno nella root.
+- Ogni presentazione e i suoi deliverable finali vanno nella cartella `yyyy-mm-dd-<nome-progetto>/`.
 - `docs/ui/` non deve contenere output generati.
+- Le reference specifiche di una presentazione vanno in `yyyy-mm-dd-<nome-progetto>/visual-references/`.
 - `docs/template.pptx` non va sovrascritto.
 - Non installare dipendenze se non servono davvero.
 - Non usare reference visuali come fonte di fatti cliente.

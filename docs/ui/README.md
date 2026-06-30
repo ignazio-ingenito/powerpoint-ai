@@ -1,14 +1,16 @@
 # UI References
 
-Questa cartella contiene riferimenti visivi e di layout per creare nuove presentazioni.
+Questa cartella contiene riferimenti visivi e di layout comuni per creare nuove presentazioni.
 
 Usare questi file per dedurre lo stile grafico, la struttura delle slide, la densità del contenuto e il trattamento visuale di sezioni ricorrenti. Non usare questa cartella come destinazione per output generati.
 
 ## Reference Disponibili
 
-Questa cartella deve essere trattata come un archivio dinamico di reference visuali.
+Questa cartella deve essere trattata come un archivio dinamico di reference visuali comuni.
 
-Prima di creare, modificare o revisionare un deck, verificare sempre tutti i file effettivamente presenti in `docs/ui/`, non solo quelli elencati in questo README. Nuove immagini, PDF, screenshot o altri export aggiunti in futuro devono essere considerati automaticamente come possibili reference visive, salvo diversa indicazione dell'utente.
+Prima di creare, modificare o revisionare un deck, verificare sempre tutti i file effettivamente presenti in `docs/ui/`, non solo quelli elencati in questo README. Nuove immagini, PDF, screenshot o altri export aggiunti in futuro devono essere considerati automaticamente come possibili reference visive comuni, salvo diversa indicazione dell'utente.
+
+Le reference visuali specifiche di una singola presentazione non devono essere archiviate qui: vanno nella cartella della presentazione, ad esempio `yyyy-mm-dd-<nome-progetto>/visual-references/`.
 
 Usare un comando equivalente a:
 
@@ -42,6 +44,16 @@ Ogni nuovo file aggiunto in `docs/ui/` deve essere considerato parte delle refer
 - altri asset visuali forniti dall'utente.
 
 Non assumere che l'elenco sopra sia esaustivo. Se il contenuto di un nuovo file non è chiaro dal nome, ispezionarlo prima di decidere se usarlo come riferimento.
+
+## Reference Specifiche Di Progetto
+
+Quando una reference nasce da un lavoro specifico o serve solo a ricostruire una singola presentazione, conservarla nella cartella progetto:
+
+```text
+yyyy-mm-dd-<nome-progetto>/visual-references/
+```
+
+Usare `docs/ui/` per pattern comuni e riusabili; usare la cartella progetto per screenshot, export, prove o reference specifiche del deck.
 
 ## Come Usare Questa Reference
 

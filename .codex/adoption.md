@@ -45,7 +45,8 @@ The primary quality bar is: a final deck should be credible as a consultant-grad
 - Minor gaps may be carried as explicit assumptions or validation points.
 - `docs/` and user-provided source material are content authorities.
 - `docs/ui/` and `docs/template.pptx` are visual/layout authorities.
-- Generated deliverables belong in the project root, not in `docs/` or `docs/ui/`.
+- Each presentation belongs in a dedicated root-level folder named `yyyy-mm-dd-<project-name>`.
+- Generated deliverables belong in the relevant presentation folder, not in repository root, `docs/`, or `docs/ui/`.
 - Handoff notes are continuity aids, not policy.
 
 # High-Risk Confirmation Rule
@@ -69,4 +70,4 @@ The target operating model is a quality-first deck pipeline:
 4. Visual grounding against `docs/ui/` and `docs/template.pptx`.
 5. Deck production as editable PowerPoint.
 6. Quality review and validation.
-7. Handoff with evidence, assumptions, and open decisions.
+7. Handoff with evidence, assumptions, open decisions, and the presentation folder path.

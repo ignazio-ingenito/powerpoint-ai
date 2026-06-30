@@ -92,7 +92,11 @@ A non-critical missing detail that can be carried in the deck as an explicit ass
 
 ## Visual Reference
 
-A file under `docs/ui/`, `docs/template.pptx`, or a source deck used to infer visual style, slide structure, layout, typography, palette, icons, cards, tables, diagrams, and density.
+A file under `docs/ui/`, `docs/template.pptx`, a presentation-folder `visual-references/` directory, or a source deck used to infer visual style, slide structure, layout, typography, palette, icons, cards, tables, diagrams, and density.
+
+## Presentation Folder
+
+A root-level folder named `yyyy-mm-dd-<project-name>/` that contains all material for one presentation. It must use the standard subfolders `drafts/`, `prompts/`, `source-materials/`, `visual-references/`, `generated-assets/`, and `attempts/`, plus final deliverables in the folder root unless a task explicitly chooses a subfolder.
 
 Visual references are not content sources unless the user explicitly authorizes reuse.
 

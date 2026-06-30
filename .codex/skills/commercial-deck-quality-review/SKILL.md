@@ -50,7 +50,7 @@ Assess:
 - slide-by-slide readability;
 - visual consistency with template/source deck;
 - respect for creative handoff guardrails and declared `Creative freedom` level;
-- concrete resemblance to selected `docs/ui/` reference patterns only where the slide is marked `Creative freedom: Low` or the user requested strict fidelity;
+- concrete resemblance to selected common or presentation-specific reference patterns only where the slide is marked `Creative freedom: Low` or the user requested strict fidelity;
 - icon and card discipline;
 - deliverable location and filename;
 - package integrity.
@@ -101,7 +101,8 @@ If there are no material issues, say so directly and still report residual risks
 
 Do not call the deck complete unless:
 
-- the file exists in the project root;
+- the file exists in the relevant presentation folder;
+- the presentation folder uses the standard subfolders `drafts/`, `prompts/`, `source-materials/`, `visual-references/`, `generated-assets/`, and `attempts/`;
 - it is a `.pptx` unless the user requested otherwise;
 - package integrity has been checked where practical;
 - assumptions are explicit;

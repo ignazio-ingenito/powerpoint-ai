@@ -26,7 +26,7 @@ For content-bearing changes, also read all `docs/reference*.md` and task-specifi
 ## Operating Rules
 
 - Do not overwrite a source deck without explicit approval.
-- Save new final deliverables in the project root.
+- Save new final deliverables in the relevant presentation folder.
 - Keep text, tables, shapes, connectors, and diagrams editable where practical.
 - Prefer copying/adapting existing slide layouts over rebuilding them from scratch.
 - Reuse actual logo/image assets from an authorized source deck or template; do not recreate logos with text.
@@ -63,7 +63,7 @@ Choose the least risky strategy:
 |---|---|
 | Change text only | edit existing text boxes or regenerate using copied layout |
 | Add a similar slide | duplicate a similar slide pattern and replace content |
-| Build a new deck | use `docs/template.pptx` and `docs/ui/` as visual references |
+| Build a new deck | use `docs/template.pptx`, `docs/ui/`, and any presentation-folder `visual-references/` as visual references |
 | Preserve exact style | copy geometry, theme, media, and XML patterns from source deck |
 | Repair package issues | normalize package parts without changing visible content |
 | Heavy generation | add a script/dependency only after confirming it is needed |

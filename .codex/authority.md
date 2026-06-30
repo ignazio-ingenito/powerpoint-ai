@@ -22,13 +22,14 @@ For this repository, use this order:
 4. `.codex/*.md` repository workflow policy.
 5. `CONTEXT.md` for glossary terms.
 6. `docs/reference*.md` for proposal method and storyline.
-7. User-provided source material for the specific deck.
+7. User-provided source material for the specific deck, including material stored in the relevant presentation folder.
 8. `docs/template.pptx` for editable PowerPoint baseline and reusable structure.
-9. `docs/ui/README.md` and files under `docs/ui/` for visual reference.
-10. Existing deck source when the task is to revise a specific deck.
-11. Durable decisions in `docs/adr/`.
-12. Accepted research in `docs/research/accepted/`.
-13. Prompt examples, old handoffs, generated decks, and historical artifacts.
+9. `docs/ui/README.md` and files under `docs/ui/` for common visual reference.
+10. Presentation-folder visual references, normally under `yyyy-mm-dd-<project-name>/visual-references/`.
+11. Existing deck source when the task is to revise a specific deck.
+12. Durable decisions in `docs/adr/`.
+13. Accepted research in `docs/research/accepted/`.
+14. Prompt examples, old handoffs, generated decks, and historical artifacts.
 
 # Conflict Rules
 
@@ -76,6 +77,7 @@ Primary:
 - `docs/template.pptx`
 - `docs/ui/README.md`
 - current files under `docs/ui/`
+- project-specific visual references under the relevant presentation folder
 - source deck visual language when revising a deck.
 
 Rules:

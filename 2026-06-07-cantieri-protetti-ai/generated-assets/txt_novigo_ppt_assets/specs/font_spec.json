@@ -1,0 +1,11 @@
+{
+  "primary": "Poppins",
+  "fallback": "Aptos, Arial, Helvetica, sans-serif",
+  "weights": {
+    "title": "700",
+    "subtitle": "600",
+    "body": "400",
+    "caption": "400"
+  },
+  "note": "Non include file font. Installare Poppins localmente oppure usare fallback PowerPoint."
+}

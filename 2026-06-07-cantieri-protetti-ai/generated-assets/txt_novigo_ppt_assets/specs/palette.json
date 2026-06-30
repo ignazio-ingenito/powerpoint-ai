@@ -1,0 +1,98 @@
+{
+  "background_primary": {
+    "hex": "#FFFFFF",
+    "rgb": [
+      255,
+      255,
+      255
+    ]
+  },
+  "background_secondary_1": {
+    "hex": "#F7F7F7",
+    "rgb": [
+      247,
+      247,
+      247
+    ]
+  },
+  "background_secondary_2": {
+    "hex": "#F3F6F7",
+    "rgb": [
+      243,
+      246,
+      247
+    ]
+  },
+  "background_secondary_3": {
+    "hex": "#EBEFF5",
+    "rgb": [
+      235,
+      239,
+      245
+    ]
+  },
+  "text_primary": {
+    "hex": "#050505",
+    "rgb": [
+      5,
+      5,
+      5
+    ]
+  },
+  "text_secondary": {
+    "hex": "#5F5F5F",
+    "rgb": [
+      95,
+      95,
+      95
+    ]
+  },
+  "line_neutral": {
+    "hex": "#A7A7A7",
+    "rgb": [
+      167,
+      167,
+      167
+    ]
+  },
+  "accent_teal": {
+    "hex": "#52AB9F",
+    "rgb": [
+      82,
+      171,
+      159
+    ]
+  },
+  "accent_teal_dark": {
+    "hex": "#4FA7A8",
+    "rgb": [
+      79,
+      167,
+      168
+    ]
+  },
+  "accent_blue": {
+    "hex": "#368BD6",
+    "rgb": [
+      54,
+      139,
+      214
+    ]
+  },
+  "accent_blue_alt": {
+    "hex": "#307FE2",
+    "rgb": [
+      48,
+      127,
+      226
+    ]
+  },
+  "accent_light_blue": {
+    "hex": "#9FCCDB",
+    "rgb": [
+      159,
+      204,
+      219
+    ]
+  }
+}

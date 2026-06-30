@@ -18,7 +18,35 @@ Produce editable, executive-ready PowerPoint proposals and business cases for so
 
 # Primary Output
 
-The primary deliverable is a `.pptx` saved in the project root.
+The primary deliverable is a `.pptx` saved in the dedicated presentation folder.
+
+Presentation folders live in the repository root and use:
+
+```text
+yyyy-mm-dd-<project-name>/
+```
+
+Use that folder for all project-specific source materials, working drafts, prompts, visual references, generated assets, attempts, and final deliverables.
+
+Every presentation folder must include these standard subfolders:
+
+```text
+drafts/
+prompts/
+source-materials/
+visual-references/
+generated-assets/
+attempts/
+```
+
+Use them consistently:
+
+- `drafts/`: briefs, storylines, creative handoffs, visual plans, and working notes;
+- `prompts/`: prompts used for generation, recovery, or external handoff;
+- `source-materials/`: source material received or used for the presentation;
+- `visual-references/`: presentation-specific visual references;
+- `generated-assets/`: generated assets, scripts, and packages for that presentation;
+- `attempts/`: attempts, previews, intermediate exports, and non-final outputs.
 
 Optional outputs:
 
@@ -39,6 +67,8 @@ Inventory all supplied materials:
 - transcripts;
 - source decks;
 - requested output filename;
+- target presentation folder;
+- presence of the standard presentation subfolders;
 - target audience;
 - business objective;
 - commercial constraints.
@@ -125,6 +155,7 @@ Before producing slides:
 
 - read `docs/ui/README.md`;
 - list actual files under `docs/ui/`;
+- list project-specific visual references under the presentation folder when present;
 - inspect relevant visual references;
 - inspect `docs/template.pptx` when creating a new deck;
 - inspect the source deck when revising one.
@@ -204,7 +235,7 @@ Create or update the `.pptx`:
 - use `.codex/skills/powerpoint-manipulation/SKILL.md` for package inspection, editing, validation, repair, and export;
 - prefer `pptxgenjs` for generated decks only when a generation script/dependency is intentionally added for the task;
 - keep scripts under `scripts/`;
-- save final deliverables in the project root.
+- save final deliverables in the relevant presentation folder.
 
 Do not overwrite existing files without confirmation.
 
@@ -232,7 +263,7 @@ The formal quality review must cover:
 - readability;
 - package integrity;
 - no accidental content copied from references;
-- deliverable location and filename.
+- presentation folder, deliverable location, and filename.
 
 For generated `.pptx` files, validate package integrity when practical.
 
@@ -243,6 +274,7 @@ Use `.codex/skills/pptx-package-validation/SKILL.md` as the technical delivery g
 Final response or handoff notes should include:
 
 - output file path;
+- presentation folder;
 - major content decisions;
 - assumptions left in the deck;
 - open questions;
@@ -288,7 +320,7 @@ Passes when:
 
 Passes when:
 
-- the output exists in root;
+- the output exists in the dedicated presentation folder;
 - PowerPoint package integrity is checked;
 - remaining assumptions are explicit;
 - final `Critic`, `Review`, and `Humanize` passes have been completed for the delivered artifact;

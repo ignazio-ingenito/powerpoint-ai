@@ -25,7 +25,8 @@ For any deck-production task, read in this order:
 7. `docs/ui/README.md`
 8. actual files under `docs/ui/`
 9. `docs/template.pptx` when creating or revising deck layout
-10. task-specific source material supplied by the user
+10. task-specific source material, drafts, prompts, and visual references inside the relevant `yyyy-mm-dd-<project-name>/` folder
+11. task-specific source material supplied by the user outside the repository, when explicitly referenced
 
 # Repository Policy
 
@@ -98,6 +99,26 @@ Use for:
 - color palette;
 - typography cues;
 - card, table, roadmap, architecture, and economics layout patterns.
+
+Project-specific visual references belong in the relevant presentation folder, normally under `yyyy-mm-dd-<project-name>/visual-references/`.
+
+# Presentation Folders
+
+Location:
+
+- `yyyy-mm-dd-<project-name>/`
+
+Use for:
+
+- `source-materials/`: project-specific source materials;
+- `drafts/`: draft briefs, storylines, creative handoffs, visual plans, and working notes;
+- `prompts/`: generation, recovery, and external handoff prompts;
+- `visual-references/`: project-specific visual references;
+- `generated-assets/`: generated or downloaded assets for that presentation;
+- `attempts/`: intermediate attempts, previews, exports, and non-final outputs;
+- final `.pptx` and optional `.pdf` deliverables.
+
+Every presentation folder must contain the six standard subfolders above. Repository-wide method, template, common visual references, and reusable prompts stay outside them.
 
 # Durable Decisions
 

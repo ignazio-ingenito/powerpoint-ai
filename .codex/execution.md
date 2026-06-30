@@ -19,7 +19,7 @@ Invalidation Triggers: new automation, new external integration, new publication
 Allowed without confirmation:
 
 - inspect markdown, scripts, templates, decks, PDFs, and images;
-- list files in `docs/`, `docs/ui/`, root, scripts, and config folders;
+- list files in `docs/`, `docs/ui/`, root, presentation folders, scripts, and config folders;
 - extract deck structure for analysis;
 - produce review notes.
 
@@ -41,7 +41,8 @@ Rules:
 
 Allowed when the user asks to create or improve a deck:
 
-- generate a new `.pptx` in the repository root;
+- generate a new `.pptx` in the relevant `yyyy-mm-dd-<project-name>/` presentation folder;
+- create and use the standard presentation subfolders `drafts/`, `prompts/`, `source-materials/`, `visual-references/`, `generated-assets/`, and `attempts/`;
 - create temporary extraction or validation artifacts under `/tmp` or `.codex-work/`;
 - update scripts under `scripts/` only when pipeline implementation is requested.
 
@@ -106,4 +107,4 @@ When producing output:
 
 - if the requested output filename exists, ask before overwriting or create a clearly suffixed version;
 - never overwrite `docs/template.pptx`;
-- never place final deliverables under `docs/` or `docs/ui/`.
+- never place final deliverables under repository root, `docs/`, or `docs/ui/` when they belong to a specific presentation.

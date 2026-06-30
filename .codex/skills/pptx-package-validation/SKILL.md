@@ -22,7 +22,7 @@ Read:
 
 Run equivalent checks for the target `.pptx`:
 
-1. File exists in the project root unless explicitly requested otherwise.
+1. File exists in the relevant presentation folder unless explicitly requested otherwise.
 2. `unzip -t "<file>.pptx"` passes.
 3. Every XML file parses.
 4. Every `[Content_Types].xml` override points to an existing part.

@@ -1,0 +1,436 @@
+[
+  {
+    "type": "icon_svg",
+    "name": "activity",
+    "path": "txt_novigo_ppt_assets/icons/svg/activity.svg",
+    "source": "Lucide icons via GitHub/unpkg; fallback generated if unavailable",
+    "ppt_usage": "Insert > Pictures > SVG, recolor via Graphics Format"
+  },
+  {
+    "type": "icon_svg",
+    "name": "alert-triangle",
+    "path": "txt_novigo_ppt_assets/icons/svg/alert-triangle.svg",
+    "source": "Lucide icons via GitHub/unpkg; fallback generated if unavailable",
+    "ppt_usage": "Insert > Pictures > SVG, recolor via Graphics Format"
+  },
+  {
+    "type": "icon_svg",
+    "name": "badge-check",
+    "path": "txt_novigo_ppt_assets/icons/svg/badge-check.svg",
+    "source": "Lucide icons via GitHub/unpkg; fallback generated if unavailable",
+    "ppt_usage": "Insert > Pictures > SVG, recolor via Graphics Format"
+  },
+  {
+    "type": "icon_svg",
+    "name": "bar-chart-3",
+    "path": "txt_novigo_ppt_assets/icons/svg/bar-chart-3.svg",
+    "source": "Lucide icons via GitHub/unpkg; fallback generated if unavailable",
+    "ppt_usage": "Insert > Pictures > SVG, recolor via Graphics Format"
+  },
+  {
+    "type": "icon_svg",
+    "name": "book-open-check",
+    "path": "txt_novigo_ppt_assets/icons/svg/book-open-check.svg",
+    "source": "Lucide icons via GitHub/unpkg; fallback generated if unavailable",
+    "ppt_usage": "Insert > Pictures > SVG, recolor via Graphics Format"
+  },
+  {
+    "type": "icon_svg",
+    "name": "bot",
+    "path": "txt_novigo_ppt_assets/icons/svg/bot.svg",
+    "source": "Lucide icons via GitHub/unpkg; fallback generated if unavailable",
+    "ppt_usage": "Insert > Pictures > SVG, recolor via Graphics Format"
+  },
+  {
+    "type": "icon_svg",
+    "name": "boxes",
+    "path": "txt_novigo_ppt_assets/icons/svg/boxes.svg",
+    "source": "Lucide icons via GitHub/unpkg; fallback generated if unavailable",
+    "ppt_usage": "Insert > Pictures > SVG, recolor via Graphics Format"
+  },
+  {
+    "type": "icon_svg",
+    "name": "braces",
+    "path": "txt_novigo_ppt_assets/icons/svg/braces.svg",
+    "source": "Lucide icons via GitHub/unpkg; fallback generated if unavailable",
+    "ppt_usage": "Insert > Pictures > SVG, recolor via Graphics Format"
+  },
+  {
+    "type": "icon_svg",
+    "name": "brain-circuit",
+    "path": "txt_novigo_ppt_assets/icons/svg/brain-circuit.svg",
+    "source": "Lucide icons via GitHub/unpkg; fallback generated if unavailable",
+    "ppt_usage": "Insert > Pictures > SVG, recolor via Graphics Format"
+  },
+  {
+    "type": "icon_svg",
+    "name": "briefcase",
+    "path": "txt_novigo_ppt_assets/icons/svg/briefcase.svg",
+    "source": "Lucide icons via GitHub/unpkg; fallback generated if unavailable",
+    "ppt_usage": "Insert > Pictures > SVG, recolor via Graphics Format"
+  },
+  {
+    "type": "icon_svg",
+    "name": "building-2",
+    "path": "txt_novigo_ppt_assets/icons/svg/building-2.svg",
+    "source": "Lucide icons via GitHub/unpkg; fallback generated if unavailable",
+    "ppt_usage": "Insert > Pictures > SVG, recolor via Graphics Format"
+  },
+  {
+    "type": "icon_svg",
+    "name": "calendar",
+    "path": "txt_novigo_ppt_assets/icons/svg/calendar.svg",
+    "source": "Lucide icons via GitHub/unpkg; fallback generated if unavailable",
+    "ppt_usage": "Insert > Pictures > SVG, recolor via Graphics Format"
+  },
+  {
+    "type": "icon_svg",
+    "name": "calendar-check",
+    "path": "txt_novigo_ppt_assets/icons/svg/calendar-check.svg",
+    "source": "Lucide icons via GitHub/unpkg; fallback generated if unavailable",
+    "ppt_usage": "Insert > Pictures > SVG, recolor via Graphics Format"
+  },
+  {
+    "type": "icon_svg",
+    "name": "check-circle",
+    "path": "txt_novigo_ppt_assets/icons/svg/check-circle.svg",
+    "source": "Lucide icons via GitHub/unpkg; fallback generated if unavailable",
+    "ppt_usage": "Insert > Pictures > SVG, recolor via Graphics Format"
+  },
+  {
+    "type": "icon_svg",
+    "name": "clipboard-check",
+    "path": "txt_novigo_ppt_assets/icons/svg/clipboard-check.svg",
+    "source": "Lucide icons via GitHub/unpkg; fallback generated if unavailable",
+    "ppt_usage": "Insert > Pictures > SVG, recolor via Graphics Format"
+  },
+  {
+    "type": "icon_svg",
+    "name": "clipboard-list",
+    "path": "txt_novigo_ppt_assets/icons/svg/clipboard-list.svg",
+    "source": "Lucide icons via GitHub/unpkg; fallback generated if unavailable",
+    "ppt_usage": "Insert > Pictures > SVG, recolor via Graphics Format"
+  },
+  {
+    "type": "icon_svg",
+    "name": "clock",
+    "path": "txt_novigo_ppt_assets/icons/svg/clock.svg",
+    "source": "Lucide icons via GitHub/unpkg; fallback generated if unavailable",
+    "ppt_usage": "Insert > Pictures > SVG, recolor via Graphics Format"
+  },
+  {
+    "type": "icon_svg",
+    "name": "cloud",
+    "path": "txt_novigo_ppt_assets/icons/svg/cloud.svg",
+    "source": "Lucide icons via GitHub/unpkg; fallback generated if unavailable",
+    "ppt_usage": "Insert > Pictures > SVG, recolor via Graphics Format"
+  },
+  {
+    "type": "icon_svg",
+    "name": "cloud-upload",
+    "path": "txt_novigo_ppt_assets/icons/svg/cloud-upload.svg",
+    "source": "Lucide icons via GitHub/unpkg; fallback generated if unavailable",
+    "ppt_usage": "Insert > Pictures > SVG, recolor via Graphics Format"
+  },
+  {
+    "type": "icon_svg",
+    "name": "code-2",
+    "path": "txt_novigo_ppt_assets/icons/svg/code-2.svg",
+    "source": "Lucide icons via GitHub/unpkg; fallback generated if unavailable",
+    "ppt_usage": "Insert > Pictures > SVG, recolor via Graphics Format"
+  },
+  {
+    "type": "icon_svg",
+    "name": "cpu",
+    "path": "txt_novigo_ppt_assets/icons/svg/cpu.svg",
+    "source": "Lucide icons via GitHub/unpkg; fallback generated if unavailable",
+    "ppt_usage": "Insert > Pictures > SVG, recolor via Graphics Format"
+  },
+  {
+    "type": "icon_svg",
+    "name": "database",
+    "path": "txt_novigo_ppt_assets/icons/svg/database.svg",
+    "source": "Lucide icons via GitHub/unpkg; fallback generated if unavailable",
+    "ppt_usage": "Insert > Pictures > SVG, recolor via Graphics Format"
+  },
+  {
+    "type": "icon_svg",
+    "name": "eye",
+    "path": "txt_novigo_ppt_assets/icons/svg/eye.svg",
+    "source": "Lucide icons via GitHub/unpkg; fallback generated if unavailable",
+    "ppt_usage": "Insert > Pictures > SVG, recolor via Graphics Format"
+  },
+  {
+    "type": "icon_svg",
+    "name": "file-check",
+    "path": "txt_novigo_ppt_assets/icons/svg/file-check.svg",
+    "source": "Lucide icons via GitHub/unpkg; fallback generated if unavailable",
+    "ppt_usage": "Insert > Pictures > SVG, recolor via Graphics Format"
+  },
+  {
+    "type": "icon_svg",
+    "name": "file-search",
+    "path": "txt_novigo_ppt_assets/icons/svg/file-search.svg",
+    "source": "Lucide icons via GitHub/unpkg; fallback generated if unavailable",
+    "ppt_usage": "Insert > Pictures > SVG, recolor via Graphics Format"
+  },
+  {
+    "type": "icon_svg",
+    "name": "file-text",
+    "path": "txt_novigo_ppt_assets/icons/svg/file-text.svg",
+    "source": "Lucide icons via GitHub/unpkg; fallback generated if unavailable",
+    "ppt_usage": "Insert > Pictures > SVG, recolor via Graphics Format"
+  },
+  {
+    "type": "icon_svg",
+    "name": "file-warning",
+    "path": "txt_novigo_ppt_assets/icons/svg/file-warning.svg",
+    "source": "Lucide icons via GitHub/unpkg; fallback generated if unavailable",
+    "ppt_usage": "Insert > Pictures > SVG, recolor via Graphics Format"
+  },
+  {
+    "type": "icon_svg",
+    "name": "files",
+    "path": "txt_novigo_ppt_assets/icons/svg/files.svg",
+    "source": "Lucide icons via GitHub/unpkg; fallback generated if unavailable",
+    "ppt_usage": "Insert > Pictures > SVG, recolor via Graphics Format"
+  },
+  {
+    "type": "icon_svg",
+    "name": "folder",
+    "path": "txt_novigo_ppt_assets/icons/svg/folder.svg",
+    "source": "Lucide icons via GitHub/unpkg; fallback generated if unavailable",
+    "ppt_usage": "Insert > Pictures > SVG, recolor via Graphics Format"
+  },
+  {
+    "type": "icon_svg",
+    "name": "folder-check",
+    "path": "txt_novigo_ppt_assets/icons/svg/folder-check.svg",
+    "source": "Lucide icons via GitHub/unpkg; fallback generated if unavailable",
+    "ppt_usage": "Insert > Pictures > SVG, recolor via Graphics Format"
+  },
+  {
+    "type": "icon_svg",
+    "name": "gauge",
+    "path": "txt_novigo_ppt_assets/icons/svg/gauge.svg",
+    "source": "Lucide icons via GitHub/unpkg; fallback generated if unavailable",
+    "ppt_usage": "Insert > Pictures > SVG, recolor via Graphics Format"
+  },
+  {
+    "type": "icon_svg",
+    "name": "git-branch",
+    "path": "txt_novigo_ppt_assets/icons/svg/git-branch.svg",
+    "source": "Lucide icons via GitHub/unpkg; fallback generated if unavailable",
+    "ppt_usage": "Insert > Pictures > SVG, recolor via Graphics Format"
+  },
+  {
+    "type": "icon_svg",
+    "name": "hard-hat",
+    "path": "txt_novigo_ppt_assets/icons/svg/hard-hat.svg",
+    "source": "Lucide icons via GitHub/unpkg; fallback generated if unavailable",
+    "ppt_usage": "Insert > Pictures > SVG, recolor via Graphics Format"
+  },
+  {
+    "type": "icon_svg",
+    "name": "help-circle",
+    "path": "txt_novigo_ppt_assets/icons/svg/help-circle.svg",
+    "source": "Lucide icons via GitHub/unpkg; fallback generated if unavailable",
+    "ppt_usage": "Insert > Pictures > SVG, recolor via Graphics Format"
+  },
+  {
+    "type": "icon_svg",
+    "name": "info",
+    "path": "txt_novigo_ppt_assets/icons/svg/info.svg",
+    "source": "Lucide icons via GitHub/unpkg; fallback generated if unavailable",
+    "ppt_usage": "Insert > Pictures > SVG, recolor via Graphics Format"
+  },
+  {
+    "type": "icon_svg",
+    "name": "key-round",
+    "path": "txt_novigo_ppt_assets/icons/svg/key-round.svg",
+    "source": "Lucide icons via GitHub/unpkg; fallback generated if unavailable",
+    "ppt_usage": "Insert > Pictures > SVG, recolor via Graphics Format"
+  },
+  {
+    "type": "icon_svg",
+    "name": "landmark",
+    "path": "txt_novigo_ppt_assets/icons/svg/landmark.svg",
+    "source": "Lucide icons via GitHub/unpkg; fallback generated if unavailable",
+    "ppt_usage": "Insert > Pictures > SVG, recolor via Graphics Format"
+  },
+  {
+    "type": "icon_svg",
+    "name": "layers",
+    "path": "txt_novigo_ppt_assets/icons/svg/layers.svg",
+    "source": "Lucide icons via GitHub/unpkg; fallback generated if unavailable",
+    "ppt_usage": "Insert > Pictures > SVG, recolor via Graphics Format"
+  },
+  {
+    "type": "icon_svg",
+    "name": "line-chart",
+    "path": "txt_novigo_ppt_assets/icons/svg/line-chart.svg",
+    "source": "Lucide icons via GitHub/unpkg; fallback generated if unavailable",
+    "ppt_usage": "Insert > Pictures > SVG, recolor via Graphics Format"
+  },
+  {
+    "type": "icon_svg",
+    "name": "list-checks",
+    "path": "txt_novigo_ppt_assets/icons/svg/list-checks.svg",
+    "source": "Lucide icons via GitHub/unpkg; fallback generated if unavailable",
+    "ppt_usage": "Insert > Pictures > SVG, recolor via Graphics Format"
+  },
+  {
+    "type": "icon_svg",
+    "name": "lock",
+    "path": "txt_novigo_ppt_assets/icons/svg/lock.svg",
+    "source": "Lucide icons via GitHub/unpkg; fallback generated if unavailable",
+    "ppt_usage": "Insert > Pictures > SVG, recolor via Graphics Format"
+  },
+  {
+    "type": "icon_svg",
+    "name": "network",
+    "path": "txt_novigo_ppt_assets/icons/svg/network.svg",
+    "source": "Lucide icons via GitHub/unpkg; fallback generated if unavailable",
+    "ppt_usage": "Insert > Pictures > SVG, recolor via Graphics Format"
+  },
+  {
+    "type": "icon_svg",
+    "name": "package-check",
+    "path": "txt_novigo_ppt_assets/icons/svg/package-check.svg",
+    "source": "Lucide icons via GitHub/unpkg; fallback generated if unavailable",
+    "ppt_usage": "Insert > Pictures > SVG, recolor via Graphics Format"
+  },
+  {
+    "type": "icon_svg",
+    "name": "pie-chart",
+    "path": "txt_novigo_ppt_assets/icons/svg/pie-chart.svg",
+    "source": "Lucide icons via GitHub/unpkg; fallback generated if unavailable",
+    "ppt_usage": "Insert > Pictures > SVG, recolor via Graphics Format"
+  },
+  {
+    "type": "icon_svg",
+    "name": "puzzle",
+    "path": "txt_novigo_ppt_assets/icons/svg/puzzle.svg",
+    "source": "Lucide icons via GitHub/unpkg; fallback generated if unavailable",
+    "ppt_usage": "Insert > Pictures > SVG, recolor via Graphics Format"
+  },
+  {
+    "type": "icon_svg",
+    "name": "rocket",
+    "path": "txt_novigo_ppt_assets/icons/svg/rocket.svg",
+    "source": "Lucide icons via GitHub/unpkg; fallback generated if unavailable",
+    "ppt_usage": "Insert > Pictures > SVG, recolor via Graphics Format"
+  },
+  {
+    "type": "icon_svg",
+    "name": "scale",
+    "path": "txt_novigo_ppt_assets/icons/svg/scale.svg",
+    "source": "Lucide icons via GitHub/unpkg; fallback generated if unavailable",
+    "ppt_usage": "Insert > Pictures > SVG, recolor via Graphics Format"
+  },
+  {
+    "type": "icon_svg",
+    "name": "scan-text",
+    "path": "txt_novigo_ppt_assets/icons/svg/scan-text.svg",
+    "source": "Lucide icons via GitHub/unpkg; fallback generated if unavailable",
+    "ppt_usage": "Insert > Pictures > SVG, recolor via Graphics Format"
+  },
+  {
+    "type": "icon_svg",
+    "name": "search",
+    "path": "txt_novigo_ppt_assets/icons/svg/search.svg",
+    "source": "Lucide icons via GitHub/unpkg; fallback generated if unavailable",
+    "ppt_usage": "Insert > Pictures > SVG, recolor via Graphics Format"
+  },
+  {
+    "type": "icon_svg",
+    "name": "server",
+    "path": "txt_novigo_ppt_assets/icons/svg/server.svg",
+    "source": "Lucide icons via GitHub/unpkg; fallback generated if unavailable",
+    "ppt_usage": "Insert > Pictures > SVG, recolor via Graphics Format"
+  },
+  {
+    "type": "icon_svg",
+    "name": "settings",
+    "path": "txt_novigo_ppt_assets/icons/svg/settings.svg",
+    "source": "Lucide icons via GitHub/unpkg; fallback generated if unavailable",
+    "ppt_usage": "Insert > Pictures > SVG, recolor via Graphics Format"
+  },
+  {
+    "type": "icon_svg",
+    "name": "shield-alert",
+    "path": "txt_novigo_ppt_assets/icons/svg/shield-alert.svg",
+    "source": "Lucide icons via GitHub/unpkg; fallback generated if unavailable",
+    "ppt_usage": "Insert > Pictures > SVG, recolor via Graphics Format"
+  },
+  {
+    "type": "icon_svg",
+    "name": "shield-check",
+    "path": "txt_novigo_ppt_assets/icons/svg/shield-check.svg",
+    "source": "Lucide icons via GitHub/unpkg; fallback generated if unavailable",
+    "ppt_usage": "Insert > Pictures > SVG, recolor via Graphics Format"
+  },
+  {
+    "type": "icon_svg",
+    "name": "sliders-horizontal",
+    "path": "txt_novigo_ppt_assets/icons/svg/sliders-horizontal.svg",
+    "source": "Lucide icons via GitHub/unpkg; fallback generated if unavailable",
+    "ppt_usage": "Insert > Pictures > SVG, recolor via Graphics Format"
+  },
+  {
+    "type": "icon_svg",
+    "name": "target",
+    "path": "txt_novigo_ppt_assets/icons/svg/target.svg",
+    "source": "Lucide icons via GitHub/unpkg; fallback generated if unavailable",
+    "ppt_usage": "Insert > Pictures > SVG, recolor via Graphics Format"
+  },
+  {
+    "type": "icon_svg",
+    "name": "user-check",
+    "path": "txt_novigo_ppt_assets/icons/svg/user-check.svg",
+    "source": "Lucide icons via GitHub/unpkg; fallback generated if unavailable",
+    "ppt_usage": "Insert > Pictures > SVG, recolor via Graphics Format"
+  },
+  {
+    "type": "icon_svg",
+    "name": "users",
+    "path": "txt_novigo_ppt_assets/icons/svg/users.svg",
+    "source": "Lucide icons via GitHub/unpkg; fallback generated if unavailable",
+    "ppt_usage": "Insert > Pictures > SVG, recolor via Graphics Format"
+  },
+  {
+    "type": "icon_svg",
+    "name": "workflow",
+    "path": "txt_novigo_ppt_assets/icons/svg/workflow.svg",
+    "source": "Lucide icons via GitHub/unpkg; fallback generated if unavailable",
+    "ppt_usage": "Insert > Pictures > SVG, recolor via Graphics Format"
+  },
+  {
+    "type": "icon_svg",
+    "name": "x-circle",
+    "path": "txt_novigo_ppt_assets/icons/svg/x-circle.svg",
+    "source": "Lucide icons via GitHub/unpkg; fallback generated if unavailable",
+    "ppt_usage": "Insert > Pictures > SVG, recolor via Graphics Format"
+  },
+  {
+    "type": "support_svg",
+    "name": "accent_waves_teal_blue.svg",
+    "path": "txt_novigo_ppt_assets/graphics/svg/accent_waves_teal_blue.svg",
+    "source": "generated",
+    "ppt_usage": "Decorative light accent waves, place bottom/right with transparency"
+  },
+  {
+    "type": "support_svg",
+    "name": "document_intelligence_core_stack.svg",
+    "path": "txt_novigo_ppt_assets/graphics/svg/document_intelligence_core_stack.svg",
+    "source": "generated",
+    "ppt_usage": "Central core illustration; editable as SVG after ungrouping in PowerPoint"
+  },
+  {
+    "type": "support_svg",
+    "name": "business_impact_target.svg",
+    "path": "txt_novigo_ppt_assets/graphics/svg/business_impact_target.svg",
+    "source": "generated",
+    "ppt_usage": "Final decision board / closing visual"
+  }
+]

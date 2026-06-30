@@ -1,0 +1,35 @@
+{
+  "format": "16:9 widescreen",
+  "size_px_reference": "1792 x 1024",
+  "ppt_size_in": "13.333 x 7.5",
+  "safe_margins": {
+    "left": "0.45 in",
+    "right": "0.45 in",
+    "top": "0.30 in",
+    "bottom": "0.30 in"
+  },
+  "recurring_elements": {
+    "logo": "top-left, TXT | NOVIGO wordmark ricostruibile come testo",
+    "slide_number": "bottom-left, teal/blue",
+    "bottom_rule": "thin line, teal or blue",
+    "accent_waves": "light teal/blue SVG lines, optional on cover and section slides"
+  },
+  "rebuild_notes": {
+    "powerpoint_objects": [
+      "testi",
+      "card",
+      "linee",
+      "frecce",
+      "tabelle",
+      "Gantt",
+      "roadmap",
+      "checklist",
+      "matrici",
+      "icone SVG"
+    ],
+    "raster_or_reference": [
+      "render 3D/isometrici generati",
+      "eventuali slide PNG finali se usate come background di riferimento"
+    ]
+  }
+}
