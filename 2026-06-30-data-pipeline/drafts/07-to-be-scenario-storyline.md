@@ -40,20 +40,22 @@ Il confronto deve essere leggibile per C-level e Tech Committee:
 - Scenario database AWS: RDS o database cliente, in funzione della scelta del cliente.
 - Scenario Metabase: per questa fase si assume che Metabase possa essere accettato dal cliente come layer BI/presentation.
 - Scenario Qlik: usare Qlik Cloud Analytics Premium come target.
+- Scenario Talend/Qlik: le pagine ufficiali Qlik pricing indicano che Qlik Cloud Analytics include/muove dati con Qlik Talend Cloud e che Qlik Talend Cloud ha anche piani dedicati separati per Data Integration and Quality. Nel deck va quindi trattato come opzione coerente con Qlik, non come licenza Talend pienamente confermata.
 - Economics: range e driver di costo, non dettaglio di offerta.
 
 ### Best practice / ipotesi di lavoro
 
 - Kiron CDG e' trattato come caso documentato grazie ai materiali in `source-materials/cdg-kiron/`.
 - Per ProSIGNAL si usano gli appunti aggiornati nel vault indicato dall'utente e pattern comuni di file ingestion / regulatory data processing.
-- Per la WBS Kiron e ProSIGNAL, dove manca dettaglio, si usano scenari comuni marcati come ipotesi.
+- Per Kiron la WBS e' source-grounded sui materiali `cdg-kiron`; l'utente non ha altri chiarimenti da aggiungere in questa fase.
+- Per ProSIGNAL, dove mancano esempi file/tracciati/output, si usano scenari comuni marcati come ipotesi; l'utente non ha altri esempi disponibili in questa fase.
 
 ### Da verificare prima del PPTX finale
 
-- Licensing e packaging attuali Talend/Qlik, in particolare cosa include davvero Qlik Cloud Analytics Premium.
+- Licensing e packaging contrattuali Talend/Qlik: verificare sul tenant/contratto quali capability Talend sono effettivamente abilitate e con quali limiti di capacita'.
 - Cost range indicativi: infrastruttura, licenze/subscription, delivery, run.
-- Chiarimenti Kiron su regole/open point ancora da definire nel materiale sorgente.
-- Esempi file/tracciati/output ING ProSIGNAL, soprattutto Lease e Conto Arancio, se disponibili e autorizzati.
+- Kiron: eventuali regole/open point non chiusi nella documentazione sorgente restano da trattare come rischi o assunzioni, non come contenuti inventati.
+- ProSIGNAL: esempi file/tracciati/output non sono disponibili ora; i claim su Lease, Conto Arancio, file grandi e controlli cross-file devono restare formulati come ipotesi o pattern comuni.
 - Requisiti specifici di access control, publishing, embedding/export e governance BI per Metabase, se richiesti dai clienti.
 - Fit Qlik/Talend su file grandi, fixed-column e controlli cross-file per ProSIGNAL.
 
@@ -69,8 +71,8 @@ Il confronto deve essere leggibile per C-level e Tech Committee:
 | 6 | Scenario A | Nello scenario AWS ogni componente della pipeline resta esplicita e governabile | Mapping componenti -> tool | `06`, repo CDG | Matrice o swimlane |
 | 7 | Scenario A | Architettura logica AWS: sorgenti, compute ECS/EC2, database, trasformazioni, mart, Metabase | Schema architetturale | decisioni utente, best practice AWS | No EKS; DB cliente/RDS |
 | 8 | Scenario A | Benefici e limiti dello scenario AWS/open stack | Trade-off scenario A | best practice marcata | Range costi solo qualitativi |
-| 9 | Scenario B | Talend + Qlik privilegia integrazione enterprise e analytics gestita | Presenta scenario B | decisioni utente | Claim licensing da verificare |
-| 10 | Scenario B | Nello scenario Talend/Qlik ingestion, quality e analytics sono concentrati in una filiera piu' product-oriented | Mapping componenti -> tool | `06`, best practice marcata | Verificare confini Talend/Qlik |
+| 9 | Scenario B | Talend + Qlik privilegia integrazione enterprise e analytics gestita | Presenta scenario B | decisioni utente, pricing ufficiale Qlik | Evitare claim di licenza piena non verificata |
+| 10 | Scenario B | Nello scenario Talend/Qlik ingestion, quality e analytics sono concentrati in una filiera piu' product-oriented | Mapping componenti -> tool | `06`, best practice marcata, pricing ufficiale Qlik | Verificare entitlement e limiti di capacita' |
 | 11 | Scenario B | Architettura logica Talend/Qlik: runtime integrazione, storage/db, Qlik Cloud presentation | Schema architetturale | decisioni utente | Runtime Talend da chiarire |
 | 12 | Scenario B | Benefici e limiti dello scenario Talend/Qlik | Trade-off scenario B | best practice marcata | Evidenziare licensing/lock-in |
 | 13 | Confronto | I trade-off principali riguardano riuso, scalabilita', costi, velocita', complessita' e modello operativo | Matrice comparativa | decisioni utente | Neutrale, senza vincitore predefinito |
@@ -93,11 +95,10 @@ Il confronto deve essere leggibile per C-level e Tech Committee:
 
 ## Open Questions Prima Del PPTX
 
-1. **Talend/Qlik licensing:** abbiamo bisogno di una conferma commerciale su Qlik Cloud Analytics Premium e sull'eventuale inclusione/uso di Talend.
-2. **Kiron CDG:** i materiali specifici sono stati trovati; restano da chiarire solo eventuali regole/open point non chiusi nella documentazione sorgente.
-3. **ING ProSIGNAL:** i materiali aggiornati nel vault sono stati trovati; servono ancora esempi tracciati/file/output, se disponibili e autorizzati, per validare i claim su fixed-column, file grandi e controlli cross-file.
+1. **Talend/Qlik licensing:** le fonti ufficiali Qlik separano pricing Analytics e pricing Qlik Talend Cloud; Qlik Cloud Analytics include alcune capability/connessioni Talend Cloud, ma entitlement, limiti e costi vanno confermati su contratto/tenant prima del PPTX finale.
+2. **Kiron CDG:** non sono attesi altri chiarimenti dall'utente in questa fase; eventuali open point delle regole restano assunzioni/rischi da dichiarare.
+3. **ING ProSIGNAL:** non sono disponibili altri esempi; i claim su fixed-column, file grandi e controlli cross-file devono restare best practice/ipotesi finche' non emergono tracciati reali.
 4. **Economics:** possiamo usare una stima a range/driver, ma servono almeno ipotesi commerciali su licenze Qlik/Talend e ipotesi cloud/run per rendere i range difendibili.
-5. **Discussione finale:** il deck resta neutrale e non deve chiudere la scelta; la chiusura deve proporre domande guida e prossimi approfondimenti.
 
 ## grill-with-docs
 
@@ -111,7 +112,7 @@ Il confronto deve essere leggibile per C-level e Tech Committee:
 - Obiettivo di discussione, audience e neutralita' sono espliciti.
 - Le due opzioni sono entrambe rappresentate con mapping, architettura, benefici e limiti.
 - Le WBS e il piano comune sono demandati agli artifact dedicati.
-- Le informazioni di licensing/costi sono segnate come gap da verificare.
+- Le informazioni di licensing/costi sono aggiornate con ricerca ufficiale Qlik, ma restano da confermare contrattualmente.
 - Non sono stati introdotti prezzi, effort, date o commitment.
 
 ## Humanize

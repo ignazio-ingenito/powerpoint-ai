@@ -38,7 +38,7 @@ Per questa presentazione il flusso standard del repo viene adattato in modo espl
 - **Discussione che il deck deve abilitare:** presentare al CEO, a Gianfranco, al CTO e al Tech Committee le due opzioni, mantenendo neutralita' comparativa, per aprire una discussione informata sull'adozione futura della blueprint.
 - **Audience:** C-level / Gianfranco, CTO e Tech Committee.
 - **Posizionamento del confronto:** restare neutrale tra le due ipotesi, evidenziando trade-off, criteri di valutazione e domande da discutere.
-- **Scenario Talend/Qlik:** Talend e' considerato come opzione; ipotesi utente da verificare: Talend potrebbe essere compreso nella licenza Qlik. Target BI indicato: **Qlik Cloud Analytics Premium**.
+- **Scenario Talend/Qlik:** Talend e' considerato come opzione. La ricerca su fonti ufficiali Qlik indica capability Qlik Talend Cloud dentro i piani Analytics e piani Qlik Talend Cloud separati per Data Integration and Quality; quindi il deck deve parlare di scenario coerente Talend/Qlik, ma non di licenza Talend pienamente confermata. Target BI indicato: **Qlik Cloud Analytics Premium**.
 - **Scenario Dagster/dbt/Metabase:** target cloud **AWS**. Compute candidato: **ECS o EC2**, non EKS. Database: **RDS o database cliente**, in funzione della volonta' del cliente e del modello di hosting.
 - **Priorita' casi target:** ProSIGNAL e Kiron sono clienti esterni e hanno priorita' rispetto al CDG interno.
 - **Economics:** non entrare in dettaglio; fornire una prima idea dei costi come range e driver, coerente con una blueprint.
@@ -52,7 +52,8 @@ Per questa presentazione il flusso standard del repo viene adattato in modo espl
 - Per Talend, Qlik, Dagster, dbt, Metabase, cloud, pricing, licenze, limiti e deployment, verificare documentazione aggiornata prima di trasformare il contenuto in claim.
 - Non inventare costi, effort, date o commitment.
 - Kiron CDG ha ora materiali specifici in `source-materials/cdg-kiron/`: analisi funzionale, campi input/output, tabelle guida e regole. Non va piu' trattato come caso solo ipotetico.
-- ProSIGNAL ha materiali aggiornati nel vault indicato dall'utente e gia' copiati nel progetto; usare comunque cautela perche' il contenuto funzionale storico dichiara analisi da riconsiderare e mancano esempi file/tracciati/output.
+- Kiron CDG: l'utente non ha altri chiarimenti da aggiungere ora; eventuali open point nei materiali restano rischi/assunzioni dichiarate.
+- ProSIGNAL ha materiali aggiornati nel vault indicato dall'utente e gia' copiati nel progetto; usare comunque cautela perche' il contenuto funzionale storico dichiara analisi da riconsiderare e non sono disponibili altri esempi file/tracciati/output.
 - Per ogni definizione o modifica del piano eseguire `grill-with-docs`, `Review` e `Humanize` prima di considerare l'artifact pronto.
 - Il primo obiettivo di delivery e' un PowerPoint editabile, il piu' fedele possibile al layout standard/consigliato dalle linee guida di Gianfranco e dai riferimenti visuali del repo.
 - Se non e' possibile produrre un PowerPoint editabile con fedelta' sufficiente, produrre immagini o PDF come alternativa, esplicitando che l'assemblaggio finale in PowerPoint sara' manuale.
@@ -331,11 +332,10 @@ Prima del PPTX, produrre:
 
 ## Informazioni Da Verificare Prima Di Scrivere Claim
 
-- Deployment e licensing Talend attuali.
-- Deployment e licensing Qlik/Qlik Cloud attuali.
+- Entitlement, deployment e licensing Talend/Qlik effettivi sul tenant/contratto disponibile.
 - Limiti applicabili a tenant/licenze e contesto cliente per Qlik/Talend, Dagster/dbt/Metabase e deployment cloud.
 - Scelta database/warehouse per entrambi gli scenari.
 - Se la pipeline Dagster/dbt/Metabase deve essere tutta su AWS o mista.
-- Se Talend/Qlik e' gia' disponibile internamente o va considerato come nuovo stack/licenza.
-- Chiarimenti Kiron su regole/open point ancora da definire nel materiale sorgente.
-- Esempi file/tracciati/output ING ProSIGNAL e allegati SharePoint autorizzati; le note aggiornate del vault sono gia' state acquisite.
+- Se Talend/Qlik e' gia' disponibile internamente o va considerato come nuovo stack/licenza aggiuntiva.
+- Kiron: nessun altro chiarimento atteso dall'utente ora; eventuali regole/open point del materiale sorgente vanno gestiti come rischi/assunzioni.
+- ProSIGNAL: nessun altro esempio disponibile ora; le note aggiornate del vault sono state acquisite, mentre esempi file/tracciati/output e allegati SharePoint restano materiali mancanti da non inventare.

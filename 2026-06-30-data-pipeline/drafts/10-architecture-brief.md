@@ -158,8 +158,8 @@ Sorgenti
 ### Note Visuali
 
 - Usare uno schema a zone verticali, con Qlik Cloud evidenziato come cloud presentation/analytics.
-- Mostrare Talend come integration/data quality layer, ma segnare runtime e packaging come da verificare.
-- Evitare di scrivere che Talend e' incluso nella licenza Qlik finche' non verificato.
+- Mostrare Talend/Qlik Talend Cloud come integration/data quality layer, ma segnare runtime, entitlement e limiti di capacita' come da verificare.
+- Evitare di scrivere che tutte le capability Talend sono gia' incluse nella licenza Qlik: le pagine ufficiali Qlik mostrano capability Talend dentro Analytics e piani Talend Cloud separati.
 - Mostrare le automazioni/API Qlik come supporto operativo per reload, task chain e run log, non come sostituto automatico di un orchestratore data engineering.
 
 ## Architettura Logica Comune
@@ -211,7 +211,7 @@ Salvare eventuali SVG, diagrammi Mermaid, immagini o sorgenti in:
 - Confermare RDS vs DB cliente per ogni progetto.
 - Confermare se serve S3/landing object storage.
 - Confermare runtime/deployment Talend.
-- Confermare packaging/licenza Talend con Qlik Cloud Analytics Premium.
+- Confermare entitlement/licenza Talend con Qlik Cloud Analytics Premium sul contratto o tenant effettivo.
 - Confermare limiti Qlik/Talend per file grandi e fixed-column.
 - Assumere Metabase accettabile come layer BI per clienti esterni; dettagliare solo requisiti di access control, publishing, embedding/export e governance se emergono vincoli specifici.
 
@@ -226,7 +226,7 @@ Implicazioni per il deck:
 
 - Qlik/Talend puo' essere rappresentato come scenario piattaforma per data integration, data quality e analytics.
 - Qlik Cloud puo' essere rappresentato come analytics/presentation layer con capability operative di automazione, reload e task chain.
-- La componente Talend va comunque trattata come opzione da verificare su licenza, runtime, deployment e limiti tecnici.
+- La componente Talend/Qlik Talend Cloud puo' essere rappresentata come capability di data integration/data quality coerente con lo scenario, ma va verificata su entitlement, runtime, deployment e limiti tecnici.
 - Per ProSIGNAL resta da verificare il fit su file molto grandi, tracciati fixed-column e controlli cross-file.
 
 ## Riscontri Context7 Su Dagster E Metabase

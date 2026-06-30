@@ -6,6 +6,25 @@ Annotare i riscontri ottenuti tramite Context7 sulla documentazione Qlik, da usa
 
 Queste note non sostituiscono una verifica commerciale su licenze, packaging o limiti contrattuali.
 
+## Riscontro Web Ufficiale Pricing
+
+Fonti consultate il 2026-06-30:
+
+- Qlik Cloud Analytics Plans and Pricing: `https://www.qlik.com/us/pricing`
+- Qlik Talend Cloud Plans and Pricing: `https://www.qlik.com/us/pricing/data-integration-products-pricing`
+
+Riscontri utili:
+
+- La pagina Analytics presenta piani Starter, Standard, Premium ed Enterprise per Qlik Cloud Analytics.
+- Nei piani Analytics, Qlik cita l'uso di Qlik Talend Cloud per muovere dati verso Qlik Cloud Analytics e capability aggiuntive su sorgenti Qlik Talend Cloud.
+- La pagina Data Integration presenta Qlik Talend Cloud con piani propri: Starter, Standard, Premium ed Enterprise.
+- La FAQ Qlik Talend Cloud descrive un modello di subscription a capacita' per edizione; l'usage e' misurato con una combinazione di volume dati mossi, numero di job execution e durata delle execution.
+
+Implicazione per il deck:
+
+- Possiamo presentare lo scenario come `Talend/Qlik` o `Qlik Cloud Analytics Premium + capability Qlik Talend Cloud`.
+- Non dobbiamo scrivere che una licenza Analytics Premium conferma automaticamente tutto Talend. Prima di economics o architettura esecutiva serve verifica del tenant/contratto.
+
 ## Fonti Context7
 
 ### Qlik Help
@@ -51,14 +70,15 @@ Sorgenti
 
 ## Claim Da Non Fare Senza Verifica
 
-- Non affermare che Talend e' incluso in Qlik Cloud Analytics Premium.
+- Non affermare che tutte le capability Talend sono incluse in Qlik Cloud Analytics Premium.
+- Non affermare entitlement, limiti di capacita' o costi senza verifica commerciale/tenant.
 - Non affermare che Qlik/Talend copra senza custom tutti i casi ProSIGNAL, soprattutto file grandi, fixed-column e controlli cross-file.
 - Non affermare costi o range economici Qlik senza fonte commerciale.
 - Non affermare che Qlik Automate sostituisce sempre un orchestratore data engineering.
 
 ## Gap Da Verificare
 
-- Packaging commerciale effettivo di Qlik Cloud Analytics Premium e Talend.
+- Packaging commerciale effettivo di Qlik Cloud Analytics Premium e Qlik Talend Cloud nel contratto/tenant disponibile.
 - Runtime/deployment Talend nel contesto target.
 - Limiti su volumi, scheduling, task chain, refresh e run log applicabili al tenant/licenza.
 - Fit tecnico su fixed-column file processing e file molto grandi.
@@ -72,7 +92,7 @@ Sorgenti
 
 ## Review
 
-- Le note distinguono capability documentate e aspetti commerciali da verificare.
+- Le note distinguono capability documentate, pricing pubblico e aspetti commerciali da verificare.
 - Non sono stati introdotti prezzi, promesse di licenza o limiti quantitativi non supportati.
 - I risultati sono coerenti con i draft `08-scenario-comparison.md` e `10-architecture-brief.md`.
 

@@ -34,7 +34,7 @@ Questo documento prepara le slide comparative. Non contiene una raccomandazione 
 
 - Qlik Cloud Analytics Premium come target presentation/analytics;
 - Talend come opzione di data integration;
-- ipotesi da verificare: Talend potrebbe essere compreso nella licenza Qlik.
+- Qlik pricing ufficiale indica alcune capability/connessioni Qlik Talend Cloud dentro i piani Analytics, ma Qlik Talend Cloud ha anche pricing e piani propri per Data Integration and Quality.
 
 **Posizionamento:** scenario enterprise/product-oriented, con forte copertura su integrazione dati e analytics gestita.
 
@@ -44,7 +44,9 @@ Questo documento prepara le slide comparative. Non contiene una raccomandazione 
 - Qlik Help descrive Qlik Talend Cloud come pacchetto unificato di data integration e data quality per pipeline che producono dati trusted.
 - Qlik Automate viene documentato come interfaccia no-code per automatizzare workflow analytics e data workflow.
 - Qlik Developer documenta API per task, task chain, run, log, reload e automazioni, utili per operationalization e monitoraggio.
-- Non risulta verificato da Context7 che Talend sia incluso nella licenza Qlik Cloud Analytics Premium: resta un punto commerciale/contrattuale da confermare.
+- La pagina ufficiale Qlik Cloud Analytics pricing cita l'uso di Qlik Talend Cloud per muovere dati verso Qlik Cloud Analytics e capability aggiuntive per sorgenti Qlik Talend Cloud.
+- La pagina ufficiale Qlik Talend Cloud pricing presenta Starter, Standard, Premium ed Enterprise come piani dedicati, con usage/capacity legata a volumi mossi, esecuzioni job e durata di esecuzione.
+- Implicazione: nel deck si puo' dire che Scenario B usa Qlik Cloud Analytics Premium con capability Talend/Qlik per data integration, ma non che ogni capability Talend sia gia' compresa senza verifica contrattuale.
 
 ## Parti Comuni
 
@@ -97,14 +99,14 @@ Questo documento prepara le slide comparative. Non contiene una raccomandazione 
 ### Scenario B - Benefici
 
 - Potenziale fit enterprise se Qlik Cloud Analytics Premium e' gia' scelto o disponibile.
-- Possibile riduzione del lavoro custom su ingestion/data integration se Talend copre i connettori necessari.
+- Possibile riduzione del lavoro custom su ingestion/data integration se le capability Talend/Qlik disponibili coprono i connettori necessari.
 - Forte posizionamento su analytics/presentation.
 - Potenzialmente piu' rapido se licenze, tenant e competenze sono gia' disponibili.
 - Puo' essere piu' leggibile per clienti che preferiscono stack BI/integration consolidati.
 
 ### Scenario B - Limiti / blocker
 
-- Licensing/package Talend + Qlik da verificare prima di qualunque claim.
+- Entitlement, limiti e costi Talend/Qlik da verificare sul contratto/tenant prima di qualunque claim definitivo.
 - Possibile lock-in maggiore sullo stack prodotto.
 - Runtime, deployment, costi e governance Talend devono essere chiariti.
 - Riuso cross-cliente potrebbe dipendere da configurazioni tenant/licenze/progetti.
@@ -116,7 +118,7 @@ Questo documento prepara le slide comparative. Non contiene una raccomandazione 
 |---|---|---|
 | Riuso | Alto se si standardizzano asset, modelli, template e convenzioni | Alto se connettori/job/template sono riusabili tra tenant/progetti |
 | Scalabilita' | Buona, legata a design AWS, database e orchestrazione | Buona, ma dipendente da limiti/licensing/runtime Qlik/Talend |
-| Costi | Più infrastruttura/run/competenze; licenze potenzialmente minori | Più licensing/subscription; minore custom se stack gia' disponibile |
+| Costi | Più infrastruttura/run/competenze; licenze potenzialmente minori | Più subscription/capacity; minore custom se capability e tenant sono gia' disponibili |
 | Rapidita' iniziale | Rapida se si riusa CDG; piu' lenta se serve setup completo | Rapida se licenze/tenant/connettori sono pronti; altrimenti da verificare |
 | Complessita' | Maggiore lato engineering e operations | Maggiore lato prodotto/licensing/governance vendor |
 | Skill richieste | Data engineering, AWS, SQL/dbt, Python, BI | Talend, Qlik, data integration, BI governance |
@@ -155,8 +157,8 @@ Range da stimare in discovery
 
 | Caso | Priorita' | Scenario A | Scenario B | Nota |
 |---|---|---|---|---|
-| ING ProSIGNAL | Alta | Forte se servono processing custom, file grandi, controlli specifici | Forte se Qlik/Talend copre ingestion/quality e analytics con minor custom | Materiali vault acquisiti; mancano esempi file/tracciati/output |
-| Kiron CDG | Alta | Buono: caso documentato con Actual, Forecast, riconciliazione e output BI-ready | Buono se lo stack Qlik e' preferito o disponibile per cliente | Restano da chiarire eventuali open point sulle regole |
+| ING ProSIGNAL | Alta | Forte se servono processing custom, file grandi, controlli specifici | Forte se Qlik/Talend copre ingestion/quality e analytics con minor custom | Materiali vault acquisiti; altri esempi non disponibili ora |
+| Kiron CDG | Alta | Buono: caso documentato con Actual, Forecast, riconciliazione e output BI-ready | Buono se lo stack Qlik e' preferito o disponibile per cliente | Nessun altro chiarimento atteso ora; eventuali open point restano rischi dichiarati |
 | CDG interno | Media | Molto coerente con lavoro esistente | Possibile scenario alternativo, ma meno allineato allo stato corrente | Utile come reference implementation |
 
 ## grill-with-docs
@@ -168,7 +170,7 @@ Range da stimare in discovery
 ## Review
 
 - Tutti i criteri richiesti dall'utente sono coperti.
-- Le informazioni non verificate su licensing e deployment sono marcate come gap.
+- Le informazioni Qlik/Talend sono aggiornate con fonti ufficiali; entitlement, deployment e limiti restano gap contrattuali/tecnici.
 - Non ci sono prezzi, date o effort inventati.
 
 ## Humanize

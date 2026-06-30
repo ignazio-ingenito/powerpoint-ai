@@ -66,8 +66,8 @@ Questa inventory non e' ancora una storyline e non contiene claim commerciali de
 ## Materiali Da Recuperare Dopo
 
 - Confronto puntuale tra documentazione Internal CDG e implementazione corrente del repo `cdg-data-pipeline`.
-- Eventuali chiarimenti Kiron su regole ancora marcate come da definire/open point nel materiale sorgente.
-- Materiali ProSIGNAL aggiuntivi: esempi file, tracciati, output attesi, allegati SharePoint autorizzati, limiti OutSystems su file grandi, vincoli tecnici aggiornati.
+- Kiron: nessun altro chiarimento atteso dall'utente ora; eventuali regole ancora marcate come da definire/open point nel materiale sorgente vanno dichiarate come rischi/assunzioni.
+- ProSIGNAL: nessun altro esempio disponibile ora; esempi file, tracciati, output attesi, allegati SharePoint autorizzati, limiti OutSystems su file grandi e vincoli tecnici aggiornati restano materiali mancanti da non inventare.
 - Eventuali deck o appunti gia' esistenti su CDG/Kiron/ProSIGNAL.
 - Screenshot o export Metabase/NocoDB/Dagster autorizzati, se servono come evidenza visuale.
 - Eventuali materiali in repository o cartelle con naming specifico Kiron: la ricerca in `../` e nel vault Obsidian TXT Novigo non ha trovato cartelle o file dedicati con quel nome.
@@ -75,8 +75,12 @@ Questa inventory non e' ancora una storyline e non contiene claim commerciali de
 
 ## Domande Aperte Prima Della Storyline
 
-1. La presentazione deve vendere una blueprint interna, ottenere approvazione R&D, o diventare una proposta cliente?
-2. Audience primaria: CEO/C-level, IT management, delivery team, PMO, o stakeholder business?
-3. Quanto ProSIGNAL deve pesare nel deck rispetto a CDG?
+Queste domande sono state in larga parte risolte nella direzione successiva:
+
+- il deck serve a presentare due ipotesi al CEO/Gianfranco, CTO e Tech Committee;
+- il deck resta neutrale e abilita una discussione, senza chiudere la scelta;
+- ProSIGNAL e Kiron hanno priorita' rispetto al CDG interno;
+- Kiron non ha altri chiarimenti disponibili ora;
+- ProSIGNAL non ha altri esempi disponibili ora.
 4. Vogliamo includere effort/economics o limitarci a principi, roadmap e capability?
 5. Possiamo usare contenuti del deck `CDG Process Reengineering.pptx` come reference/contesto, o solo come materiale interno da sintetizzare?

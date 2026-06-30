@@ -113,7 +113,7 @@ La blueprint pero' deve evitare che il layer applicativo diventi il motore princ
 ## Gap Da Chiudere
 
 - Confronto tra documentazione Internal CDG e implementazione corrente del repo `cdg-data-pipeline`.
-- Chiarimenti Kiron su regole ancora marcate come da definire/open point nel materiale sorgente.
-- Esempi file/tracciati/output ProSignal, soprattutto Lease e Conto Arancio, se disponibili e autorizzati.
+- Kiron: nessun altro chiarimento atteso dall'utente ora; eventuali open point del materiale sorgente restano assunzioni/rischi.
+- ProSignal: nessun altro esempio disponibile ora; i claim su Lease, Conto Arancio, file grandi e controlli cross-file devono restare ipotesi/best practice.
 - Limiti tecnici OutSystems sul caricamento file grandi, se il deck deve entrare nel disegno applicativo.
 - Decisione se includere una parte economics oppure limitarsi a blueprint e roadmap.
