@@ -1,0 +1,16 @@
+source:
+  file: input/xls/Etichette issue.xlsx
+  sheet: "Issue type"
+
+target:
+  database: configured_mariadb_database
+  table: raw_xls_etichette_issue
+
+columns:
+  "Issue Type": issue_type
+
+load_options:
+  truncate_before_load: true
+  required_columns:
+    - issue_type
+  generated_columns: []

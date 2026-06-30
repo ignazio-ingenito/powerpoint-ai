@@ -1,0 +1,79 @@
+gantt
+    title CDG Process Reengineering
+    dateFormat  YYYY-MM-DD
+    axisFormat  %d-%m
+    todayMarker off
+
+    section Avvio e perimetro
+        Kick-off progetto e allineamento stakeholder :CDG-001, 2026-06-01, 1d
+        Definizione perimetro funzionale e tecnico :CDG-002, after CDG-001, 3d
+        Raccolta documentazione esistente e asset di progetto :CDG-003, after CDG-001, 2d
+        Impostazione piano di lavoro e governance progetto :CDG-004, after CDG-002, 2d
+
+    section Assessment AS-IS
+        Analisi fonti SAP, Jira/Tempo, CDG APP e tabelle mapping :CDG-005, after CDG-003, 5d
+        Mappatura flussi input grezzi e dipendenze applicative :CDG-006, after CDG-005, 4d
+        Analisi qualità dati e gap principali :CDG-007, after CDG-005, 4d
+        Identificazione manualità, pain point e rischi operativi :CDG-008, after CDG-006, 3d
+        Validazione assessment AS-IS :CDG-009, after  CDG-008, 1d
+
+    section Disegno TO-BE
+        Disegno modello dati normalizzato :CDG-010, after CDG-009, 5d
+        Definizione regole di normalizzazione :CDG-011, after CDG-010, 4d
+        Definizione regole di arricchimento e ribaltamento costi :CDG-012, after CDG-010, 5d
+        Definizione validità temporale mapping e storicizzazione regole :CDG-013, after CDG-011, 3d
+        Disegno controlli, quadrature e data quality :CDG-014, after CDG-012, 4d
+        Disegno profili, ownership dati e sicurezza accessi :CDG-015, after CDG-009, 3d
+        Validazione disegno TO-BE :CDG-016, after  CDG-015, 1d
+
+    section Setup Ambienti
+        Setup ambienti dev/test/prod :CDG-017, after CDG-016, 4d
+        Configurazione staging area e pipeline dati :CDG-018, after CDG-017, 5d
+        Configurazione batch notturni e schedulazione :CDG-019, after CDG-018, 3d
+        Logging tecnico e monitoraggio applicativo :CDG-020, after CDG-018, 3d
+        Gestione profili e accessi applicativi :CDG-021, after  CDG-017, 2d
+
+    section Normalizzazione
+        Import dati da SAP :CDG-022, after CDG-018, 5d
+        Import dati da Jira/Tempo :CDG-023, after CDG-018, 4d
+        Import dati da CDG APP :CDG-024, after CDG-018, 4d
+        Implementazione normalizzazione e mapping :CDG-025, after  CDG-024, 8d
+        Gestione scarti e anomalie di normalizzazione :CDG-026, after CDG-025, 4d
+        Storicizzazione input grezzi e dati normalizzati :CDG-027, after CDG-025, 4d
+        Validazione normalizzazione con utenti CDG :CDG-028, after  CDG-027, 2d
+
+    section Elaborazioni
+        Implementazione regole di arricchimento :CDG-029, after  CDG-028, 6d
+        Implementazione ribaltamento costi :CDG-030, after CDG-029, 8d
+        Gestione versioning e storicizzazione regole :CDG-031, after  CDG-030, 4d
+        Implementazione quadrature fonte vs output :CDG-032, after  CDG-030, 5d
+        Audit trail elaborazioni e lineage dati :CDG-033, after  CDG-032, 4d
+        Validazione elaborazioni e quadrature CDG :CDG-034, after  CDG-033, 2d
+
+    section Dashboard e Output
+        Raccolta requisiti dashboard CDG :CDG-035, after CDG-016, 3d
+        Implementazione dashboard CDG :CDG-036, after CDG-035, 7d
+        Implementazione dashboard tecnica batch :CDG-037, after  CDG-036, 4d
+        Configurazione notifiche mail esito elaborazioni :CDG-038, after  CDG-037, 3d
+        Performance e UX review dashboard :CDG-039, after CDG-036, 3d
+        Validazione output e dashboard :CDG-040, after  CDG-039, 2d
+
+    section Test e parallel run
+        Preparazione test plan e casi UAT :CDG-041, after  CDG-040, 4d
+        Esecuzione UAT con key user :CDG-042, after CDG-041, 6d
+        Parallel run su periodo campione :CDG-043, after  CDG-041, 6d
+        Riconciliazione differenze e correzioni prioritarie :CDG-044, after  CDG-043, 5d
+        Definizione cut-over e freeze periodi chiusi :CDG-045, after CDG-044, 3d
+        Go-live readiness review :CDG-046, after  CDG-045, 1d
+
+    section Go live e hypercare
+        Redazione runbook operativo :CDG-047, after CDG-046, 3d
+        Formazione utenti e handover operativo :CDG-048, after CDG-047, 3d
+        Go-live controllato :CDG-049, after  CDG-048, 2d
+        Supporto primo ciclo di chiusura :CDG-050, after CDG-049, 5d
+        Consolidamento backlog evolutive post go-live :CDG-051, after CDG-050, 2d
+
+    section Evolutive opzionali
+        Assessment porting dati HR su CDG APP :CDG-052, after CDG-051, 3d
+        POC AI per anomaly detection sui controlli :CDG-053, after  CDG-052, 5d
+        Disegno notifiche evolute e automazioni avanzate :CDG-054, after  CDG-053, 3d

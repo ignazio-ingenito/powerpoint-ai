@@ -1,0 +1,22 @@
+source:
+  file: input/xls/WBS Category.xlsx
+  sheet: "Regole WBS"
+
+target:
+  database: configured_mariadb_database
+  table: raw_xls_wbs_category
+
+columns:
+  "WBS Priority": wbs_priority
+  "Attività specifica": attivita_specifica
+  "Tipo WBS": tipo_wbs
+  "Priorità per rettifiche": priorita_per_rettifiche
+  "Cluster priority": cluster_priority
+  "Voce": voce
+  "Macro voce": macro_voce
+
+load_options:
+  truncate_before_load: true
+  required_columns:
+    - wbs_priority
+  generated_columns: []

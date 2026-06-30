@@ -1,0 +1,19 @@
+source:
+  file: input/xls/Sintesi storico SD.xlsx
+  sheet: "Backlog complessivo"
+
+target:
+  database: configured_mariadb_database
+  table: raw_xls_sintesi_storico_sd
+
+columns:
+  "Mese": mese
+  "Backlog": backlog
+  "Aperti": aperti
+  "Risolti": risolti
+
+load_options:
+  truncate_before_load: true
+  required_columns:
+    - mese
+  generated_columns: []

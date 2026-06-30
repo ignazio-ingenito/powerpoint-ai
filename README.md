@@ -14,7 +14,8 @@ Ogni artefatto finale deve passare da `Critic`, `Review` e ultima passata `human
 
 ## Regole Minime
 
-- Non inventare fatti, costi, date, scope, commitment o benefici.
+- Non inventare fatti, costi, date, scope, commitment, benefici, contenuti o informazioni non presenti nelle fonti o non richiesti esplicitamente.
+- Se un documento, link o allegato citato non e' raggiungibile, chiedere all'utente di recuperarlo o fornirlo; non ricostruirne il contenuto per inferenza.
 - Marca sempre **fatti confermati**, **inferenze**, **stime**, **assunzioni** e **domande aperte**.
 - Se procedi usando assunzioni, dichiarale anche nel messaggio all'utente.
 - Mantieni le cinque sezioni cardine: `Contesto / Esigenza / Obiettivi`, `AS IS`, `TO BE`, `Piano di lavoro`, `Economics`.
@@ -243,7 +244,8 @@ Genera un deck PowerPoint pronto per una lettura executive usando:
 - yyyy-mm-dd-<nome-progetto>/visual-references/
 
 Rispetta contenuti obbligatori, guardrail e livelli Creative freedom.
-Non inventare claim, prezzi, date o commitment.
+Non inventare claim, prezzi, date, commitment, contenuti o informazioni non presenti nelle fonti o non richiesti esplicitamente.
+Se una fonte citata non e' raggiungibile, segnalarla come mancante e chiedere all'utente di recuperarla prima di usarne il contenuto.
 ```
 
 ### 6. Genera il PPTX con Codex
@@ -338,7 +340,8 @@ Usa il workflow di questo repo PowerPoint:
 5. poi Creative Handoff;
 6. aspetta approvazione prima di generare il PPTX.
 
-Non inventare dati, costi, date, benefici o commitment.
+Non inventare dati, costi, date, benefici, commitment, contenuti o informazioni non presenti nelle fonti o non richiesti esplicitamente.
+Se un documento necessario non e' raggiungibile, chiedere all'utente di recuperarlo o fornirlo; non sostituirlo con contenuto plausibile.
 Se usi assunzioni per procedere, dichiarale nella risposta prima di generare l'artefatto.
 Se mancano informazioni critiche, chiedi.
 ```

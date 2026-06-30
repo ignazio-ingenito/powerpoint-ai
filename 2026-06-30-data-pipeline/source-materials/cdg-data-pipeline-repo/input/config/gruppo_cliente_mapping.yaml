@@ -1,0 +1,17 @@
+source:
+  file: input/xls/Gruppo cliente.xlsx
+  sheet: "Gruppo cliente"
+
+target:
+  database: configured_mariadb_database
+  table: raw_xls_gruppo_cliente
+
+columns:
+  "Customer Name": customer_name
+  "Gruppo cliente": gruppo_cliente
+
+load_options:
+  truncate_before_load: true
+  required_columns:
+    - customer_name
+  generated_columns: []

@@ -1,0 +1,22 @@
+source:
+  file: input/xls/Account Category.xlsx
+  sheet: "Account Category"
+
+target:
+  database: configured_mariadb_database
+  table: raw_xls_account_category
+
+columns:
+  "Key Category": key_category
+  "Interne/Cliente": interne_cliente
+  "Profit center": profit_center
+  "Attività specifica": attivita_specifica
+  "Attività generale": attivita_generale
+  "Specifica T&M": specifica_t_e_m
+  "Account category name": account_category_name
+
+load_options:
+  truncate_before_load: true
+  required_columns:
+    - key_category
+  generated_columns: []

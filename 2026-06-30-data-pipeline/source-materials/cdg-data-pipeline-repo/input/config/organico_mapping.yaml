@@ -1,0 +1,62 @@
+source:
+  file: input/xls/Organico.xlsx
+  sheet: "Organico"
+
+target:
+  database: configured_mariadb_database
+  table: raw_xls_organico
+
+columns:
+  "Nome Cognome JIRA": nome_cognome_jira
+  "Cognome Nome SAP": cognome_nome_sap
+  "Cognome+Nome": cognome_nome
+  "Stato": stato
+  "Categoria": categoria
+  "Company": company
+  "Team new": team_new
+  "Area new": area_new
+  "Ruolo Novigo New": ruolo_novigo_new
+  "Ruolo Novigo Old": ruolo_novigo_old
+  "Ruolo 1 Capacity": ruolo_1_capacity
+  "Ruolo 2 Capacity": ruolo_2_capacity
+  "Tipo": tipo
+  "Codice JIRA": codice_jira
+  "Personnel number - CID": personnel_number_cid
+  "Nome": nome
+  "Cognome": cognome
+  "Codice Fiscale": codice_fiscale
+  "Sesso": sesso
+  "Data di Nascita": data_di_nascita
+  "Età": eta
+  "Cittadinanza": cittadinanza
+  "Luogo di nascita": luogo_di_nascita
+  "Provincia di Nascita": provincia_di_nascita
+  "Cap": cap
+  "Citta di residenza": citta_di_residenza
+  "Provincia di Residenza": provincia_di_residenza
+  "Indirizzo di residenza": indirizzo_di_residenza
+  "Titolo di studio": titolo_di_studio
+  "Indirizzo di studio": indirizzo_di_studio
+  "Data Inizio Stage": data_inizio_stage
+  "Data fine Stage": data_fine_stage
+  "Data Assunzione": data_assunzione
+  "Data scadenza contratto": data_scadenza_contratto
+  "Cessazione": cessazione
+  "Team": team
+  "Mail": mail
+  "P.": p
+  "Orario": orario
+  "Check ore": check_ore
+  "ID Manager": id_manager
+  "ID MANAGER SAP": id_manager_sap
+  "URL foto": url_foto
+  "ACT Type": act_type
+  "CAMPO 3": campo_3
+  "CAMPO 4": campo_4
+  "CAMPO 5": campo_5
+
+load_options:
+  truncate_before_load: true
+  required_columns:
+    - nome_cognome_jira
+  generated_columns: []

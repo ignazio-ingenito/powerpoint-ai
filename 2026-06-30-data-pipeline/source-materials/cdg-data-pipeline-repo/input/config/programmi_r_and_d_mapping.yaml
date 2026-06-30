@@ -1,0 +1,17 @@
+source:
+  file: input/xls/Programmi R&D.xlsx
+  sheet: "Sheet1"
+
+target:
+  database: configured_mariadb_database
+  table: raw_xls_programmi_r_and_d
+
+columns:
+  "Programma": programma
+  "Account Jira": account_jira
+
+load_options:
+  truncate_before_load: true
+  required_columns:
+    - programma
+  generated_columns: []

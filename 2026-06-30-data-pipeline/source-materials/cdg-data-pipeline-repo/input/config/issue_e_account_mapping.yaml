@@ -1,0 +1,22 @@
+source:
+  file: input/xls/Issue e account.xlsx
+  sheet: "Sheet1"
+
+target:
+  database: configured_mariadb_database
+  table: raw_xls_issue_e_account
+
+columns:
+  "Issue key": issue_key
+  "Account key": account_key
+  "Campo 1": campo_1
+  "Campo 2": campo_2
+  "Campo 3": campo_3
+  "Campo 4": campo_4
+  "Campo 5": campo_5
+
+load_options:
+  truncate_before_load: true
+  required_columns:
+    - issue_key
+  generated_columns: []

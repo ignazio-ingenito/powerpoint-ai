@@ -71,7 +71,9 @@ Partire sempre da:
 
 Rileggere sempre il contenuto aggiornato delle cartelle di riferimento prima di lavorare. Non basarsi su letture precedenti, memoria della sessione o assunzioni su versioni passate, perché `docs/` e `docs/ui/` possono essere aggiornate nel tempo.
 
-Considerare `docs/` come fonte primaria per struttura, metodo e contenuti della presentazione. Non inventare fatti, impegni, costi, date, perimetro progettuale, tecnologie, claim commerciali, esempi, dettagli cliente o dettagli implementativi che non siano presenti nei materiali sorgente o chiaramente forniti dall'utente.
+Considerare `docs/` come fonte primaria per struttura, metodo e contenuti della presentazione. Non inventare fatti, impegni, costi, date, perimetro progettuale, tecnologie, claim commerciali, esempi, dettagli cliente, dettagli implementativi, contenuti o informazioni che non siano presenti nei materiali sorgente o chiaramente forniti dall'utente.
+
+Se un documento, link, allegato, deck, file SharePoint/Drive/OneDrive o altro materiale citato non e' raggiungibile, non ricostruirne il contenuto per inferenza e non sostituirlo con contenuti plausibili. Segnalarlo all'utente e chiedere di recuperare o fornire il documento, indicando esattamente quale fonte manca e perche' e' necessaria.
 
 ## Struttura Per Presentazione
 
@@ -118,7 +120,7 @@ Uso previsto:
 
 La root deve restare l'indice dei progetti e delle regole comuni, non una destinazione per output o working draft di singole presentazioni.
 
-Se un contenuto manca, è ambiguo o non è sufficientemente specificato, chiedere all'utente prima di colmare il vuoto. Fare assunzioni o creare contenuti placeholder solo quando l'utente lo chiede esplicitamente. Quando le assunzioni sono richieste, dichiararle in modo esplicito e facilmente verificabile nel documento e nel messaggio di handoff.
+Se un contenuto manca, è ambiguo, non è sufficientemente specificato o dipende da un documento non raggiungibile, chiedere all'utente prima di colmare il vuoto. Fare assunzioni o creare contenuti placeholder solo quando l'utente lo chiede esplicitamente. Quando le assunzioni sono richieste, dichiararle in modo esplicito e facilmente verificabile nel documento e nel messaggio di handoff.
 
 ## Storyline Standard
 

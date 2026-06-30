@@ -1,0 +1,73 @@
+services:
+  dagster-webserver:
+    build:
+      context: ./dagster
+      dockerfile: Dockerfile
+    container_name: lab-dagster-web
+    restart: unless-stopped
+    command: dagster-webserver -h 0.0.0.0 -p 3001 -w /opt/dagster/app/workspace.yaml
+    working_dir: /opt/dagster/app
+    environment:
+      DAGSTER_HOME: /opt/dagster/dagster_home
+      MARIADB_HOST: ${MARIADB_HOST:?MARIADB_HOST is required}
+      MARIADB_PORT: ${MARIADB_PORT:?MARIADB_PORT is required}
+      MARIADB_USER: ${MARIADB_USER:?MARIADB_USER is required}
+      MARIADB_PASSWORD: ${MARIADB_PASSWORD:?MARIADB_PASSWORD is required}
+      MARIADB_DATABASE: ${MARIADB_DATABASE:?MARIADB_DATABASE is required}
+      DAGSTER_MARIADB_DATABASE: ${MARIADB_DATABASE:?MARIADB_DATABASE is required}
+      DAGSTER_MYSQL_URL: ${DAGSTER_MYSQL_URL:-mysql+mysqlconnector://${MARIADB_USER:?MARIADB_USER is required}:${MARIADB_PASSWORD:?MARIADB_PASSWORD is required}@${MARIADB_HOST:?MARIADB_HOST is required}:${MARIADB_PORT:?MARIADB_PORT is required}/${MARIADB_DATABASE:?MARIADB_DATABASE is required}?ssl_disabled=${DAGSTER_MYSQL_SSL_DISABLED:-true}}
+      JIRA_BASE_URL: ${JIRA_BASE_URL:-}
+      JIRA_EMAIL: ${JIRA_EMAIL:-}
+      JIRA_API_TOKEN: ${JIRA_API_TOKEN:-}
+      JIRA_ISSUE_JQL: ${JIRA_ISSUE_JQL:-}
+      JIRA_MAX_RESULTS: ${JIRA_MAX_RESULTS:-}
+      JIRA_PAGE_SIZE: ${JIRA_PAGE_SIZE:-100}
+      JIRA_REQUEST_TIMEOUT: ${JIRA_REQUEST_TIMEOUT:-180}
+      API_REQUEST_RETRIES: ${API_REQUEST_RETRIES:-3}
+      API_RETRY_BACKOFF_SECONDS: ${API_RETRY_BACKOFF_SECONDS:-10}
+      TEMPO_BASE_URL: ${TEMPO_BASE_URL:-https://api.tempo.io/4}
+      TEMPO_API_TOKEN: ${TEMPO_API_TOKEN:-}
+      REF_MAPPING_CONFIG: ${REF_MAPPING_CONFIG:-input/config/xls_mappings_index.yaml}
+      REF_MAPPING_DIR: ${REF_MAPPING_DIR:-input/config}
+    volumes:
+      - ./dagster:/opt/dagster/app
+      - ./init:/opt/dagster/app/init:ro
+      - ./input:/opt/dagster/app/input:ro
+      - ./dagster/dagster.yaml:/opt/dagster/dagster_home/dagster.yaml
+    ports:
+      - "3001:3001"
+  dagster-daemon:
+    build:
+      context: ./dagster
+      dockerfile: Dockerfile
+    container_name: lab-dagster-daemon
+    restart: unless-stopped
+    command: dagster-daemon run
+    working_dir: /opt/dagster/app
+    environment:
+      DAGSTER_HOME: /opt/dagster/dagster_home
+      MARIADB_HOST: ${MARIADB_HOST:?MARIADB_HOST is required}
+      MARIADB_PORT: ${MARIADB_PORT:?MARIADB_PORT is required}
+      MARIADB_USER: ${MARIADB_USER:?MARIADB_USER is required}
+      MARIADB_PASSWORD: ${MARIADB_PASSWORD:?MARIADB_PASSWORD is required}
+      MARIADB_DATABASE: ${MARIADB_DATABASE:?MARIADB_DATABASE is required}
+      DAGSTER_MARIADB_DATABASE: ${MARIADB_DATABASE:?MARIADB_DATABASE is required}
+      DAGSTER_MYSQL_URL: ${DAGSTER_MYSQL_URL:-mysql+mysqlconnector://${MARIADB_USER:?MARIADB_USER is required}:${MARIADB_PASSWORD:?MARIADB_PASSWORD is required}@${MARIADB_HOST:?MARIADB_HOST is required}:${MARIADB_PORT:?MARIADB_PORT is required}/${MARIADB_DATABASE:?MARIADB_DATABASE is required}?ssl_disabled=${DAGSTER_MYSQL_SSL_DISABLED:-true}}
+      JIRA_BASE_URL: ${JIRA_BASE_URL:-}
+      JIRA_EMAIL: ${JIRA_EMAIL:-}
+      JIRA_API_TOKEN: ${JIRA_API_TOKEN:-}
+      JIRA_ISSUE_JQL: ${JIRA_ISSUE_JQL:-}
+      JIRA_MAX_RESULTS: ${JIRA_MAX_RESULTS:-}
+      JIRA_PAGE_SIZE: ${JIRA_PAGE_SIZE:-100}
+      JIRA_REQUEST_TIMEOUT: ${JIRA_REQUEST_TIMEOUT:-180}
+      API_REQUEST_RETRIES: ${API_REQUEST_RETRIES:-3}
+      API_RETRY_BACKOFF_SECONDS: ${API_RETRY_BACKOFF_SECONDS:-10}
+      TEMPO_BASE_URL: ${TEMPO_BASE_URL:-https://api.tempo.io/4}
+      TEMPO_API_TOKEN: ${TEMPO_API_TOKEN:-}
+      REF_MAPPING_CONFIG: ${REF_MAPPING_CONFIG:-input/config/xls_mappings_index.yaml}
+      REF_MAPPING_DIR: ${REF_MAPPING_DIR:-input/config}
+    volumes:
+      - ./dagster:/opt/dagster/app
+      - ./init:/opt/dagster/app/init:ro
+      - ./input:/opt/dagster/app/input:ro
+      - ./dagster/dagster.yaml:/opt/dagster/dagster_home/dagster.yaml

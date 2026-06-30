@@ -1,0 +1,17 @@
+mappings:
+  - input/config/account_category_mapping.yaml
+  # - input/config/corrispondeza_validita_raccordo_mapping.yaml
+  - input/config/customers_organization_mapping.yaml
+  - input/config/eccezioni_wbs_new_org_mapping.yaml
+  - input/config/etichette_issue_mapping.yaml
+  - input/config/gruppo_cliente_mapping.yaml
+  # - input/config/issue_e_account_mapping.yaml
+  - input/config/it_ops_gruppi_assignee_mapping.yaml
+  - input/config/it_ops_progetti_service_desk_mapping.yaml
+  # - input/config/kpi_target_mapping.yaml
+  - input/config/organico_mapping.yaml
+  - input/config/period_e_anno_mapping.yaml
+  - input/config/programmi_r_and_d_mapping.yaml
+  # - input/config/sintesi_storico_sd_mapping.yaml
+  - input/config/team_e_pm_mapping.yaml
+  - input/config/wbs_category_mapping.yaml

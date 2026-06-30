@@ -1,0 +1,23 @@
+source:
+  file: input/xls/Period e anno.xlsx
+  sheet: "Foglio1"
+
+target:
+  database: configured_mariadb_database
+  table: raw_xls_period_e_anno
+
+columns:
+  "Period": period
+  "Trimestre": trimestre
+  "Anno": anno
+  "CAMPO 1": campo_1
+  "CAMPO 2": campo_2
+  "CAMPO 3": campo_3
+  "CAMPO 4": campo_4
+  "CAMPO 5": campo_5
+
+load_options:
+  truncate_before_load: true
+  required_columns:
+    - period
+  generated_columns: []

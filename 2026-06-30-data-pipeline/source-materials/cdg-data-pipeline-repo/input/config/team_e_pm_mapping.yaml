@@ -1,0 +1,19 @@
+source:
+  file: input/xls/Team e PM.xlsx
+  sheet: "Team e PM"
+
+target:
+  database: configured_mariadb_database
+  table: raw_xls_team_e_pm
+
+columns:
+  "PM": pm
+  "team descrizione estesa": team_descrizione_estesa
+  "Team new": team_new
+  "Area new": area_new
+
+load_options:
+  truncate_before_load: true
+  required_columns:
+    - pm
+  generated_columns: []

@@ -1,0 +1,21 @@
+source:
+  file: input/xls/IT OPS gruppi assignee.xlsx
+  sheet: "Sheet1"
+
+target:
+  database: configured_mariadb_database
+  table: raw_xls_it_ops_gruppi_assignee
+
+columns:
+  "Team": team
+  "Personnel number - CID": personnel_number_cid
+  "Nome Cognome JIRA": nome_cognome_jira
+  "Cognome Nome SAP": cognome_nome_sap
+  "Ruolo": ruolo
+  "Gruppo Assignee": gruppo_assignee
+
+load_options:
+  truncate_before_load: true
+  required_columns:
+    - team
+  generated_columns: []

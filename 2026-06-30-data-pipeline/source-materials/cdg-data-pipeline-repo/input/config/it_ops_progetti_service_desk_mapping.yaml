@@ -1,0 +1,17 @@
+source:
+  file: input/xls/IT OPS progetti Service Desk.xlsx
+  sheet: "Sheet1"
+
+target:
+  database: configured_mariadb_database
+  table: raw_xls_it_ops_progetti_service_desk
+
+columns:
+  "Nome progetto": nome_progetto
+  "Natura": natura
+
+load_options:
+  truncate_before_load: true
+  required_columns:
+    - nome_progetto
+  generated_columns: []

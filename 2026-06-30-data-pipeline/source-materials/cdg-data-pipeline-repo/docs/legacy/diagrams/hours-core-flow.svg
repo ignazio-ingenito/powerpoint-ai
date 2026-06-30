@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="900" viewBox="0 0 1400 900">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto" markerUnits="strokeWidth">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#444"/>
+    </marker>
+    <style>
+      .box { rx: 14; ry: 14; stroke-width: 2; }
+      .src { fill: #dae8fc; stroke: #6c8ebf; }
+      .step { fill: #fff2cc; stroke: #d6b656; }
+      .proc { fill: #d5e8d4; stroke: #82b366; }
+      .ticket { fill: #f8cecc; stroke: #b85450; }
+      .out { fill: #e1d5e7; stroke: #9673a6; }
+      text { font-family: Arial, sans-serif; font-size: 22px; fill: #222; text-anchor: middle; dominant-baseline: middle; }
+      .bold { font-weight: 700; }
+      .edge { stroke: #444; stroke-width: 2.5; fill: none; marker-end: url(#arrow); }
+    </style>
+  </defs>
+
+  <rect class="box src" x="40" y="80" width="190" height="56"/><text x="135" y="108">Report ore new</text>
+  <rect class="box src" x="40" y="170" width="190" height="56"/><text x="135" y="198">Account Jira</text>
+  <rect class="box src" x="40" y="260" width="190" height="56"/><text x="135" y="288">Organico</text>
+  <rect class="box src" x="40" y="350" width="190" height="56"/><text x="135" y="378">Tabella di raccordo</text>
+  <rect class="box src" x="40" y="440" width="190" height="56"/><text x="135" y="468">WBS</text>
+  <rect class="box src" x="40" y="560" width="190" height="56"/><text x="135" y="588">Ticket</text>
+  <rect class="box src" x="40" y="650" width="190" height="56"/><text x="135" y="678">Issue e account</text>
+
+  <rect class="box step" x="330" y="80" width="250" height="56"/><text x="455" y="108">Report ore new raggruppato</text>
+  <rect class="box step" x="330" y="170" width="250" height="56"/><text x="455" y="198">Account Jira elaborato</text>
+  <rect class="box step" x="330" y="260" width="250" height="56"/><text x="455" y="288">Organico elaborato</text>
+  <rect class="box step" x="330" y="350" width="250" height="56"/><text x="455" y="378">Validita raccordo</text>
+  <rect class="box step" x="330" y="440" width="250" height="56"/><text x="455" y="468">WBS</text>
+
+  <rect class="box proc" x="660" y="170" width="300" height="68"/><text x="810" y="204">A-Report ore new raggruppato</text><text x="810" y="228">elaborato</text>
+  <rect class="box ticket" x="660" y="380" width="240" height="60"/><text x="780" y="410">B-Ticket elaborato</text>
+
+  <rect class="box out" x="1060" y="280" width="240" height="84"/><text class="bold" x="1180" y="322">Output All A+B</text>
+
+  <path class="edge" d="M230 108 H330"/>
+  <path class="edge" d="M230 198 H330"/>
+  <path class="edge" d="M230 288 H330"/>
+  <path class="edge" d="M230 378 H330"/>
+  <path class="edge" d="M230 468 H330"/>
+  <path class="edge" d="M230 588 H660"/>
+  <path class="edge" d="M230 678 H660"/>
+
+  <path class="edge" d="M580 108 C620 108, 620 190, 660 190"/>
+  <path class="edge" d="M580 198 H660"/>
+  <path class="edge" d="M580 288 C620 288, 620 214, 660 214"/>
+  <path class="edge" d="M580 378 C620 378, 620 228, 660 228"/>
+  <path class="edge" d="M580 468 C620 468, 620 238, 660 238"/>
+
+  <path class="edge" d="M580 198 C620 198, 620 390, 660 390"/>
+  <path class="edge" d="M580 288 C620 288, 620 430, 660 430"/>
+
+  <path class="edge" d="M900 410 H1060"/>
+  <path class="edge" d="M960 204 C1010 204, 1010 322, 1060 322"/>
+</svg>

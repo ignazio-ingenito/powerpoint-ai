@@ -1,0 +1,17 @@
+source:
+  file: input/xls/Customers - Organization.xlsx
+  sheet: "Organization"
+
+target:
+  database: configured_mariadb_database
+  table: raw_xls_customers_organization
+
+columns:
+  "Organization": organization
+  "presente in opzioni accettabili": presente_in_opzioni_accettabili
+
+load_options:
+  truncate_before_load: true
+  required_columns:
+    - organization
+  generated_columns: []

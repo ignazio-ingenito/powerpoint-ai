@@ -1,0 +1,16 @@
+source:
+  file: input/xls/KPI Target.xlsx
+  sheet: "KPI Target"
+
+target:
+  database: configured_mariadb_database
+  table: raw_xls_kpi_target
+
+columns:
+  "Target": target
+
+load_options:
+  truncate_before_load: true
+  required_columns:
+    - target
+  generated_columns: []

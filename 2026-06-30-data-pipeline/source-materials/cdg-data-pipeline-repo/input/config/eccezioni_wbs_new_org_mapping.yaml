@@ -1,0 +1,19 @@
+source:
+  file: input/xls/Eccezioni wbs new org.xlsx
+  sheet: "Eccezioni wbs new org"
+
+target:
+  database: configured_mariadb_database
+  table: raw_xls_eccezioni_wbs_new_org
+
+columns:
+  "WBS": wbs
+  "Descrizione WBS": descrizione_wbs
+  "Team commessa new": team_commessa_new
+  "Area commessa new": area_commessa_new
+
+load_options:
+  truncate_before_load: true
+  required_columns:
+    - wbs
+  generated_columns: []
