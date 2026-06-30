@@ -45,6 +45,7 @@ Regole:
 - Kiron CDG ha ora fonti specifiche in `source-materials/cdg-kiron/`: trattarlo come caso documentato, marcando come ipotesi solo i dettagli non coperti o gli open point.
 - ProSIGNAL ha fonti aggiornate dal vault, ma non esempi file/tracciati/output: segnalare i limiti come gap documentali, non inventare dettagli.
 - Per Talend/Qlik, le fonti ufficiali Qlik indicano capability Qlik Talend Cloud nei piani Analytics e piani Qlik Talend Cloud separati: formulare i claim come scenario coerente, non come licenza pienamente confermata.
+- Ipotesi economics utente per Qlik/Talend: piano 50 GB tra 30-50k EUR. Usarla come baseline provvisoria dichiarata, non come quotazione ufficiale.
 - Per claim su Talend, Qlik, Dagster, dbt, Metabase, cloud, licensing, costi, limiti e deployment, verificare documentazione aggiornata prima di scrivere affermazioni definitive.
 - Non inventare prezzi, date, effort o commitment.
 

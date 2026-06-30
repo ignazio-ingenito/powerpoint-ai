@@ -226,6 +226,12 @@ Per questa fase conviene usare tre viste:
 - **Implementazione progetto:** effort per adattare sorgenti, mapping, controlli e output.
 - **Run e licenze:** cloud/runtime, DB, BI/licensing, manutenzione.
 
+Ipotesi iniziale da usare per lo scenario Qlik/Talend:
+
+- piano 50 GB stimato dall'utente tra **30-50k EUR**;
+- trattarlo come range di discussione, non come prezzo impegnativo;
+- verificare periodo, IVA, sconti, utenti, capacity add-on, bundle e capability Talend/Qlik incluse prima di metterlo in una slide economica finale.
+
 Range consigliato in slide:
 
 ```text
@@ -234,7 +240,7 @@ oppure
 Basso / Medio / Alto
 ```
 
-Non usare valori economici fino a verifica licenze, hosting e perimetro.
+Usare il range 30-50k EUR solo come baseline provvisoria dichiarata. Non aggiungere altri valori economici fino a verifica licenze, hosting e perimetro.
 
 ## grill-with-docs
 

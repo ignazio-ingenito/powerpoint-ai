@@ -41,7 +41,7 @@ Per questa presentazione il flusso standard del repo viene adattato in modo espl
 - **Scenario Talend/Qlik:** Talend e' considerato come opzione. La ricerca su fonti ufficiali Qlik indica capability Qlik Talend Cloud dentro i piani Analytics e piani Qlik Talend Cloud separati per Data Integration and Quality; quindi il deck deve parlare di scenario coerente Talend/Qlik, ma non di licenza Talend pienamente confermata. Target BI indicato: **Qlik Cloud Analytics Premium**.
 - **Scenario Dagster/dbt/Metabase:** target cloud **AWS**. Compute candidato: **ECS o EC2**, non EKS. Database: **RDS o database cliente**, in funzione della volonta' del cliente e del modello di hosting.
 - **Priorita' casi target:** ProSIGNAL e Kiron sono clienti esterni e hanno priorita' rispetto al CDG interno.
-- **Economics:** non entrare in dettaglio; fornire una prima idea dei costi come range e driver, coerente con una blueprint.
+- **Economics:** non entrare in dettaglio; fornire una prima idea dei costi come range e driver, coerente con una blueprint. Ipotesi commerciale di partenza utente: piano Qlik/Talend da 50 GB nell'ordine di **30-50k EUR**, da confermare su contratto, periodo, IVA, perimetro e capability incluse.
 - **Metodo:** produrre gli artifact intermedi che migliorano il risultato prima di passare al PowerPoint.
 
 ## Guardrail
@@ -333,6 +333,7 @@ Prima del PPTX, produrre:
 ## Informazioni Da Verificare Prima Di Scrivere Claim
 
 - Entitlement, deployment e licensing Talend/Qlik effettivi sul tenant/contratto disponibile.
+- Confermare che il range utente **30-50k EUR** per piano 50 GB sia applicabile al perimetro Qlik/Talend usato nel deck, e chiarire periodo, IVA, sconti, bundle e capability incluse.
 - Limiti applicabili a tenant/licenze e contesto cliente per Qlik/Talend, Dagster/dbt/Metabase e deployment cloud.
 - Scelta database/warehouse per entrambi gli scenari.
 - Se la pipeline Dagster/dbt/Metabase deve essere tutta su AWS o mista.

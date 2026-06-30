@@ -41,7 +41,7 @@ Il confronto deve essere leggibile per C-level e Tech Committee:
 - Scenario Metabase: per questa fase si assume che Metabase possa essere accettato dal cliente come layer BI/presentation.
 - Scenario Qlik: usare Qlik Cloud Analytics Premium come target.
 - Scenario Talend/Qlik: le pagine ufficiali Qlik pricing indicano che Qlik Cloud Analytics include/muove dati con Qlik Talend Cloud e che Qlik Talend Cloud ha anche piani dedicati separati per Data Integration and Quality. Nel deck va quindi trattato come opzione coerente con Qlik, non come licenza Talend pienamente confermata.
-- Economics: range e driver di costo, non dettaglio di offerta.
+- Economics: range e driver di costo, non dettaglio di offerta. Ipotesi utente di partenza per scenario Qlik/Talend: piano da 50 GB tra **30-50k EUR**, da confermare commercialmente.
 
 ### Best practice / ipotesi di lavoro
 
@@ -53,7 +53,7 @@ Il confronto deve essere leggibile per C-level e Tech Committee:
 ### Da verificare prima del PPTX finale
 
 - Licensing e packaging contrattuali Talend/Qlik: verificare sul tenant/contratto quali capability Talend sono effettivamente abilitate e con quali limiti di capacita'.
-- Cost range indicativi: infrastruttura, licenze/subscription, delivery, run.
+- Cost range indicativi: infrastruttura, licenze/subscription, delivery, run. Per Qlik/Talend usare come baseline provvisoria **30-50k EUR** sul piano 50 GB, senza trasformarlo in quotazione definitiva.
 - Kiron: eventuali regole/open point non chiusi nella documentazione sorgente restano da trattare come rischi o assunzioni, non come contenuti inventati.
 - ProSIGNAL: esempi file/tracciati/output non sono disponibili ora; i claim su Lease, Conto Arancio, file grandi e controlli cross-file devono restare formulati come ipotesi o pattern comuni.
 - Requisiti specifici di access control, publishing, embedding/export e governance BI per Metabase, se richiesti dai clienti.
@@ -79,7 +79,7 @@ Il confronto deve essere leggibile per C-level e Tech Committee:
 | 14 | Proiezione casi | ProSIGNAL e Kiron guidano la priorita', CDG interno consolida la reference implementation | Applica i due scenari ai tre casi | `03`, `04`, appunti ProSignal, decisioni utente | ProSIGNAL/Kiron sopra CDG interno |
 | 15 | WBS | Le WBS dei tre progetti condividono una spina dorsale comune, ma cambiano sorgenti e controlli | Introduce WBS/processi/funzioni | `09-wbs-and-workplan.md` | Mappa tipo XMind |
 | 16 | Piano | Un piano comune riduce rischio e abilita riuso progressivo | Piano comune da WBS | `09-wbs-and-workplan.md` | Niente date inventate |
-| 17 | Economics | Per una blueprint servono range e driver, non una quotazione definitiva | Economics qualitativo/range | decisione utente | Suggerire range macro, da stimare |
+| 17 | Economics | Per una blueprint servono range e driver, non una quotazione definitiva | Economics qualitativo/range | decisione utente | Qlik/Talend 50 GB: 30-50k EUR come ipotesi, da confermare |
 | 18 | Discussione | Il comitato deve discutere trade-off, rischi e prossimi approfondimenti prima di una scelta | Chiusura aperta alla discussione | decisioni utente | Domande guida, non call to action decisionale |
 
 ## Slide Chiave Da Rendere Come Infografiche
@@ -98,7 +98,7 @@ Il confronto deve essere leggibile per C-level e Tech Committee:
 1. **Talend/Qlik licensing:** le fonti ufficiali Qlik separano pricing Analytics e pricing Qlik Talend Cloud; Qlik Cloud Analytics include alcune capability/connessioni Talend Cloud, ma entitlement, limiti e costi vanno confermati su contratto/tenant prima del PPTX finale.
 2. **Kiron CDG:** non sono attesi altri chiarimenti dall'utente in questa fase; eventuali open point delle regole restano assunzioni/rischi da dichiarare.
 3. **ING ProSIGNAL:** non sono disponibili altri esempi; i claim su fixed-column, file grandi e controlli cross-file devono restare best practice/ipotesi finche' non emergono tracciati reali.
-4. **Economics:** possiamo usare una stima a range/driver, ma servono almeno ipotesi commerciali su licenze Qlik/Talend e ipotesi cloud/run per rendere i range difendibili.
+4. **Economics:** per Qlik/Talend usiamo come ipotesi di partenza 30-50k EUR per il piano 50 GB; restano da chiarire periodo, IVA, sconti, capability incluse e ipotesi cloud/run per rendere i range difendibili.
 
 ## grill-with-docs
 
@@ -112,7 +112,7 @@ Il confronto deve essere leggibile per C-level e Tech Committee:
 - Obiettivo di discussione, audience e neutralita' sono espliciti.
 - Le due opzioni sono entrambe rappresentate con mapping, architettura, benefici e limiti.
 - Le WBS e il piano comune sono demandati agli artifact dedicati.
-- Le informazioni di licensing/costi sono aggiornate con ricerca ufficiale Qlik, ma restano da confermare contrattualmente.
+- Le informazioni di licensing/costi sono aggiornate con ricerca ufficiale Qlik e ipotesi utente 50 GB / 30-50k EUR, ma restano da confermare contrattualmente.
 - Non sono stati introdotti prezzi, effort, date o commitment.
 
 ## Humanize

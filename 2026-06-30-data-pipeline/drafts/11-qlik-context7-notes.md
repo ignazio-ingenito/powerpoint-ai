@@ -24,6 +24,7 @@ Implicazione per il deck:
 
 - Possiamo presentare lo scenario come `Talend/Qlik` o `Qlik Cloud Analytics Premium + capability Qlik Talend Cloud`.
 - Non dobbiamo scrivere che una licenza Analytics Premium conferma automaticamente tutto Talend. Prima di economics o architettura esecutiva serve verifica del tenant/contratto.
+- Ipotesi utente per economics: piano 50 GB tra **30-50k EUR**. Usarlo solo come baseline provvisoria, non come prezzo ufficiale Qlik.
 
 ## Fonti Context7
 
@@ -72,6 +73,7 @@ Sorgenti
 
 - Non affermare che tutte le capability Talend sono incluse in Qlik Cloud Analytics Premium.
 - Non affermare entitlement, limiti di capacita' o costi senza verifica commerciale/tenant.
+- Non presentare il range 30-50k EUR come listino ufficiale o prezzo impegnativo.
 - Non affermare che Qlik/Talend copra senza custom tutti i casi ProSIGNAL, soprattutto file grandi, fixed-column e controlli cross-file.
 - Non affermare costi o range economici Qlik senza fonte commerciale.
 - Non affermare che Qlik Automate sostituisce sempre un orchestratore data engineering.
@@ -79,6 +81,7 @@ Sorgenti
 ## Gap Da Verificare
 
 - Packaging commerciale effettivo di Qlik Cloud Analytics Premium e Qlik Talend Cloud nel contratto/tenant disponibile.
+- Conferma commerciale del range 30-50k EUR per piano 50 GB: periodo, IVA, sconti, utenti, add-on e capability incluse.
 - Runtime/deployment Talend nel contesto target.
 - Limiti su volumi, scheduling, task chain, refresh e run log applicabili al tenant/licenza.
 - Fit tecnico su fixed-column file processing e file molto grandi.

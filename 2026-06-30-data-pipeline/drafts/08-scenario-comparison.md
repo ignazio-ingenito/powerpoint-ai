@@ -118,7 +118,7 @@ Questo documento prepara le slide comparative. Non contiene una raccomandazione 
 |---|---|---|
 | Riuso | Alto se si standardizzano asset, modelli, template e convenzioni | Alto se connettori/job/template sono riusabili tra tenant/progetti |
 | Scalabilita' | Buona, legata a design AWS, database e orchestrazione | Buona, ma dipendente da limiti/licensing/runtime Qlik/Talend |
-| Costi | Più infrastruttura/run/competenze; licenze potenzialmente minori | Più subscription/capacity; minore custom se capability e tenant sono gia' disponibili |
+| Costi | Più infrastruttura/run/competenze; licenze potenzialmente minori | Più subscription/capacity; baseline utente 50 GB: 30-50k EUR, da confermare |
 | Rapidita' iniziale | Rapida se si riusa CDG; piu' lenta se serve setup completo | Rapida se licenze/tenant/connettori sono pronti; altrimenti da verificare |
 | Complessita' | Maggiore lato engineering e operations | Maggiore lato prodotto/licensing/governance vendor |
 | Skill richieste | Data engineering, AWS, SQL/dbt, Python, BI | Talend, Qlik, data integration, BI governance |
@@ -142,6 +142,12 @@ Suggerimento:
   - run/manutenzione;
   - evolutive;
 - mostrare cosa guida il costo, non il prezzo finale.
+
+Ipotesi commerciale di partenza per Scenario B:
+
+- piano Qlik/Talend da 50 GB nell'ordine di **30-50k EUR**;
+- usare il range come baseline provvisoria per la discussione, non come quotazione;
+- chiarire prima del PPTX finale: periodo coperto, IVA, eventuali sconti, bundle, utenti, capacity add-on e capability Talend/Qlik effettivamente incluse.
 
 Possibile scala:
 
@@ -170,7 +176,7 @@ Range da stimare in discovery
 ## Review
 
 - Tutti i criteri richiesti dall'utente sono coperti.
-- Le informazioni Qlik/Talend sono aggiornate con fonti ufficiali; entitlement, deployment e limiti restano gap contrattuali/tecnici.
+- Le informazioni Qlik/Talend sono aggiornate con fonti ufficiali e range utente 50 GB / 30-50k EUR; entitlement, deployment e limiti restano gap contrattuali/tecnici.
 - Non ci sono prezzi, date o effort inventati.
 
 ## Humanize
