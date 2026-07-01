@@ -1,0 +1,865 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <title>Data Pipeline Blueprint - Image Final v1.0</title>
+  <style>
+    @page { size: 16in 9in; margin: 0; }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: #eef2f4;
+      color: #101418;
+      font-family: "Aptos", "Segoe UI", Arial, sans-serif;
+    }
+    .slide {
+      width: 1600px;
+      height: 900px;
+      position: relative;
+      overflow: hidden;
+      page-break-after: always;
+      background: #fff;
+    }
+    .logo {
+      position: absolute;
+      left: 24px;
+      top: 24px;
+      width: 176px;
+      height: 44px;
+    }
+    .logo img { width: 100%; height: auto; display: block; }
+    .header {
+      position: absolute;
+      left: 226px;
+      top: 31px;
+      right: 90px;
+      height: 38px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #4b4f54;
+      font-size: 20px;
+      font-weight: 600;
+    }
+    .header .client {
+      color: #8b9095;
+      font-weight: 500;
+    }
+    .page {
+      position: absolute;
+      right: 42px;
+      top: 31px;
+      font-size: 18px;
+      color: #2d3338;
+    }
+    .rule-left {
+      position: absolute;
+      left: 0;
+      top: 86px;
+      width: 184px;
+      height: 7px;
+      background: linear-gradient(90deg, #42b99f, #168fd0);
+    }
+    .rule-right {
+      position: absolute;
+      right: 0;
+      top: 86px;
+      width: 52px;
+      height: 7px;
+      background: linear-gradient(90deg, #42b99f, #168fd0);
+    }
+    .brand-mark {
+      position: absolute;
+      right: 38px;
+      bottom: 28px;
+      width: 38px;
+      opacity: .78;
+    }
+    .content {
+      position: absolute;
+      left: 92px;
+      right: 92px;
+      top: 128px;
+      bottom: 66px;
+    }
+    h1, h2, h3, p { margin: 0; }
+    .slide-title {
+      font-size: 37px;
+      line-height: 1.08;
+      font-weight: 760;
+      color: #161b20;
+      margin-bottom: 18px;
+    }
+    .lead {
+      font-size: 24px;
+      line-height: 1.28;
+      color: #1f252b;
+      max-width: 1240px;
+    }
+    .small {
+      font-size: 16px;
+      line-height: 1.25;
+      color: #495057;
+    }
+    .muted { color: #727a82; }
+    .teal { color: #26aa9a; }
+    .blue { color: #168fd0; }
+    .grad {
+      color: #168fd0;
+    }
+    .cover-wave {
+      position: absolute;
+      right: 92px;
+      top: 0;
+      height: 900px;
+      width: auto;
+    }
+    .cover-title {
+      position: absolute;
+      left: 64px;
+      bottom: 178px;
+      width: 900px;
+      font-size: 52px;
+      line-height: 1.03;
+      font-weight: 780;
+      color: #171b20;
+    }
+    .cover-subtitle {
+      position: absolute;
+      left: 68px;
+      bottom: 125px;
+      font-size: 22px;
+      color: #3d444b;
+    }
+    .cover-date {
+      position: absolute;
+      left: 68px;
+      bottom: 78px;
+      font-size: 16px;
+      color: #6a737b;
+    }
+    .vertical-label {
+      position: absolute;
+      left: 82px;
+      top: 142px;
+      width: 160px;
+      bottom: 92px;
+      border-right: 2px solid #1f9fc5;
+      display: grid;
+      grid-template-rows: 1fr 1fr 1fr;
+      align-items: center;
+      color: #168fd0;
+      font-weight: 760;
+      text-align: right;
+      padding-right: 30px;
+      font-size: 18px;
+    }
+    .context-area {
+      position: absolute;
+      left: 300px;
+      right: 106px;
+      top: 142px;
+      bottom: 96px;
+      display: grid;
+      grid-template-rows: 1fr 1fr 1fr;
+      gap: 24px;
+    }
+    .context-card {
+      border-left: 4px solid #25ad9e;
+      padding: 4px 0 0 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .context-card h2 {
+      font-size: 28px;
+      color: #262b31;
+      margin-bottom: 10px;
+    }
+    .context-card p {
+      font-size: 20px;
+      line-height: 1.31;
+      color: #20262c;
+    }
+    .kicker {
+      display: inline-block;
+      padding: 7px 13px;
+      border: 1.5px solid #27ae9b;
+      color: #168fd0;
+      border-radius: 999px;
+      font-size: 15px;
+      font-weight: 760;
+      margin-bottom: 13px;
+      background: #f8fffd;
+    }
+    .grid-7 {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 12px;
+      margin-top: 34px;
+    }
+    .flow-card, .plain-card, .metric-card, .scenario-card, .wbs-card, .phase-card {
+      border: 1.5px solid #c7e8ee;
+      border-radius: 8px;
+      background: #fff;
+      box-shadow: 0 10px 22px rgba(24, 57, 78, .055);
+    }
+    .flow-card {
+      min-height: 188px;
+      padding: 17px 12px;
+      text-align: center;
+      position: relative;
+    }
+    .flow-card:after {
+      content: "";
+      position: absolute;
+      right: -17px;
+      top: 84px;
+      width: 24px;
+      height: 14px;
+      clip-path: polygon(0 26%, 66% 26%, 66% 0, 100% 50%, 66% 100%, 66% 74%, 0 74%);
+      background: linear-gradient(90deg, #34b89f, #168fd0);
+      z-index: 2;
+    }
+    .flow-card:last-child:after { display: none; }
+    .icon {
+      width: 44px;
+      height: 44px;
+      margin: 0 auto 10px;
+      border: 2px solid #1f9fc5;
+      border-radius: 50%;
+      position: relative;
+    }
+    .icon:before, .icon:after {
+      content: "";
+      position: absolute;
+      background: #1f9fc5;
+      opacity: .95;
+    }
+    .icon.source:before { left: 11px; right: 11px; top: 13px; height: 3px; box-shadow: 0 7px 0 #1f9fc5, 0 14px 0 #1f9fc5; }
+    .icon.contract:before { left: 12px; top: 10px; width: 19px; height: 23px; border: 2px solid #1f9fc5; background: transparent; border-radius: 3px; }
+    .icon.prepare:before { left: 11px; top: 20px; width: 22px; height: 3px; transform: rotate(35deg); }
+    .icon.prepare:after { left: 11px; top: 20px; width: 22px; height: 3px; transform: rotate(-35deg); }
+    .icon.model:before { left: 10px; top: 12px; width: 8px; height: 8px; border-radius: 50%; box-shadow: 15px 0 0 #1f9fc5, 7px 15px 0 #1f9fc5; }
+    .icon.control:before { left: 12px; top: 11px; width: 20px; height: 20px; border: 2px solid #1f9fc5; border-radius: 4px; background: transparent; }
+    .icon.serve:before { left: 11px; top: 13px; width: 22px; height: 17px; border: 2px solid #1f9fc5; background: transparent; border-radius: 3px; }
+    .icon.govern:before { left: 13px; top: 10px; width: 18px; height: 22px; border: 2px solid #1f9fc5; border-radius: 12px 12px 8px 8px; background: transparent; }
+    .flow-card h3 { font-size: 19px; color: #168fd0; margin-bottom: 8px; }
+    .flow-card p { font-size: 14.5px; line-height: 1.24; color: #3a424a; }
+    .value-band {
+      position: absolute;
+      left: 142px;
+      right: 142px;
+      bottom: 60px;
+      border: 1.5px solid #1f9fc5;
+      border-radius: 8px;
+      padding: 12px 22px;
+      color: #168fd0;
+      font-size: 21px;
+      line-height: 1.28;
+      text-align: center;
+      background: #fbfeff;
+    }
+    .three {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      margin-top: 34px;
+    }
+    .plain-card { padding: 22px 24px; min-height: 356px; }
+    .plain-card h2 {
+      color: #fff;
+      font-size: 24px;
+      padding: 13px 16px;
+      margin: -22px -24px 20px;
+      text-align: center;
+      background: linear-gradient(90deg, #37b79f, #168fd0);
+      border-radius: 8px 8px 0 0;
+    }
+    .plain-card p {
+      font-size: 19px;
+      line-height: 1.3;
+      color: #273039;
+      margin-bottom: 14px;
+    }
+    .bullet {
+      margin: 0;
+      padding-left: 20px;
+    }
+    .bullet li {
+      font-size: 18px;
+      line-height: 1.28;
+      margin-bottom: 10px;
+    }
+    .architecture {
+      display: grid;
+      grid-template-columns: 59% 41%;
+      gap: 36px;
+      margin-top: 28px;
+      align-items: start;
+    }
+    .arch-map {
+      border: 1.5px solid #1f9fc5;
+      border-radius: 8px;
+      padding: 18px;
+      min-height: 430px;
+      background: #fbfeff;
+    }
+    .zones {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+    .zone {
+      min-height: 112px;
+      padding: 10px 8px;
+      border: 1.5px solid #bfe4ec;
+      border-radius: 7px;
+      text-align: center;
+      background: #fff;
+      position: relative;
+    }
+    .zone:after {
+      content: "";
+      position: absolute;
+      right: -15px;
+      top: 48px;
+      width: 20px;
+      height: 13px;
+      clip-path: polygon(0 26%, 66% 26%, 66% 0, 100% 50%, 66% 100%, 66% 74%, 0 74%);
+      background: linear-gradient(90deg, #34b89f, #168fd0);
+      z-index: 2;
+    }
+    .zone:last-child:after { display: none; }
+    .zone h3 { color: #168fd0; font-size: 17px; margin-bottom: 8px; }
+    .zone p { color: #39434b; font-size: 14.2px; line-height: 1.18; }
+    .governance {
+      margin-top: 18px;
+      padding: 14px 18px;
+      border: 1.5px solid #26aa9a;
+      border-radius: 8px;
+      color: #167c83;
+      font-size: 17px;
+      text-align: center;
+      background: #f8fffd;
+    }
+    .arch-notes {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 22px;
+    }
+    .arch-note {
+      border: 1px solid #d5edf2;
+      border-radius: 7px;
+      padding: 12px 14px;
+      min-height: 118px;
+      background: #fff;
+    }
+    .arch-note h4 {
+      margin: 0 0 8px;
+      color: #168fd0;
+      font-size: 16px;
+    }
+    .arch-note p {
+      margin: 0;
+      color: #3a444d;
+      font-size: 14.5px;
+      line-height: 1.22;
+    }
+    .side-note {
+      padding: 20px 24px;
+      border-left: 4px solid #25ad9e;
+      background: #fbfeff;
+      min-height: 430px;
+    }
+    .side-note h2 { font-size: 27px; margin-bottom: 15px; color: #22272d; }
+    .side-note p { font-size: 19px; line-height: 1.31; margin-bottom: 13px; color: #2b333b; }
+    .matrix {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 30px;
+      table-layout: fixed;
+      font-size: 17px;
+    }
+    .matrix th {
+      padding: 14px 12px;
+      color: #fff;
+      background: linear-gradient(90deg, #36b69f, #168fd0);
+      border: 4px solid #fff;
+      font-size: 19px;
+    }
+    .matrix td {
+      vertical-align: top;
+      padding: 14px 14px;
+      border: 4px solid #fff;
+      background: #f7fbfc;
+      line-height: 1.22;
+    }
+    .matrix td:first-child {
+      width: 18%;
+      color: #147f94;
+      font-weight: 760;
+      background: #eef9f8;
+    }
+    .benefit-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+      margin-top: 36px;
+    }
+    .metric-card {
+      padding: 20px 18px 18px;
+      min-height: 240px;
+    }
+    .metric-card h2 {
+      font-size: 22px;
+      color: #168fd0;
+      margin-bottom: 12px;
+    }
+    .metric-card p {
+      font-size: 18px;
+      line-height: 1.28;
+      color: #303941;
+    }
+    .scenario-fit {
+      position: absolute;
+      left: 140px;
+      right: 140px;
+      bottom: 72px;
+      text-align: center;
+      font-size: 21px;
+      line-height: 1.28;
+      color: #22282f;
+    }
+    .case-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 26px;
+      margin-top: 44px;
+    }
+    .scenario-card { padding: 24px; min-height: 385px; }
+    .badge {
+      display: inline-block;
+      padding: 7px 12px;
+      border-radius: 999px;
+      color: #fff;
+      background: linear-gradient(90deg, #37b79f, #168fd0);
+      font-size: 14px;
+      font-weight: 760;
+      margin-bottom: 18px;
+    }
+    .scenario-card h2 { font-size: 27px; margin-bottom: 16px; color: #151b20; }
+    .scenario-card p { font-size: 18px; line-height: 1.3; margin-bottom: 13px; color: #2c343c; }
+    .wbs-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin-top: 30px;
+    }
+    .wbs-card {
+      min-height: 435px;
+      padding: 18px 16px;
+      border-top: 4px solid #25ad9e;
+      box-shadow: none;
+    }
+    .wbs-card h2 { color: #168fd0; font-size: 21px; margin-bottom: 5px; }
+    .wbs-card .label { color: #25ad9e; font-size: 13px; font-weight: 800; letter-spacing: .02em; margin-bottom: 14px; }
+    .wbs-card p { font-size: 16px; line-height: 1.22; padding: 7px 0; border-bottom: 1px solid #e5f1f3; color: #303941; }
+    .timeline {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 14px;
+      margin-top: 46px;
+      position: relative;
+    }
+    .timeline:before {
+      content: "";
+      position: absolute;
+      left: 8%;
+      right: 8%;
+      top: 46px;
+      height: 5px;
+      background: linear-gradient(90deg, #37b79f, #168fd0);
+      border-radius: 999px;
+      z-index: 0;
+    }
+    .phase-card {
+      position: relative;
+      z-index: 1;
+      padding: 70px 18px 20px;
+      min-height: 350px;
+    }
+    .phase-num {
+      position: absolute;
+      top: 20px;
+      left: 18px;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #37b79f, #168fd0);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      font-weight: 800;
+    }
+    .phase-card h2 { color: #168fd0; font-size: 22px; margin-bottom: 12px; }
+    .phase-card p { font-size: 16.3px; line-height: 1.26; color: #303941; }
+    .decision-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 38px;
+      margin-top: 42px;
+    }
+    .decision-card {
+      border: 1.5px solid #c7e8ee;
+      border-radius: 8px;
+      min-height: 360px;
+      background: #fff;
+      box-shadow: 0 10px 22px rgba(24, 57, 78, .055);
+    }
+    .decision-card h2 {
+      background: linear-gradient(90deg, #37b79f, #168fd0);
+      color: #fff;
+      padding: 16px 22px;
+      font-size: 24px;
+      border-radius: 8px 8px 0 0;
+      text-align: center;
+    }
+    .decision-card ul { margin: 24px 36px; padding-left: 20px; }
+    .decision-card li { font-size: 21px; line-height: 1.32; margin-bottom: 16px; }
+    .closing-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 72% 20%, rgba(196, 234, 241, .38), transparent 30%),
+        radial-gradient(circle at 10% 90%, rgba(218, 244, 239, .48), transparent 32%),
+        #f7f8fa;
+    }
+    .closing-logo {
+      position: absolute;
+      left: 554px;
+      top: 326px;
+      width: 492px;
+    }
+    .footer-note {
+      position: absolute;
+      left: 64px;
+      right: 64px;
+      bottom: 25px;
+      font-size: 9px;
+      line-height: 1.25;
+      color: #7a838b;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+<section class="slide">
+  <img class="logo" src="../../novigo-header-logo-template.png" alt="">
+  <img class="cover-wave" src="../../template-cover-wave.png" alt="">
+  <div class="cover-title"><span class="grad">Data Pipeline Blueprint</span><br>Due scenari TO BE per progetti data-intensive</div>
+  <div class="cover-subtitle">Documento di discussione per CEO, CTO, Gianfranco e Tech Committee</div>
+  <div class="cover-date">30 giugno 2026</div>
+</section>
+
+<section class="slide">
+  <img class="logo" src="../../novigo-header-logo-template.png" alt="">
+  <div class="header"><span class="client">TXT Novigo |</span><span>Contesto ed esigenza</span></div><div class="page">2</div><div class="rule-left"></div><div class="rule-right"></div>
+  <div class="vertical-label"><div>Contesto</div><div>Esigenza</div><div>Obiettivi</div></div>
+  <div class="context-area">
+    <div class="context-card">
+      <h2>Tre casi diversi, stesso tema di governo del dato</h2>
+      <p>ProSIGNAL, Kiron CDG e CDG interno partono da fonti e obiettivi diversi. Il punto comune è governare dati, regole, anomalie e output in modo spiegabile, non produrre solo una dashboard in più.</p>
+    </div>
+    <div class="context-card">
+      <h2>Serve una blueprint, non una soluzione rigida</h2>
+      <p>Senza un modello condiviso, ogni progetto rischia di ricostruire da zero tracciati, mapping, controlli, log e gestione degli scarti. La blueprint deve lasciare flessibilità sui casi specifici, ma standardizzare qualità, auditabilità e costi di gestione.</p>
+    </div>
+    <div class="context-card">
+      <h2>La decisione riguarda il modello operativo riusabile</h2>
+      <p>Il deck mette a confronto due ipotesi TO BE, Dagster/dbt/Metabase su AWS e Talend/Qlik, chiarendo cosa resta comune, cosa cambia davvero e quali verifiche servono prima di applicare la blueprint a ProSIGNAL e Kiron.</p>
+    </div>
+  </div>
+  <img class="brand-mark" src="../../txt-star-mark-template.png" alt="">
+</section>
+
+<section class="slide">
+  <img class="logo" src="../../novigo-header-logo-template.png" alt="">
+  <div class="header"><span class="client">TXT Novigo |</span><span>Componenti di una buona pipeline</span></div><div class="page">3</div><div class="rule-left"></div><div class="rule-right"></div>
+  <div class="content">
+    <h1 class="slide-title">La blueprint separa le responsabilità del dato, dall’ingresso fino all’uso business.</h1>
+    <p class="lead">Il valore non sta in un singolo tool. Sta nel rendere chiaro dove nasce il dato, quali regole lo trasformano, quali controlli lo validano e quali output possono essere usati con fiducia.</p>
+    <div class="grid-7">
+      <div class="flow-card"><div class="icon source"></div><h3>Source</h3><p>API, file, database e sistemi cliente entrano in una landing controllata.</p></div>
+      <div class="flow-card"><div class="icon contract"></div><h3>Contract</h3><p>Tracciati, campi, frequenze, owner e versioni sono espliciti.</p></div>
+      <div class="flow-card"><div class="icon prepare"></div><h3>Prepare</h3><p>Parsing, mapping e normalizzazione rendono il dato confrontabile.</p></div>
+      <div class="flow-card"><div class="icon model"></div><h3>Model</h3><p>Regole business, ribaltamenti, forecast e aggregazioni creano mart e output.</p></div>
+      <div class="flow-card"><div class="icon control"></div><h3>Control</h3><p>Scarti, quadrature, anomalie e riconciliazioni rendono il dato difendibile.</p></div>
+      <div class="flow-card"><div class="icon serve"></div><h3>Serve</h3><p>Dashboard, report, export e dataset rendono il risultato fruibile.</p></div>
+      <div class="flow-card"><div class="icon govern"></div><h3>Govern</h3><p>Run history, audit, accessi e runbook permettono gestione continuativa.</p></div>
+    </div>
+  </div>
+  <div class="value-band">Una pipeline riusabile nasce quando componenti comuni e adattamenti specifici sono separati fin dall’inizio.</div>
+  <img class="brand-mark" src="../../txt-star-mark-template.png" alt="">
+</section>
+
+<section class="slide">
+  <img class="logo" src="../../novigo-header-logo-template.png" alt="">
+  <div class="header"><span class="client">TXT Novigo |</span><span>Parti comuni e scenari</span></div><div class="page">4</div><div class="rule-left"></div><div class="rule-right"></div>
+  <div class="content">
+    <h1 class="slide-title">I due scenari vanno confrontati sul modello operativo, non solo sulla lista dei prodotti.</h1>
+    <p class="lead">Le parti comuni devono rimanere stabili. Cambia il modo in cui vengono implementate, governate e portate in esercizio.</p>
+    <div class="three">
+      <div class="plain-card"><h2>Parti comuni</h2><p>Data contract, quality gate, mart, output, run log e responsabilità operative.</p><p>Questa è la base da riusare sui progetti futuri.</p></div>
+      <div class="plain-card"><h2>Scenario A | AWS</h2><p>Dagster coordina job e dipendenze, dbt rende esplicite trasformazioni e test, Metabase espone mart e dashboard.</p><p>È lo scenario con maggiore controllo ingegneristico.</p></div>
+      <div class="plain-card"><h2>Scenario B | Qlik</h2><p>Talend/Qlik presidia integrazione, quality e analytics in una filiera più product-oriented.</p><p>Licenze, tenant e capacity diventano parte della decisione.</p></div>
+    </div>
+  </div>
+  <img class="brand-mark" src="../../txt-star-mark-template.png" alt="">
+</section>
+
+<section class="slide">
+  <img class="logo" src="../../novigo-header-logo-template.png" alt="">
+  <div class="header"><span class="client">TXT Novigo |</span><span>Scenario A - Architettura AWS</span></div><div class="page">5</div><div class="rule-left"></div><div class="rule-right"></div>
+  <div class="content">
+    <h1 class="slide-title">Lo scenario AWS separa orchestrazione, trasformazioni, storage e presentation layer.</h1>
+    <div class="architecture">
+      <div class="arch-map">
+        <div class="zones">
+          <div class="zone"><h3>Fonti</h3><p>Jira, Tempo, SAP, Excel, file, API cliente</p></div>
+          <div class="zone"><h3>Compute AWS</h3><p>Dagster su ECS o EC2 per job, schedule e dipendenze</p></div>
+          <div class="zone"><h3>Raw / DB</h3><p>S3, RDS o database cliente; dato fedele alla fonte</p></div>
+          <div class="zone"><h3>Transform</h3><p>dbt, SQL/Python, test e modelli staging/mart</p></div>
+          <div class="zone"><h3>Serve</h3><p>Metabase, dashboard, query, export e report</p></div>
+        </div>
+        <div class="governance">Governance trasversale: run history, asset checks, log, anomalie, audit e runbook</div>
+        <div class="arch-notes">
+          <div class="arch-note"><h4>Decisioni</h4><p>ECS o EC2, database cliente o RDS, modello di deploy e gestione run.</p></div>
+          <div class="arch-note"><h4>Output</h4><p>Mart controllati, dashboard, export e log verificabili per audit operativo.</p></div>
+          <div class="arch-note"><h4>Riuso</h4><p>Convenzioni raw/stg/mart, job template e controlli portabili su nuovi progetti.</p></div>
+        </div>
+      </div>
+      <div class="side-note">
+        <h2>Come leggerlo</h2>
+        <p>Dagster governa il flusso: quando parte, cosa dipende da cosa, dove si è fermato e quali controlli hanno dato esito negativo.</p>
+        <p>dbt separa le regole di trasformazione dalla parte di ingestion. Metabase consuma output già controllati: non diventa il motore dati.</p>
+        <p><span class="teal">ECS o EC2</span> restano una scelta di costo e operation. <span class="blue">RDS o DB cliente</span> dipende dal contesto del progetto.</p>
+      </div>
+    </div>
+  </div>
+  <img class="brand-mark" src="../../txt-star-mark-template.png" alt="">
+</section>
+
+<section class="slide">
+  <img class="logo" src="../../novigo-header-logo-template.png" alt="">
+  <div class="header"><span class="client">TXT Novigo |</span><span>Scenario A - Copertura componenti</span></div><div class="page">6</div><div class="rule-left"></div><div class="rule-right"></div>
+  <div class="content">
+    <h1 class="slide-title">Nello scenario AWS ogni componente resta esplicita e governabile.</h1>
+    <table class="matrix">
+      <tr><th>Componente</th><th>Come viene soddisfatta</th><th>Impatto per il comitato</th></tr>
+      <tr><td>Ingestion</td><td>Job Dagster su ECS/EC2, connettori, upload file, API e schedule.</td><td>Maggiore controllo su run, retry, volumi e responsabilità tecniche.</td></tr>
+      <tr><td>Preparazione</td><td>Parsing, mapping e normalizzazione in SQL/Python e modelli dbt.</td><td>Regole leggibili, versionabili e riusabili tra progetti simili.</td></tr>
+      <tr><td>Qualità</td><td>Test dbt, asset checks, scarti, quadrature e run history.</td><td>Errori e anomalie diventano verificabili, non dipendono da controlli manuali.</td></tr>
+      <tr><td>Esposizione</td><td>Mart e dataset BI-ready esposti via Metabase, export o query.</td><td>Il layer BI resta leggero e consuma dati già controllati.</td></tr>
+    </table>
+  </div>
+  <img class="brand-mark" src="../../txt-star-mark-template.png" alt="">
+</section>
+
+<section class="slide">
+  <img class="logo" src="../../novigo-header-logo-template.png" alt="">
+  <div class="header"><span class="client">TXT Novigo |</span><span>Scenario A - Benefici e limiti</span></div><div class="page">7</div><div class="rule-left"></div><div class="rule-right"></div>
+  <div class="content">
+    <h1 class="slide-title">Lo scenario AWS è forte quando servono controllo, logiche custom e riuso tecnico.</h1>
+    <div class="benefit-grid">
+      <div class="metric-card"><h2>Riuso</h2><p>Alto se asset Dagster, modelli dbt e convenzioni raw/stg/mart diventano standard.</p></div>
+      <div class="metric-card"><h2>Scalabilità</h2><p>Buona, legata a disegno cloud, database, scheduling e separazione dei layer.</p></div>
+      <div class="metric-card"><h2>Costi</h2><p>Licenze potenzialmente leggere; pesano infrastruttura, run e competenze.</p></div>
+      <div class="metric-card"><h2>Blocker</h2><p>Skill data engineering, operation AWS e requisiti BI dei clienti esterni.</p></div>
+    </div>
+  </div>
+  <div class="scenario-fit">Fit naturale per file processing custom, controlli specifici e reference implementation CDG.</div>
+  <img class="brand-mark" src="../../txt-star-mark-template.png" alt="">
+</section>
+
+<section class="slide">
+  <img class="logo" src="../../novigo-header-logo-template.png" alt="">
+  <div class="header"><span class="client">TXT Novigo |</span><span>Scenario B - Architettura Qlik/Talend</span></div><div class="page">8</div><div class="rule-left"></div><div class="rule-right"></div>
+  <div class="content">
+    <h1 class="slide-title">Lo scenario Talend/Qlik concentra integrazione, quality e analytics in una filiera più gestita.</h1>
+    <div class="architecture">
+      <div class="arch-map">
+        <div class="zones">
+          <div class="zone"><h3>Fonti</h3><p>File, API, DB, applicativi cliente e sorgenti TXT</p></div>
+          <div class="zone"><h3>Integration</h3><p>Talend/Qlik Talend per ingestion, parsing e connettori</p></div>
+          <div class="zone"><h3>Quality</h3><p>Regole, controlli, scarti, data quality e output curated</p></div>
+          <div class="zone"><h3>Data layer</h3><p>DB, storage o warehouse da definire per mart/output</p></div>
+          <div class="zone"><h3>Qlik Cloud</h3><p>Analytics, dashboard, reload, task e automazioni</p></div>
+        </div>
+        <div class="governance">Governance trasversale: tenant, accessi, reload, log, capacity, entitlement e operating model</div>
+        <div class="arch-notes">
+          <div class="arch-note"><h4>Decisioni</h4><p>Entitlement Talend/Qlik, tenant, capacity e runtime effettivamente disponibili.</p></div>
+          <div class="arch-note"><h4>Output</h4><p>Dataset curated, dashboard Qlik, reload controllati ed export dove richiesto.</p></div>
+          <div class="arch-note"><h4>Riuso</h4><p>Connettori, job e modelli Qlik replicabili se i limiti contrattuali lo permettono.</p></div>
+        </div>
+      </div>
+      <div class="side-note">
+        <h2>Come leggerlo</h2>
+        <p>Talend/Qlik sposta parte del lavoro custom verso una piattaforma di integrazione e quality.</p>
+        <p>Qlik Cloud diventa il layer principale per consumo, dashboard e analytics, con automazioni operative a supporto.</p>
+        <p>Il punto da verificare è concreto: entitlement, capacity e fit su file grandi, fixed-column e controlli cross-file.</p>
+      </div>
+    </div>
+  </div>
+  <img class="brand-mark" src="../../txt-star-mark-template.png" alt="">
+</section>
+
+<section class="slide">
+  <img class="logo" src="../../novigo-header-logo-template.png" alt="">
+  <div class="header"><span class="client">TXT Novigo |</span><span>Scenario B - Copertura componenti</span></div><div class="page">9</div><div class="rule-left"></div><div class="rule-right"></div>
+  <div class="content">
+    <h1 class="slide-title">Nello scenario Qlik/Talend la piattaforma diventa parte del modello operativo.</h1>
+    <table class="matrix">
+      <tr><th>Componente</th><th>Come viene soddisfatta</th><th>Impatto per il comitato</th></tr>
+      <tr><td>Ingestion</td><td>Connettori e job Talend/Qlik Talend, con runtime e tenant da confermare.</td><td>Avvio più rapido se licenze, ambienti e connettori sono pronti.</td></tr>
+      <tr><td>Preparazione</td><td>Data integration, regole di mapping e trasformazioni gestite nella filiera prodotto.</td><td>Più standardizzazione, ma maggiore dipendenza dal perimetro della piattaforma.</td></tr>
+      <tr><td>Qualità</td><td>Data quality, scarti, controlli e monitoraggio secondo capability abilitate.</td><td>Va verificato cosa è incluso nel contratto e con quali limiti di capacity.</td></tr>
+      <tr><td>Esposizione</td><td>Qlik Cloud per dashboard, analytics, reload, task chain ed eventuali export.</td><td>Il layer di consumo è più integrato, ma licensing e governance diventano centrali.</td></tr>
+    </table>
+  </div>
+  <img class="brand-mark" src="../../txt-star-mark-template.png" alt="">
+</section>
+
+<section class="slide">
+  <img class="logo" src="../../novigo-header-logo-template.png" alt="">
+  <div class="header"><span class="client">TXT Novigo |</span><span>Scenario B - Benefici e limiti</span></div><div class="page">10</div><div class="rule-left"></div><div class="rule-right"></div>
+  <div class="content">
+    <h1 class="slide-title">Lo scenario Qlik/Talend è forte quando contano analytics gestita, standardizzazione e time-to-start.</h1>
+    <div class="benefit-grid">
+      <div class="metric-card"><h2>Riuso</h2><p>Alto se job, connettori, modelli Qlik e convenzioni di tenant sono trasferibili.</p></div>
+      <div class="metric-card"><h2>Scalabilità</h2><p>Buona, ma dipende da capacity, limiti tecnici e modello di licenza.</p></div>
+      <div class="metric-card"><h2>Costi</h2><p>Più subscription e capacity. Baseline utente: 50 GB tra 30k e 50k EUR.</p></div>
+      <div class="metric-card"><h2>Blocker</h2><p>Entitlement Talend/Qlik, lock-in e fit su file complessi.</p></div>
+    </div>
+  </div>
+  <div class="scenario-fit">Prima di usarlo come scenario finale serve una verifica contrattuale e tecnica sul tenant effettivo.</div>
+  <img class="brand-mark" src="../../txt-star-mark-template.png" alt="">
+</section>
+
+<section class="slide">
+  <img class="logo" src="../../novigo-header-logo-template.png" alt="">
+  <div class="header"><span class="client">TXT Novigo |</span><span>Confronto soluzioni</span></div><div class="page">11</div><div class="rule-left"></div><div class="rule-right"></div>
+  <div class="content">
+    <h1 class="slide-title">La scelta definisce il modello operativo riusabile, non soltanto lo stack tecnologico.</h1>
+    <table class="matrix">
+      <tr><th></th><th>Scenario A<br>Dagster / dbt / Metabase</th><th>Scenario B<br>Talend / Qlik</th></tr>
+      <tr><td>Riuso</td><td>Asset, modelli e convenzioni tecniche.</td><td>Job, connettori, tenant e modelli Qlik.</td></tr>
+      <tr><td>Velocità</td><td>Alta se si riusa CDG; media se serve setup completo.</td><td>Alta se licenze, tenant e connettori sono pronti.</td></tr>
+      <tr><td>Costi</td><td>Infrastruttura, run e competenze.</td><td>Subscription, capacity e capability incluse.</td></tr>
+      <tr><td>Complessità</td><td>Engineering e operation cloud.</td><td>Licensing, governance prodotto e lock-in.</td></tr>
+      <tr><td>Fit progetti</td><td>Forte su custom processing e reference CDG.</td><td>Forte se Qlik è piattaforma target.</td></tr>
+    </table>
+  </div>
+  <img class="brand-mark" src="../../txt-star-mark-template.png" alt="">
+</section>
+
+<section class="slide">
+  <img class="logo" src="../../novigo-header-logo-template.png" alt="">
+  <div class="header"><span class="client">TXT Novigo |</span><span>Proiezione sui casi</span></div><div class="page">12</div><div class="rule-left"></div><div class="rule-right"></div>
+  <div class="content">
+    <h1 class="slide-title">ProSIGNAL e Kiron guidano la priorità; il CDG interno consolida la reference implementation.</h1>
+    <div class="case-grid">
+      <div class="scenario-card"><span class="badge">Priorità alta</span><h2>ING ProSIGNAL</h2><p><b>Scenario A:</b> forte per file processing custom e controlli specifici.</p><p><b>Scenario B:</b> da verificare su file grandi, fixed-column e controlli cross-file.</p><p>È il caso utile per stressare volumi, tracciati e controlli regolamentari.</p></div>
+      <div class="scenario-card"><span class="badge">Priorità alta</span><h2>Kiron CDG</h2><p><b>Scenario A:</b> coerente con un caso CDG-like documentato.</p><p><b>Scenario B:</b> utile se Qlik è preferito come BI enterprise.</p><p>È il caso esterno più vicino alla logica CDG interno.</p></div>
+      <div class="scenario-card"><span class="badge">Reference</span><h2>CDG interno</h2><p><b>Scenario A:</b> molto coerente con il lavoro corrente.</p><p><b>Scenario B:</b> possibile alternativa, ma implica ripensare parte della reference.</p><p>Serve come base per standard, controlli e convenzioni di delivery.</p></div>
+    </div>
+  </div>
+  <img class="brand-mark" src="../../txt-star-mark-template.png" alt="">
+</section>
+
+<section class="slide">
+  <img class="logo" src="../../novigo-header-logo-template.png" alt="">
+  <div class="header"><span class="client">TXT Novigo |</span><span>WBS - Processi e funzioni CDG</span></div><div class="page">13</div><div class="rule-left"></div><div class="rule-right"></div>
+  <div class="content">
+    <h1 class="slide-title">Per i casi CDG la WBS segue il modello Kiron: processo al primo livello, funzioni al secondo.</h1>
+    <div class="wbs-grid">
+      <div class="wbs-card"><h2>1. PM e coordinamento</h2><div class="label">FUNZIONI</div><p>Gestione progettuale</p><p>SAL interni e cliente</p><p>Raccolta open point</p><p>Allineamento piano e WBS</p></div>
+      <div class="wbs-card"><h2>2. Actual</h2><div class="label">FUNZIONI KIRON</div><p>Setup e analisi</p><p>Web app e base dati</p><p>Import Campus e Zucchetti</p><p>Configuratore regole</p><p>Ribaltamenti e data management</p><p>Output verso BI</p></div>
+      <div class="wbs-card"><h2>3. Forecast</h2><div class="label">FUNZIONI</div><p>Regole e parametri forecast</p><p>Motore calcolo forecast</p><p>Tabelle e viste forecast</p><p>Test interno</p><p>Rilascio e validazione</p></div>
+      <div class="wbs-card"><h2>4. UAT e rilascio</h2><div class="label">FUNZIONI</div><p>UAT cliente / owner CDG</p><p>Parallel run dove necessario</p><p>Deploy e validazione processo</p><p>Runbook e hypercare</p><p>Adattamento CDG interno: P1-P5 Actual e P6 Forecast</p></div>
+    </div>
+  </div>
+  <img class="brand-mark" src="../../txt-star-mark-template.png" alt="">
+</section>
+
+<section class="slide">
+  <img class="logo" src="../../novigo-header-logo-template.png" alt="">
+  <div class="header"><span class="client">TXT Novigo |</span><span>WBS - Processi e funzioni ProSIGNAL</span></div><div class="page">14</div><div class="rule-left"></div><div class="rule-right"></div>
+  <div class="content">
+    <h1 class="slide-title">ProSIGNAL usa la stessa logica WBS, ma i processi ruotano attorno a file, tracciati, controlli e output.</h1>
+    <div class="wbs-grid">
+      <div class="wbs-card"><h2>1. Intake e tracciati</h2><div class="label">FUNZIONI</div><p>Upload e registro file</p><p>Gestione file grandi</p><p>Tracciati fixed-column</p><p>Versionamento campi</p><p>Mapping Lease / Conto Arancio</p></div>
+      <div class="wbs-card"><h2>2. Parsing e validazione</h2><div class="label">FUNZIONI</div><p>Parsing per range colonne</p><p>Controllo lunghezza record</p><p>Header e tail checks</p><p>Numero righe e formato</p><p>Gestione scarti e anomalie</p></div>
+      <div class="wbs-card"><h2>3. Controlli funzionali</h2><div class="label">FUNZIONI</div><p>Aggregazioni per forma tecnica</p><p>Quantità, importi e operazioni</p><p>Scostamento andamentale</p><p>Controlli incrociati file decadali</p><p>Audit regole applicate</p></div>
+      <div class="wbs-card"><h2>4. Output e operatività</h2><div class="label">FUNZIONI</div><p>Manipolazione e merge dati</p><p>Export output regolamentari</p><p>Storicizzazione esiti</p><p>Dashboard controllo esiti</p><p>Log elaborazioni e workflow utente</p></div>
+    </div>
+  </div>
+  <img class="brand-mark" src="../../txt-star-mark-template.png" alt="">
+</section>
+
+<section class="slide">
+  <img class="logo" src="../../novigo-header-logo-template.png" alt="">
+  <div class="header"><span class="client">TXT Novigo |</span><span>Piano di lavoro</span></div><div class="page">15</div><div class="rule-left"></div><div class="rule-right"></div>
+  <div class="content">
+    <h1 class="slide-title">Il piano deriva dalla WBS: prima si validano processi e funzioni, poi si realizza per rilasci controllabili.</h1>
+    <div class="timeline">
+      <div class="phase-card"><div class="phase-num">1</div><h2>Assessment</h2><p>Fonti, processi, output e vincoli. Output: inventario sorgenti, gap, priorità ProSIGNAL/Kiron e WBS validata.</p></div>
+      <div class="phase-card"><div class="phase-num">2</div><h2>Blueprint</h2><p>Data contract, quality gate, convenzioni raw/stg/mart e criteri di scelta scenario. Output: modello comune riusabile.</p></div>
+      <div class="phase-card"><div class="phase-num">3</div><h2>Architettura</h2><p>Runtime, database, presentation layer, sicurezza e governance. Output: scelte su AWS, DB cliente/RDS o Qlik/Talend.</p></div>
+      <div class="phase-card"><div class="phase-num">4</div><h2>Build & test</h2><p>Ingestion, validazioni, trasformazioni, mart, dashboard, UAT e parallel run. Output: pipeline provata su dati campione.</p></div>
+      <div class="phase-card"><div class="phase-num">5</div><h2>Run</h2><p>Go-live, monitoraggio, runbook, gestione anomalie, hypercare e backlog evolutivo. Output: modello operativo ripetibile.</p></div>
+    </div>
+  </div>
+  <img class="brand-mark" src="../../txt-star-mark-template.png" alt="">
+</section>
+
+<section class="slide">
+  <img class="logo" src="../../novigo-header-logo-template.png" alt="">
+  <div class="header"><span class="client">TXT Novigo |</span><span>Economics e decisioni</span></div><div class="page">16</div><div class="rule-left"></div><div class="rule-right"></div>
+  <div class="content">
+    <h1 class="slide-title">Per una blueprint servono driver e range di discussione, non una quotazione definitiva.</h1>
+    <div class="three">
+      <div class="plain-card"><h2>Setup blueprint</h2><p>Analisi comune, convenzioni, template pipeline, criteri scenario e governance.</p><p>È lavoro comune: va progettato per non ripeterlo a ogni cliente.</p></div>
+      <div class="plain-card"><h2>Implementazione</h2><p>Adattamento per cliente: fonti, tracciati, regole, mart, dashboard e UAT.</p><p>Il costo dipende dalla distanza tra caso reale e blueprint.</p></div>
+      <div class="plain-card"><h2>Run e licenze</h2><p>Cloud/runtime, database, BI, monitoraggio, manutenzione ed evolutive.</p><p>Scenario B: ipotesi 50 GB tra 30k e 50k EUR, da confermare.</p></div>
+    </div>
+  </div>
+  <img class="brand-mark" src="../../txt-star-mark-template.png" alt="">
+</section>
+
+<section class="slide">
+  <img class="logo" src="../../novigo-header-logo-template.png" alt="">
+  <div class="header"><span class="client">TXT Novigo |</span><span>Discussione</span></div><div class="page">17</div><div class="rule-left"></div><div class="rule-right"></div>
+  <div class="content">
+    <h1 class="slide-title">La presentazione non chiude una scelta: mette sul tavolo le decisioni da prendere.</h1>
+    <div class="decision-grid">
+      <div class="decision-card"><h2>Da decidere</h2><ul><li>Quale modello operativo vogliamo standardizzare?</li><li>Quanto lock-in prodotto è accettabile?</li><li>Dove serve più custom processing?</li><li>Quale scenario accelera ProSIGNAL e Kiron?</li></ul></div>
+      <div class="decision-card"><h2>Da verificare</h2><ul><li>Entitlement Talend/Qlik e limiti capacity.</li><li>Requisiti BI, accessi ed export per cliente.</li><li>RDS o DB cliente per ciascun caso.</li><li>Range economici completi di run e delivery.</li></ul></div>
+    </div>
+  </div>
+  <img class="brand-mark" src="../../txt-star-mark-template.png" alt="">
+</section>
+
+<section class="slide">
+  <div class="closing-bg"></div>
+  <img class="closing-logo" src="../../novigo-header-logo-template.png" alt="">
+  <div class="footer-note">© TXT e-solutions S.p.A. Materiale di discussione interno. Il documento sintetizza ipotesi e scenari da validare prima di qualsiasi impegno progettuale o commerciale.</div>
+</section>
+
+</body>
+</html>
