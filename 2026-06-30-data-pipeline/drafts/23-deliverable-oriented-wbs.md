@@ -31,7 +31,18 @@ La WBS copre il 100% del lavoro oggi identificabile sulla base della documentazi
 - Gli elementi finali della WBS sono formulati come deliverable o work package verificabili, non come attività operative.
 - Dove un elemento è necessario ma non pienamente documentato, viene indicato nelle note o nelle aree da chiarire.
 
-## 3. WBS principale
+## 3. WBS principali
+
+Questa sezione contiene quattro WBS distinte:
+
+- **WBS A - Blueprint comune:** lavoro necessario per produrre il kit riusabile, i criteri di scelta e gli standard di adozione.
+- **WBS B - ING ProSIGNAL:** applicazione della blueprint al caso file-processing/regolamentare.
+- **WBS C - Kiron CDG:** applicazione della blueprint al caso CDG cliente esterno.
+- **WBS D - CDG interno:** applicazione e consolidamento della blueprint sul caso interno più documentato.
+
+Le voci `9`, `10` e `11` della WBS A restano solo contenitori di raccordo. Il dettaglio stimabile dei tre casi è riportato nelle WBS B, C e D.
+
+### 3.1 WBS A - Blueprint comune
 
 | Codice WBS | Livello | Nome elemento | Descrizione | Deliverable atteso | Note |
 | ---------- | ------: | ------------- | ----------- | ------------------ | ---- |
@@ -109,27 +120,9 @@ La WBS copre il 100% del lavoro oggi identificabile sulla base della documentazi
 | 8.2 | 2 | Workflow utente ed eccezioni | Modello di gestione anomalie, rettifiche, export e approvazioni | Modello workflow/eccezioni | Dettagli cliente da confermare |
 | 8.2.1 | 3 | Gestione scarti e rettifiche | Categorie scarto, presa in carico, rettifica, ri-esecuzione | Modello gestione scarti | Rilevante per tutti i casi |
 | 8.2.1.1 | 4 | Scheda processo gestione scarti | Scheda work package con stati, ruoli e output | Scheda gestione scarti | Work package stimabile |
-| 9 | 1 | Stream applicativo ProSIGNAL | Applicazione blueprint al caso ING ProSIGNAL | WBS applicativa ProSIGNAL | Cliente esterno, priorità alta |
-| 9.1 | 2 | Pacchetto requisiti ProSIGNAL | Perimetro dati, tracciati, output e controlli confermati | Dossier requisiti ProSIGNAL | Oggi parzialmente documentato |
-| 9.1.1 | 3 | Tracciati e file inventory | Inventario file, dimensioni, formato, header/tail, versioni | Inventario tracciati/file | Richiede materiale cliente |
-| 9.1.1.1 | 4 | Scheda file/tracciato validata | Scheda per ogni tracciato disponibile | Schede tracciato validate | Da chiarire se file non forniti |
-| 9.2 | 2 | Pipeline ProSIGNAL target | Applicazione di ingestion, parsing, controlli, output e dashboard al caso | Disegno pipeline ProSIGNAL | Non ancora implementazione certa |
-| 9.2.1 | 3 | Output e controlli ProSIGNAL | Output regolamentari, aggregazioni, scostamenti, cross-file checks | Catalogo controlli/output ProSIGNAL | Basato su appunti |
-| 9.2.1.1 | 4 | Piano di collaudo ProSIGNAL preliminare | Casi test per tracciati, file grandi, controlli e output | Piano collaudo preliminare | Work package stimabile |
-| 10 | 1 | Stream applicativo Kiron CDG | Applicazione blueprint al caso Kiron CDG | WBS applicativa Kiron | Cliente esterno, priorità alta |
-| 10.1 | 2 | Pacchetto requisiti Kiron | Perimetro Actual, Forecast, fonti, tabelle guida e output | Dossier requisiti Kiron | Source-grounded su materiali cdg-kiron |
-| 10.1.1 | 3 | Fonti e dizionari Kiron | Campus, Campus 2.0, Zucchetti, campi input/output, TG/RIB/STEP | Inventario fonti e regole Kiron | Alcuni open point da validare |
-| 10.1.1.1 | 4 | Schede fonti e regole Kiron | Schede per fonte, tabella guida e regola documentata | Schede Kiron validate | Work package stimabile |
-| 10.2 | 2 | Pipeline Kiron target | Applicazione blueprint ad Actual, Forecast e BI | Disegno pipeline Kiron | Scenario tecnico da decidere |
-| 10.2.1 | 3 | Data product Kiron | DB Actual gestionale, DB Actual, DB Forecast | Catalogo data product Kiron | Basato su materiali Kiron |
-| 10.2.1.1 | 4 | Piano di collaudo Kiron preliminare | Casi test per Actual, Forecast, regole e output BI | Piano collaudo preliminare | Work package stimabile |
-| 11 | 1 | Stream applicativo CDG interno | Applicazione e consolidamento blueprint su reference interna | WBS applicativa CDG interno | Reference implementation |
-| 11.1 | 2 | Pacchetto requisiti CDG interno | Perimetro P1-P6, fonti, tabelle guida, output e dashboard | Dossier requisiti CDG interno | Fonte più completa |
-| 11.1.1 | 3 | Processi P1-P6 | Actual ore, inframensile, linked issue, economics, ore SAP, forecast | Catalogo processi P1-P6 | Basato su docs CDG |
-| 11.1.1.1 | 4 | Schede processo P1-P6 | Schede per ciascun processo con input, output, controlli e owner | Schede P1-P6 | Work package stimabile |
-| 11.2 | 2 | Pipeline CDG interno target | Applicazione blueprint a raw/ref/stg/mart, controlli, dashboard e run | Disegno pipeline CDG interno | Deve verificare attualità repo |
-| 11.2.1 | 3 | Data product CDG interno | Output P1-P6, mart BI-ready, dashboard CDG e tecnica | Catalogo data product CDG interno | Source-grounded |
-| 11.2.1.1 | 4 | Piano di collaudo CDG interno preliminare | Casi test per P1-P6, quadrature e parallel run | Piano collaudo preliminare | Work package stimabile |
+| 9 | 1 | Stream applicativo ProSIGNAL | Raccordo tra blueprint comune e WBS applicativa ProSIGNAL | WBS B - ING ProSIGNAL | Dettaglio nella sezione 3.2 |
+| 10 | 1 | Stream applicativo Kiron CDG | Raccordo tra blueprint comune e WBS applicativa Kiron CDG | WBS C - Kiron CDG | Dettaglio nella sezione 3.3 |
+| 11 | 1 | Stream applicativo CDG interno | Raccordo tra blueprint comune e WBS applicativa CDG interno | WBS D - CDG interno | Dettaglio nella sezione 3.4 |
 | 12 | 1 | Test, collaudo e readiness | Standard di verifica e preparazione al rilascio per blueprint e stream | Piano di collaudo e readiness | Area testing/collaudo e rilascio |
 | 12.1 | 2 | Strategia di test blueprint | Strategia comune per test tecnici, funzionali, UAT e parallel run | Strategia di test | Non include date |
 | 12.1.1 | 3 | Criteri di accettazione comuni | Criteri per dati accettati/scartati, output, log, dashboard e runbook | Criteri accettazione | Base per stima test |
@@ -145,7 +138,93 @@ La WBS copre il 100% del lavoro oggi identificabile sulla base della documentazi
 | 13.2.1 | 3 | Mapping WBS-to-estimate | Mappa work package -> profilo, effort da stimare, dipendenze, rischio | Template stima effort | Base per economics |
 | 13.2.1.1 | 4 | Foglio stima e RACI preliminare | Struttura pronta per stima e assegnazione responsabilità | Template stima/RACI | Work package stimabile |
 
+### 3.2 WBS B - ING ProSIGNAL
+
+| Codice WBS | Livello | Nome elemento | Descrizione | Deliverable atteso | Note |
+| ---------- | ------: | ------------- | ----------- | ------------------ | ---- |
+| B1 | 1 | Perimetro applicativo ProSIGNAL | Quadro verificabile del caso ING ProSIGNAL rispetto alla blueprint | Dossier perimetro ProSIGNAL | Basato sui materiali disponibili; da completare con file reali |
+| B1.1 | 2 | Requisiti informativi ProSIGNAL | Classificazione di file, tracciati, controlli e output attesi | Inventario requisiti informativi | Area analisi |
+| B1.1.1 | 3 | Inventario file e tracciati | Elenco tracciati, versioni, volumi attesi, formato fixed-column e vincoli noti | Catalogo file/tracciati | Mancano esempi completi |
+| B1.1.1.1 | 4 | Scheda tracciato ProSIGNAL | Scheda per ogni tracciato con campi, range, formato, owner e stato validazione | Schede tracciato | Work package stimabile |
+| B1.1.2 | 3 | Catalogo controlli ProSIGNAL | Controlli tecnici, funzionali, cross-file, scarti e severità | Catalogo controlli | Soglie da confermare |
+| B1.1.2.1 | 4 | Schede controllo ProSIGNAL | Scheda per ogni controllo con input, regola, output, severità e messaggio errore | Schede controllo | Work package stimabile |
+| B2 | 1 | Blueprint applicativa ProSIGNAL | Disegno target della pipeline ProSIGNAL | Blueprint applicativa ProSIGNAL | Non è ancora implementazione |
+| B2.1 | 2 | Architettura applicativa ProSIGNAL | Mappa di ingestion, parsing, quality, output, audit e presentation | Schema architettura ProSIGNAL | Scenario tecnico da scegliere |
+| B2.1.1 | 3 | Pattern ingestion file grandi | Landing, registro file, validazione formato, run id, retry e retention | Pattern ingestion ProSIGNAL | Da validare su volumi reali |
+| B2.1.1.1 | 4 | Specifica ingestion ProSIGNAL | Specifica verificabile di input, output, stati run e gestione errori | Specifica ingestion | Work package stimabile |
+| B2.1.2 | 3 | Pattern parsing e normalizzazione | Conversione fixed-column in strutture controllabili e auditabili | Specifica parsing | Dipende dai tracciati |
+| B2.1.2.1 | 4 | Specifica mapping campi ProSIGNAL | Mapping preliminare campo -> tipo -> vincolo -> destinazione | Specifica mapping | Work package stimabile |
+| B3 | 1 | Output, audit e consumo ProSIGNAL | Pacchetto di output business/regolamentari e tracciabilità | Catalogo output e audit ProSIGNAL | Area data product/presentation |
+| B3.1 | 2 | Output regolamentari ProSIGNAL | Definizione output, aggregazioni, formati e criteri di accettazione | Catalogo output regolamentari | Da validare con cliente |
+| B3.1.1 | 3 | Data product ProSIGNAL | Output prodotti dalla pipeline e relativi controlli di qualità | Schede data product | Da marcare per livello di confidenza |
+| B3.1.1.1 | 4 | Scheda output regolamentare | Scheda per ogni output con fonte, regola, formato, controllo e owner | Schede output | Work package stimabile |
+| B3.2 | 2 | Audit e monitoraggio ProSIGNAL | Tracciabilità di file, run, scarti, errori e output | Modello audit ProSIGNAL | Essenziale per contesto regolamentare |
+| B3.2.1 | 3 | Dashboard esiti e tecnica | Vista sintetica di run, errori, scarti e output generati | Schede dashboard | Non sostituisce BI business |
+| B3.2.1.1 | 4 | Wireframe dashboard ProSIGNAL | Wireframe executive/operativo per esiti e monitoraggio | Wireframe dashboard | Work package stimabile |
+| B4 | 1 | Collaudo e readiness ProSIGNAL | Verifiche necessarie prima di trasformare la blueprint in delivery/pilot | Pacchetto collaudo ProSIGNAL | Area test/readiness |
+| B4.1 | 2 | Strategia test ProSIGNAL | Criteri di test per file grandi, tracciati, controlli, output e audit | Strategia test ProSIGNAL | Non contiene date |
+| B4.1.1 | 3 | Test catalog ProSIGNAL | Casi test su formato, volumi, errori, cross-file checks e output | Catalogo test | Da completare con dati reali |
+| B4.1.1.1 | 4 | Pacchetto UAT ProSIGNAL preliminare | Set di casi UAT, criteri accettazione e dati richiesti al cliente | Pacchetto UAT preliminare | Work package stimabile |
+
+### 3.3 WBS C - Kiron CDG
+
+| Codice WBS | Livello | Nome elemento | Descrizione | Deliverable atteso | Note |
+| ---------- | ------: | ------------- | ----------- | ------------------ | ---- |
+| C1 | 1 | Perimetro applicativo Kiron CDG | Quadro verificabile del caso Kiron rispetto alla blueprint CDG-like | Dossier perimetro Kiron | Cliente esterno, priorità alta |
+| C1.1 | 2 | Requisiti funzionali Kiron | Perimetro Actual, Forecast, regole TG/RIB/STEP, fonti e output | Inventario requisiti Kiron | Area analisi |
+| C1.1.1 | 3 | Inventario fonti Kiron | Campus, Campus 2.0, Zucchetti e altre fonti documentate | Catalogo fonti Kiron | Da validare con cliente |
+| C1.1.1.1 | 4 | Scheda fonte Kiron | Scheda per fonte con campi, owner, frequenza, controlli e output collegati | Schede fonte | Work package stimabile |
+| C1.1.2 | 3 | Inventario regole Kiron | Regole Actual, Forecast, tabelle guida, ribaltamenti e standard | Catalogo regole Kiron | Include regole da chiarire |
+| C1.1.2.1 | 4 | Scheda regola Kiron | Scheda per regola con input, logica, output, owner e casi limite | Schede regola | Work package stimabile |
+| C2 | 1 | Blueprint applicativa Kiron | Disegno target della pipeline Kiron | Blueprint applicativa Kiron | Scenario tecnico da scegliere |
+| C2.1 | 2 | Architettura applicativa Kiron | Mappa fonti, ingestion, raw, staging, mart Actual/Forecast, BI e governance | Schema architettura Kiron | Oracle BI/OutSystems da chiarire |
+| C2.1.1 | 3 | Pattern ingestion Kiron | Acquisizione dati da fonti applicative/gestionali e tabelle guida | Specifica ingestion Kiron | Dipende da accessi e formati |
+| C2.1.1.1 | 4 | Specifica connettori Kiron | Specifica fonte -> landing/raw -> controlli minimi -> log | Specifica connettori | Work package stimabile |
+| C2.1.2 | 3 | Pattern trasformazione Kiron | Produzione Actual, DB Actual gestionale, DB Actual e DB Forecast | Specifica trasformazioni Kiron | Deriva da materiali cdg-kiron |
+| C2.1.2.1 | 4 | Specifica mart Actual/Forecast Kiron | Scheda data product con regole, controlli, output e criteri accettazione | Specifica mart | Work package stimabile |
+| C3 | 1 | Output, BI e governance Kiron | Pacchetto output e modello operativo per consumo dati | Catalogo output e governance Kiron | Area presentation/governance |
+| C3.1 | 2 | Data product Kiron | DB Actual gestionale, DB Actual, DB Forecast e output BI-ready | Catalogo data product Kiron | Source-grounded |
+| C3.1.1 | 3 | Schede output Kiron | Schede per output, utenti, controlli, refresh e responsabilità | Schede output Kiron | Serve a stima e collaudo |
+| C3.1.1.1 | 4 | Scheda accettazione output Kiron | Criteri di accettazione per output Actual/Forecast/BI | Schede accettazione | Work package stimabile |
+| C3.2 | 2 | Governance operativa Kiron | Modello di ownership, gestione anomalie, run, monitoraggio e change | Modello operativo Kiron | Dipende da ruoli cliente |
+| C3.2.1 | 3 | Runbook Kiron preliminare | Stati run, controlli, escalation, gestione scarti e riesecuzioni | Runbook preliminare | Da finalizzare in delivery |
+| C3.2.1.1 | 4 | Scheda gestione anomalie Kiron | Stati, ruoli, output e criteri di chiusura anomalia | Scheda anomalie | Work package stimabile |
+| C4 | 1 | Collaudo e readiness Kiron | Verifiche necessarie prima di trasformare la blueprint in delivery/pilot | Pacchetto collaudo Kiron | Area test/readiness |
+| C4.1 | 2 | Strategia test Kiron | Criteri di test per fonti, regole, Actual, Forecast, BI e quadrature | Strategia test Kiron | Non contiene date |
+| C4.1.1 | 3 | Test catalog Kiron | Casi test su fonti, tabelle guida, regole TG/RIB/STEP e output | Catalogo test Kiron | Da validare con cliente |
+| C4.1.1.1 | 4 | Pacchetto UAT Kiron preliminare | Set di casi UAT, criteri accettazione e dati richiesti a Kiron | Pacchetto UAT preliminare | Work package stimabile |
+
+### 3.4 WBS D - CDG interno
+
+| Codice WBS | Livello | Nome elemento | Descrizione | Deliverable atteso | Note |
+| ---------- | ------: | ------------- | ----------- | ------------------ | ---- |
+| D1 | 1 | Perimetro applicativo CDG interno | Quadro verificabile del caso interno rispetto alla blueprint | Dossier perimetro CDG interno | Reference implementation |
+| D1.1 | 2 | Requisiti funzionali CDG interno | Perimetro processi P1-P6, fonti, output, controlli e dashboard | Inventario requisiti CDG | Area analisi |
+| D1.1.1 | 3 | Catalogo processi P1-P6 | Actual ore, inframensile, linked issue, economics, ore SAP, forecast | Catalogo processi | Fonte più completa |
+| D1.1.1.1 | 4 | Scheda processo CDG | Scheda per processo con input, output, controlli, owner e criteri accettazione | Schede P1-P6 | Work package stimabile |
+| D1.1.2 | 3 | Inventario fonti e tabelle guida | Jira, Tempo, SAP, CDG app, tabelle guida e mapping documentati | Catalogo fonti/reference data | Da verificare con pipeline corrente |
+| D1.1.2.1 | 4 | Scheda fonte/reference CDG | Scheda per fonte o tabella guida con owner, frequenza, campi e controlli | Schede fonte/reference | Work package stimabile |
+| D2 | 1 | Blueprint applicativa CDG interno | Disegno target della pipeline CDG interna | Blueprint applicativa CDG | Da allineare allo stato repo |
+| D2.1 | 2 | Architettura applicativa CDG | Mappa raw/ref/stg/mart, dashboard, controlli e run | Schema architettura CDG | Reference per altri casi CDG-like |
+| D2.1.1 | 3 | Pattern ingestion CDG | Acquisizione da Jira, Tempo, SAP, CDG app e tabelle guida | Specifica ingestion CDG | Basato sui materiali CDG |
+| D2.1.1.1 | 4 | Specifica connettori CDG | Specifica fonte -> raw -> controlli minimi -> run log | Specifica connettori | Work package stimabile |
+| D2.1.2 | 3 | Pattern trasformazione CDG | Staging, regole P1-P6, mart BI-ready e output tecnici/business | Specifica trasformazioni CDG | Deve evitare duplicazioni con Kiron |
+| D2.1.2.1 | 4 | Specifica mart CDG | Scheda data product per P1-P6 con output, controlli e owner | Specifica mart | Work package stimabile |
+| D3 | 1 | Output, dashboard e governance CDG | Pacchetto output e modello operativo interno | Catalogo output e governance CDG | Area presentation/governance |
+| D3.1 | 2 | Data product CDG interno | Output P1-P6, mart, dashboard business e dashboard tecnica | Catalogo data product CDG | Source-grounded |
+| D3.1.1 | 3 | Schede output CDG | Schede per output, refresh, controlli, destinatari e uso operativo | Schede output CDG | Serve a stima e collaudo |
+| D3.1.1.1 | 4 | Scheda accettazione output CDG | Criteri di accettazione per output P1-P6 e dashboard | Schede accettazione | Work package stimabile |
+| D3.2 | 2 | Governance operativa CDG | Ownership di fonti, mapping, controlli, run, anomalie e change | Modello operativo CDG | Utile come modello riusabile |
+| D3.2.1 | 3 | Runbook CDG preliminare | Stati run, monitoraggio, scarti, escalation e riesecuzioni | Runbook preliminare | Da confrontare con operatività attuale |
+| D3.2.1.1 | 4 | Scheda gestione anomalie CDG | Stati, ruoli, output e criteri di chiusura anomalia | Scheda anomalie | Work package stimabile |
+| D4 | 1 | Collaudo e readiness CDG interno | Verifiche necessarie per consolidare il caso come reference | Pacchetto collaudo CDG | Area test/readiness |
+| D4.1 | 2 | Strategia test CDG | Criteri di test per P1-P6, quadrature, dashboard e parallel run | Strategia test CDG | Non contiene date |
+| D4.1.1 | 3 | Test catalog CDG | Casi test su fonti, tabelle guida, processi P1-P6 e output | Catalogo test CDG | Da allineare allo stato repo |
+| D4.1.1.1 | 4 | Pacchetto UAT CDG preliminare | Set di casi UAT, criteri accettazione e dati richiesti agli owner interni | Pacchetto UAT preliminare | Work package stimabile |
+
 ## 4. Vista gerarchica
+
+### 4.1 WBS A - Blueprint comune
 
 ```text
 1. Governance e perimetro blueprint
@@ -231,28 +310,10 @@ La WBS copre il 100% del lavoro oggi identificabile sulla base della documentazi
       8.2.1.1 Scheda processo gestione scarti
 
 9. Stream applicativo ProSIGNAL
-  9.1 Pacchetto requisiti ProSIGNAL
-    9.1.1 Tracciati e file inventory
-      9.1.1.1 Scheda file/tracciato validata
-  9.2 Pipeline ProSIGNAL target
-    9.2.1 Output e controlli ProSIGNAL
-      9.2.1.1 Piano di collaudo ProSIGNAL preliminare
 
 10. Stream applicativo Kiron CDG
-  10.1 Pacchetto requisiti Kiron
-    10.1.1 Fonti e dizionari Kiron
-      10.1.1.1 Schede fonti e regole Kiron
-  10.2 Pipeline Kiron target
-    10.2.1 Data product Kiron
-      10.2.1.1 Piano di collaudo Kiron preliminare
 
 11. Stream applicativo CDG interno
-  11.1 Pacchetto requisiti CDG interno
-    11.1.1 Processi P1-P6
-      11.1.1.1 Schede processo P1-P6
-  11.2 Pipeline CDG interno target
-    11.2.1 Data product CDG interno
-      11.2.1.1 Piano di collaudo CDG interno preliminare
 
 12. Test, collaudo e readiness
   12.1 Strategia di test blueprint
@@ -269,6 +330,99 @@ La WBS copre il 100% del lavoro oggi identificabile sulla base della documentazi
   13.2 Roadmap e stima readiness
     13.2.1 Mapping WBS-to-estimate
       13.2.1.1 Foglio stima e RACI preliminare
+```
+
+### 4.2 WBS B - ING ProSIGNAL
+
+```text
+B1. Perimetro applicativo ProSIGNAL
+  B1.1 Requisiti informativi ProSIGNAL
+    B1.1.1 Inventario file e tracciati
+      B1.1.1.1 Scheda tracciato ProSIGNAL
+    B1.1.2 Catalogo controlli ProSIGNAL
+      B1.1.2.1 Schede controllo ProSIGNAL
+
+B2. Blueprint applicativa ProSIGNAL
+  B2.1 Architettura applicativa ProSIGNAL
+    B2.1.1 Pattern ingestion file grandi
+      B2.1.1.1 Specifica ingestion ProSIGNAL
+    B2.1.2 Pattern parsing e normalizzazione
+      B2.1.2.1 Specifica mapping campi ProSIGNAL
+
+B3. Output, audit e consumo ProSIGNAL
+  B3.1 Output regolamentari ProSIGNAL
+    B3.1.1 Data product ProSIGNAL
+      B3.1.1.1 Scheda output regolamentare
+  B3.2 Audit e monitoraggio ProSIGNAL
+    B3.2.1 Dashboard esiti e tecnica
+      B3.2.1.1 Wireframe dashboard ProSIGNAL
+
+B4. Collaudo e readiness ProSIGNAL
+  B4.1 Strategia test ProSIGNAL
+    B4.1.1 Test catalog ProSIGNAL
+      B4.1.1.1 Pacchetto UAT ProSIGNAL preliminare
+```
+
+### 4.3 WBS C - Kiron CDG
+
+```text
+C1. Perimetro applicativo Kiron CDG
+  C1.1 Requisiti funzionali Kiron
+    C1.1.1 Inventario fonti Kiron
+      C1.1.1.1 Scheda fonte Kiron
+    C1.1.2 Inventario regole Kiron
+      C1.1.2.1 Scheda regola Kiron
+
+C2. Blueprint applicativa Kiron
+  C2.1 Architettura applicativa Kiron
+    C2.1.1 Pattern ingestion Kiron
+      C2.1.1.1 Specifica connettori Kiron
+    C2.1.2 Pattern trasformazione Kiron
+      C2.1.2.1 Specifica mart Actual/Forecast Kiron
+
+C3. Output, BI e governance Kiron
+  C3.1 Data product Kiron
+    C3.1.1 Schede output Kiron
+      C3.1.1.1 Scheda accettazione output Kiron
+  C3.2 Governance operativa Kiron
+    C3.2.1 Runbook Kiron preliminare
+      C3.2.1.1 Scheda gestione anomalie Kiron
+
+C4. Collaudo e readiness Kiron
+  C4.1 Strategia test Kiron
+    C4.1.1 Test catalog Kiron
+      C4.1.1.1 Pacchetto UAT Kiron preliminare
+```
+
+### 4.4 WBS D - CDG interno
+
+```text
+D1. Perimetro applicativo CDG interno
+  D1.1 Requisiti funzionali CDG interno
+    D1.1.1 Catalogo processi P1-P6
+      D1.1.1.1 Scheda processo CDG
+    D1.1.2 Inventario fonti e tabelle guida
+      D1.1.2.1 Scheda fonte/reference CDG
+
+D2. Blueprint applicativa CDG interno
+  D2.1 Architettura applicativa CDG
+    D2.1.1 Pattern ingestion CDG
+      D2.1.1.1 Specifica connettori CDG
+    D2.1.2 Pattern trasformazione CDG
+      D2.1.2.1 Specifica mart CDG
+
+D3. Output, dashboard e governance CDG
+  D3.1 Data product CDG interno
+    D3.1.1 Schede output CDG
+      D3.1.1.1 Scheda accettazione output CDG
+  D3.2 Governance operativa CDG
+    D3.2.1 Runbook CDG preliminare
+      D3.2.1.1 Scheda gestione anomalie CDG
+
+D4. Collaudo e readiness CDG interno
+  D4.1 Strategia test CDG
+    D4.1.1 Test catalog CDG
+      D4.1.1.1 Pacchetto UAT CDG preliminare
 ```
 
 ## 5. Aree mancanti o ambigue
@@ -310,8 +464,8 @@ La WBS copre il 100% del lavoro oggi identificabile sulla base della documentazi
 ## Grill-with-docs / Critic / Review
 
 - **Grill-with-docs:** il termine "blueprint" resta coerente con il glossario e con i draft: non è un tool, ma un modello riusabile di standard, template, pattern, controlli e criteri di adozione.
-- **Grill-with-docs:** la WBS ora parte dai macro-deliverable e non da una cronologia di attività. Le fasi temporali saranno derivate dopo, in roadmap/Gantt.
-- **Critic:** la WBS è più adatta alla stima, ma resta ampia. Prima di stimare conviene congelare il perimetro: blueprint core soltanto, oppure blueprint più predisposizione dei tre stream.
-- **Critic:** ProSIGNAL è ancora il punto più debole per grounding. La WBS lo segnala come rischio invece di trasformare ipotesi in certezze.
-- **Review:** i deliverable finali sono verificabili, numerati e tracciabili. Non sono state introdotte date, effort o costi.
-- **Humanize:** la WBS deve aiutare il comitato a vedere cosa stiamo comprando davvero: non tre pipeline isolate, ma un kit riusabile che poi viene adattato ai tre casi.
+- **Grill-with-docs:** le WBS partono dai macro-deliverable e non da una cronologia di attività. Le fasi temporali saranno derivate dopo, in roadmap/Gantt.
+- **Critic:** ora sono presenti quattro WBS esplicite: blueprint comune, ProSIGNAL, Kiron CDG e CDG interno. Prima di stimare conviene congelare se la prima release copre solo la blueprint core o anche la predisposizione dei tre stream.
+- **Critic:** ProSIGNAL è ancora il punto più debole per grounding. La WBS dedicata lo segnala nelle note invece di trasformare ipotesi in certezze.
+- **Review:** i deliverable finali sono verificabili, numerati e tracciabili. Le WBS applicative specializzano la blueprint senza introdurre date, effort o costi.
+- **Humanize:** le WBS devono aiutare il comitato a vedere cosa stiamo comprando davvero: un kit riusabile e tre modi concreti di applicarlo, non tre pipeline isolate.
