@@ -6,7 +6,7 @@
 - Source HTML: `sources/data-pipeline-image-final-v1.html`
 - Technical render: `previews/source-render-v1.pdf`
 - Contact sheet: `previews/image-final-v1-contact.png`
-- Slide images: `slides/slide-01.png` ... `slides/slide-18.png`
+- Slide images: `slides/slide-01.png` ... `slides/slide-20.png`
 
 ## Input PDF
 
@@ -51,6 +51,16 @@ The final PDF is intentionally image-based:
 3. PNG slides recomposed into the final PDF with `img2pdf`.
 
 Slide images are 2560 x 1440 pixels, matching a 16:9 layout.
+
+## WBS Revision Notes
+
+Slides 13-16 implement the Gianfranco guideline:
+
+- WBS blueprint first, with common process catalogue and reusable functions.
+- Three project WBS slides after the blueprint: ING ProSIGNAL, Kiron CDG, CDG interno.
+- First level is always process; second level is always function.
+- Common processes are preserved across the three project WBS views.
+- Non-applicable common/optional processes remain visible in grey with `N/A`.
 
 ## Known Trade-Off
 

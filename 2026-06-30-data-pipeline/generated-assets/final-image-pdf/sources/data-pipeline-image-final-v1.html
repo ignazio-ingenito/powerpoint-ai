@@ -452,21 +452,116 @@
     }
     .scenario-card h2 { font-size: 27px; margin-bottom: 16px; color: #151b20; }
     .scenario-card p { font-size: 18px; line-height: 1.3; margin-bottom: 13px; color: #2c343c; }
-    .wbs-grid {
+    .wbs-legend {
+      display: flex;
+      gap: 14px;
+      align-items: center;
+      margin: 4px 0 16px;
+      color: #51606b;
+      font-size: 14px;
+      font-weight: 650;
+    }
+    .wbs-legend span {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+    }
+    .wbs-legend i {
+      width: 22px;
+      height: 8px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, #37b79f, #168fd0);
+      display: inline-block;
+    }
+    .wbs-legend .na-dot { background: #aeb6bd; }
+    .wbs-blueprint {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 14px;
-      margin-top: 30px;
+      margin-top: 22px;
     }
-    .wbs-card {
-      min-height: 435px;
-      padding: 18px 16px;
+    .process-card {
+      min-height: 185px;
+      padding: 15px 15px 13px;
       border-top: 4px solid #25ad9e;
-      box-shadow: none;
+      border-radius: 7px;
+      background: #fff;
+      box-shadow: 0 0 0 1px #d8e9ec inset;
     }
-    .wbs-card h2 { color: #168fd0; font-size: 21px; margin-bottom: 5px; }
-    .wbs-card .label { color: #25ad9e; font-size: 13px; font-weight: 800; letter-spacing: .02em; margin-bottom: 14px; }
-    .wbs-card p { font-size: 16px; line-height: 1.22; padding: 7px 0; border-bottom: 1px solid #e5f1f3; color: #303941; }
+    .process-card h2 {
+      color: #168fd0;
+      font-size: 19px;
+      line-height: 1.1;
+      margin-bottom: 9px;
+    }
+    .process-card .label {
+      color: #25ad9e;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .03em;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+    }
+    .function-list {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .function-list span {
+      display: block;
+      font-size: 13.6px;
+      line-height: 1.16;
+      color: #26323a;
+      padding: 5px 8px;
+      border-radius: 5px;
+      background: #f3fafb;
+      border: 1px solid #dceff2;
+    }
+    .wbs-table {
+      display: grid;
+      grid-template-columns: 270px 1fr;
+      gap: 8px 10px;
+      margin-top: 14px;
+    }
+    .wbs-process,
+    .wbs-functions {
+      min-height: 53px;
+      border-radius: 7px;
+      border: 1px solid #d8e9ec;
+      background: #fff;
+      display: flex;
+      align-items: center;
+    }
+    .wbs-process {
+      border-left: 4px solid #25ad9e;
+      padding: 8px 12px;
+      color: #168fd0;
+      font-size: 16px;
+      font-weight: 780;
+      line-height: 1.12;
+    }
+    .wbs-functions {
+      padding: 7px 8px;
+      gap: 7px;
+      flex-wrap: wrap;
+    }
+    .wbs-functions span {
+      display: inline-block;
+      padding: 5px 8px;
+      border-radius: 5px;
+      background: #f3fafb;
+      border: 1px solid #dceff2;
+      color: #27343c;
+      font-size: 13.4px;
+      line-height: 1.12;
+      font-weight: 560;
+    }
+    .wbs-functions .na {
+      color: #6f787f;
+      background: #eef1f3;
+      border-color: #cfd6dc;
+      font-style: italic;
+    }
     .timeline {
       display: grid;
       grid-template-columns: repeat(5, 1fr);
@@ -784,14 +879,19 @@
 
 <section class="slide">
   <img class="logo" src="../../novigo-header-logo-template.png" alt="">
-  <div class="header"><span class="client">TXT Novigo |</span><span>WBS - Processi e funzioni CDG</span></div><div class="page">13</div><div class="rule-left"></div><div class="rule-right"></div>
+  <div class="header"><span class="client">TXT Novigo |</span><span>WBS - Blueprint comune</span></div><div class="page">13</div><div class="rule-left"></div><div class="rule-right"></div>
   <div class="content">
-    <h1 class="slide-title">Per i casi CDG la WBS segue il modello Kiron: processo al primo livello, funzioni al secondo.</h1>
-    <div class="wbs-grid">
-      <div class="wbs-card"><h2>1. PM e coordinamento</h2><div class="label">FUNZIONI</div><p>Gestione progettuale</p><p>SAL interni e cliente</p><p>Raccolta open point</p><p>Allineamento piano e WBS</p></div>
-      <div class="wbs-card"><h2>2. Actual</h2><div class="label">FUNZIONI KIRON</div><p>Setup e analisi</p><p>Web app e base dati</p><p>Import Campus e Zucchetti</p><p>Configuratore regole</p><p>Ribaltamenti e data management</p><p>Output verso BI</p></div>
-      <div class="wbs-card"><h2>3. Forecast</h2><div class="label">FUNZIONI</div><p>Regole e parametri forecast</p><p>Motore calcolo forecast</p><p>Tabelle e viste forecast</p><p>Test interno</p><p>Rilascio e validazione</p></div>
-      <div class="wbs-card"><h2>4. UAT e rilascio</h2><div class="label">FUNZIONI</div><p>UAT cliente / owner CDG</p><p>Parallel run dove necessario</p><p>Deploy e validazione processo</p><p>Runbook e hypercare</p><p>Adattamento CDG interno: P1-P5 Actual e P6 Forecast</p></div>
+    <h1 class="slide-title">La WBS generica definisce i processi comuni e le funzioni riusabili nei casi applicativi.</h1>
+    <div class="wbs-legend"><span><i></i>Processi di primo livello</span><span>Ogni card contiene solo funzioni di secondo livello</span></div>
+    <div class="wbs-blueprint">
+      <div class="process-card"><h2>1. Governo e adozione</h2><div class="label">FUNZIONI</div><div class="function-list"><span>Perimetro e obiettivi</span><span>Criteri di riuso</span><span>Decision log e ownership</span></div></div>
+      <div class="process-card"><h2>2. Sorgenti e ingestion</h2><div class="label">FUNZIONI</div><div class="function-list"><span>Inventario fonti</span><span>Acquisizione file/API/DB</span><span>Run id e registro input</span></div></div>
+      <div class="process-card"><h2>3. Contratti dati e reference</h2><div class="label">FUNZIONI</div><div class="function-list"><span>Data contract</span><span>Mapping e tabelle guida</span><span>Versionamento tracciati</span></div></div>
+      <div class="process-card"><h2>4. Quality e audit</h2><div class="label">FUNZIONI</div><div class="function-list"><span>Controlli tecnici</span><span>Controlli funzionali</span><span>Scarti, log e audit trail</span></div></div>
+      <div class="process-card"><h2>5. Transform e data product</h2><div class="label">FUNZIONI</div><div class="function-list"><span>Normalizzazione</span><span>Regole di calcolo</span><span>Mart e output validati</span></div></div>
+      <div class="process-card"><h2>6. Esposizione e workflow</h2><div class="label">FUNZIONI</div><div class="function-list"><span>Dashboard o export</span><span>Gestione anomalie</span><span>Workflow operativo</span></div></div>
+      <div class="process-card"><h2>7. Test, rilascio e run</h2><div class="label">FUNZIONI</div><div class="function-list"><span>Test catalog</span><span>UAT e parallel run</span><span>Runbook e hypercare</span></div></div>
+      <div class="process-card"><h2>8. Estensioni specifiche</h2><div class="label">FUNZIONI</div><div class="function-list"><span>File regolamentari</span><span>Actual / Forecast CDG</span><span>Processi P1-P6</span></div></div>
     </div>
   </div>
   <img class="brand-mark" src="../../txt-star-mark-template.png" alt="">
@@ -799,14 +899,20 @@
 
 <section class="slide">
   <img class="logo" src="../../novigo-header-logo-template.png" alt="">
-  <div class="header"><span class="client">TXT Novigo |</span><span>WBS - Processi e funzioni ProSIGNAL</span></div><div class="page">14</div><div class="rule-left"></div><div class="rule-right"></div>
+  <div class="header"><span class="client">TXT Novigo |</span><span>WBS - ING ProSIGNAL</span></div><div class="page">14</div><div class="rule-left"></div><div class="rule-right"></div>
   <div class="content">
-    <h1 class="slide-title">ProSIGNAL usa la stessa logica WBS, ma i processi ruotano attorno a file, tracciati, controlli e output.</h1>
-    <div class="wbs-grid">
-      <div class="wbs-card"><h2>1. Intake e tracciati</h2><div class="label">FUNZIONI</div><p>Upload e registro file</p><p>Gestione file grandi</p><p>Tracciati fixed-column</p><p>Versionamento campi</p><p>Mapping Lease / Conto Arancio</p></div>
-      <div class="wbs-card"><h2>2. Parsing e validazione</h2><div class="label">FUNZIONI</div><p>Parsing per range colonne</p><p>Controllo lunghezza record</p><p>Header e tail checks</p><p>Numero righe e formato</p><p>Gestione scarti e anomalie</p></div>
-      <div class="wbs-card"><h2>3. Controlli funzionali</h2><div class="label">FUNZIONI</div><p>Aggregazioni per forma tecnica</p><p>Quantità, importi e operazioni</p><p>Scostamento andamentale</p><p>Controlli incrociati file decadali</p><p>Audit regole applicate</p></div>
-      <div class="wbs-card"><h2>4. Output e operatività</h2><div class="label">FUNZIONI</div><p>Manipolazione e merge dati</p><p>Export output regolamentari</p><p>Storicizzazione esiti</p><p>Dashboard controllo esiti</p><p>Log elaborazioni e workflow utente</p></div>
+    <h1 class="slide-title">ProSIGNAL riusa i processi comuni della blueprint e aggiunge il focus sui file regolamentari.</h1>
+    <div class="wbs-legend"><span><i></i>Implementato / da dettagliare</span><span><i class="na-dot"></i>N/A esplicito</span></div>
+    <div class="wbs-table">
+      <div class="wbs-process">1. Governo e adozione</div><div class="wbs-functions"><span>Perimetro ING</span><span>Owner dati</span><span>Regole di validazione cliente</span></div>
+      <div class="wbs-process">2. Sorgenti e ingestion</div><div class="wbs-functions"><span>Upload file</span><span>Registro input</span><span>Gestione file grandi</span><span>Run decadali/mensili</span></div>
+      <div class="wbs-process">3. Contratti dati e reference</div><div class="wbs-functions"><span>Tracciati fixed-column</span><span>Versioni campi</span><span>Mapping forme tecniche</span></div>
+      <div class="wbs-process">4. Quality e audit</div><div class="wbs-functions"><span>Header/tail</span><span>Numero righe</span><span>Cross-file checks</span><span>Audit regole</span></div>
+      <div class="wbs-process">5. Transform e data product</div><div class="wbs-functions"><span>Parsing colonne</span><span>Aggregazioni</span><span>Output regolamentari</span></div>
+      <div class="wbs-process">6. Esposizione e workflow</div><div class="wbs-functions"><span>Dashboard esiti</span><span>Gestione scarti</span><span>Workflow utente</span></div>
+      <div class="wbs-process">7. Test, rilascio e run</div><div class="wbs-functions"><span>Test su volumi</span><span>UAT su file campione</span><span>Parallel run</span></div>
+      <div class="wbs-process">8. Estensione file regolamentari</div><div class="wbs-functions"><span>Lease / Conto Arancio</span><span>Tracciati variabili</span><span>Retention e audit</span></div>
+      <div class="wbs-process">9. Estensione Actual / Forecast CDG</div><div class="wbs-functions"><span class="na">N/A - non è un caso CDG-like</span></div>
     </div>
   </div>
   <img class="brand-mark" src="../../txt-star-mark-template.png" alt="">
@@ -814,7 +920,49 @@
 
 <section class="slide">
   <img class="logo" src="../../novigo-header-logo-template.png" alt="">
-  <div class="header"><span class="client">TXT Novigo |</span><span>Piano di lavoro</span></div><div class="page">15</div><div class="rule-left"></div><div class="rule-right"></div>
+  <div class="header"><span class="client">TXT Novigo |</span><span>WBS - Kiron CDG</span></div><div class="page">15</div><div class="rule-left"></div><div class="rule-right"></div>
+  <div class="content">
+    <h1 class="slide-title">Kiron CDG mantiene i processi comuni e specializza le funzioni su Actual, Forecast e BI.</h1>
+    <div class="wbs-legend"><span><i></i>Implementato / da dettagliare</span><span><i class="na-dot"></i>N/A esplicito</span></div>
+    <div class="wbs-table">
+      <div class="wbs-process">1. Governo e adozione</div><div class="wbs-functions"><span>Piano e WBS</span><span>SAL cliente</span><span>Open point funzionali</span></div>
+      <div class="wbs-process">2. Sorgenti e ingestion</div><div class="wbs-functions"><span>Campus</span><span>Campus 2.0</span><span>Zucchetti</span><span>Import dati gestionali</span></div>
+      <div class="wbs-process">3. Contratti dati e reference</div><div class="wbs-functions"><span>Campi input/output</span><span>Tabelle TG</span><span>Regole RIB/STEP</span></div>
+      <div class="wbs-process">4. Quality e audit</div><div class="wbs-functions"><span>Riconciliazioni</span><span>Quadrature</span><span>Controlli regole</span><span>Log esecuzioni</span></div>
+      <div class="wbs-process">5. Transform e data product</div><div class="wbs-functions"><span>DB Actual gestionale</span><span>DB Actual</span><span>DB Forecast</span><span>Mart BI-ready</span></div>
+      <div class="wbs-process">6. Esposizione e workflow</div><div class="wbs-functions"><span>Integrazione BI</span><span>Monitor processi</span><span>Gestione anomalie</span></div>
+      <div class="wbs-process">7. Test, rilascio e run</div><div class="wbs-functions"><span>UAT Actual</span><span>UAT Forecast</span><span>Runbook cliente</span></div>
+      <div class="wbs-process">8. Estensione file regolamentari</div><div class="wbs-functions"><span class="na">N/A - non sono previsti tracciati fixed-column regolamentari</span></div>
+      <div class="wbs-process">9. Estensione Actual / Forecast CDG</div><div class="wbs-functions"><span>Actual</span><span>Forecast</span><span>Ribaltamenti</span><span>Output direzionali</span></div>
+    </div>
+  </div>
+  <img class="brand-mark" src="../../txt-star-mark-template.png" alt="">
+</section>
+
+<section class="slide">
+  <img class="logo" src="../../novigo-header-logo-template.png" alt="">
+  <div class="header"><span class="client">TXT Novigo |</span><span>WBS - CDG interno</span></div><div class="page">16</div><div class="rule-left"></div><div class="rule-right"></div>
+  <div class="content">
+    <h1 class="slide-title">Il CDG interno usa gli stessi processi comuni come reference implementation della blueprint.</h1>
+    <div class="wbs-legend"><span><i></i>Implementato / da dettagliare</span><span><i class="na-dot"></i>N/A esplicito</span></div>
+    <div class="wbs-table">
+      <div class="wbs-process">1. Governo e adozione</div><div class="wbs-functions"><span>Owner interni</span><span>Regole di riuso</span><span>Allineamento repository/pipeline</span></div>
+      <div class="wbs-process">2. Sorgenti e ingestion</div><div class="wbs-functions"><span>Jira</span><span>Tempo</span><span>SAP</span><span>CDG app</span><span>Tabelle guida</span></div>
+      <div class="wbs-process">3. Contratti dati e reference</div><div class="wbs-functions"><span>Mapping account-WBS</span><span>Organico</span><span>Team / PM</span><span>Validità raccordi</span></div>
+      <div class="wbs-process">4. Quality e audit</div><div class="wbs-functions"><span>Linked issue</span><span>WBS chiuse</span><span>Quadrature</span><span>Run history</span></div>
+      <div class="wbs-process">5. Transform e data product</div><div class="wbs-functions"><span>P1-P5 Actual</span><span>P6 Forecast</span><span>Economics</span><span>Mart BI-ready</span></div>
+      <div class="wbs-process">6. Esposizione e workflow</div><div class="wbs-functions"><span>Dashboard CDG</span><span>Dashboard tecnica</span><span>Gestione anomalie</span></div>
+      <div class="wbs-process">7. Test, rilascio e run</div><div class="wbs-functions"><span>Parallel run</span><span>Validazione owner</span><span>Runbook operativo</span></div>
+      <div class="wbs-process">8. Estensione file regolamentari</div><div class="wbs-functions"><span class="na">N/A - non sono previsti file regolamentari fixed-column</span></div>
+      <div class="wbs-process">9. Estensione Actual / Forecast CDG</div><div class="wbs-functions"><span>Processi P1-P6</span><span>Output storicizzati</span><span>Reference per Kiron-like</span></div>
+    </div>
+  </div>
+  <img class="brand-mark" src="../../txt-star-mark-template.png" alt="">
+</section>
+
+<section class="slide">
+  <img class="logo" src="../../novigo-header-logo-template.png" alt="">
+  <div class="header"><span class="client">TXT Novigo |</span><span>Piano di lavoro</span></div><div class="page">17</div><div class="rule-left"></div><div class="rule-right"></div>
   <div class="content">
     <h1 class="slide-title">Il piano deriva dalla WBS: prima si validano processi e funzioni, poi si realizza per rilasci controllabili.</h1>
     <div class="timeline">
@@ -830,7 +978,7 @@
 
 <section class="slide">
   <img class="logo" src="../../novigo-header-logo-template.png" alt="">
-  <div class="header"><span class="client">TXT Novigo |</span><span>Economics e decisioni</span></div><div class="page">16</div><div class="rule-left"></div><div class="rule-right"></div>
+  <div class="header"><span class="client">TXT Novigo |</span><span>Economics e decisioni</span></div><div class="page">18</div><div class="rule-left"></div><div class="rule-right"></div>
   <div class="content">
     <h1 class="slide-title">Per una blueprint servono driver e range di discussione, non una quotazione definitiva.</h1>
     <div class="three">
@@ -844,7 +992,7 @@
 
 <section class="slide">
   <img class="logo" src="../../novigo-header-logo-template.png" alt="">
-  <div class="header"><span class="client">TXT Novigo |</span><span>Discussione</span></div><div class="page">17</div><div class="rule-left"></div><div class="rule-right"></div>
+  <div class="header"><span class="client">TXT Novigo |</span><span>Discussione</span></div><div class="page">19</div><div class="rule-left"></div><div class="rule-right"></div>
   <div class="content">
     <h1 class="slide-title">La presentazione non chiude una scelta: mette sul tavolo le decisioni da prendere.</h1>
     <div class="decision-grid">
